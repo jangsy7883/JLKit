@@ -25,3 +25,4 @@
 #import "NSThread+JLAdditions.h"
 #import "UIButton+JLAdditions.h"
 #import "UIBarButtonItem+JLAdditions.h"
+#import "UINavigationController+JLStatusBarStyle.h"

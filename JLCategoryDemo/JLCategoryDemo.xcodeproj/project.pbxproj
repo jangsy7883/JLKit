@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F59E6151BC0FC9C00B213A8 /* UINavigationController+JLStatusBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F59E6141BC0FC9C00B213A8 /* UINavigationController+JLStatusBarStyle.m */; settings = {ASSET_TAGS = (); }; };
 		0FAABDFE1BC0E7DA00AE9BBE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABDFD1BC0E7DA00AE9BBE /* main.m */; };
 		0FAABE011BC0E7DA00AE9BBE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE001BC0E7DA00AE9BBE /* AppDelegate.m */; };
 		0FAABE041BC0E7DA00AE9BBE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE031BC0E7DA00AE9BBE /* ViewController.m */; };
@@ -34,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F59E6131BC0FC9C00B213A8 /* UINavigationController+JLStatusBarStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+JLStatusBarStyle.h"; sourceTree = "<group>"; };
+		0F59E6141BC0FC9C00B213A8 /* UINavigationController+JLStatusBarStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+JLStatusBarStyle.m"; sourceTree = "<group>"; };
 		0FAABDF91BC0E7DA00AE9BBE /* JLCategoryDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLCategoryDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FAABDFD1BC0E7DA00AE9BBE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0FAABDFF1BC0E7DA00AE9BBE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -175,6 +178,8 @@
 				0FAABE381BC0E7E300AE9BBE /* UITableViewCell+JLAdditions.m */,
 				0FAABE391BC0E7E300AE9BBE /* UIView+JLAdditions.h */,
 				0FAABE3A1BC0E7E300AE9BBE /* UIView+JLAdditions.m */,
+				0F59E6131BC0FC9C00B213A8 /* UINavigationController+JLStatusBarStyle.h */,
+				0F59E6141BC0FC9C00B213A8 /* UINavigationController+JLStatusBarStyle.m */,
 			);
 			name = JLCategorys;
 			path = ../JLCategorys;
@@ -257,6 +262,7 @@
 				0FAABE491BC0E7E300AE9BBE /* UILabel+JLAdditions.m in Sources */,
 				0FAABE411BC0E7E300AE9BBE /* NSString+JLAdditions.m in Sources */,
 				0FAABE481BC0E7E300AE9BBE /* UIImage+JLAdditions.m in Sources */,
+				0F59E6151BC0FC9C00B213A8 /* UINavigationController+JLStatusBarStyle.m in Sources */,
 				0FAABE461BC0E7E300AE9BBE /* UIDevice+JLAdditions.m in Sources */,
 				0FAABE4C1BC0E7E300AE9BBE /* UITableViewCell+JLAdditions.m in Sources */,
 				0FAABE3F1BC0E7E300AE9BBE /* NSIndexPath+JLAdditions.m in Sources */,
@@ -417,6 +423,7 @@
 				0FAABE121BC0E7DA00AE9BBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
