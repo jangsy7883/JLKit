@@ -10,6 +10,10 @@
 
 @interface UIBarButtonItem (Additions)
 
++ (UIBarButtonItem*)barButtonItemWithtButtonImage:(UIImage *)image
+                                           target:(id)target
+                                           action:(SEL)action;
+
 + (UIBarButtonItem*)barButtonItemWithtImage:(UIImage *)image
                                       style:(UIBarButtonItemStyle)style
                                      target:(id)target
