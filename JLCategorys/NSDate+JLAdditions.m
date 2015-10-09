@@ -7,32 +7,31 @@
 //
 
 #import "NSDate+JLAdditions.h"
+#import "NSTimeZone+JLAdditions.h"
 
 @implementation NSDate (Additions)
 
-+ (NSDate*)dateFromFormat:(NSString*)dateFormat dateString:(NSString*)dateString timeZone:(NSString*)timeZone
++ (NSDateFormatter*)sharedDateFormatter
 {
-    /* CHECK -----------------------------------------------------------------*/
-    if (dateFormat == nil || [dateFormat length] <= 0)
-    {
-        return nil;
-    }
-    if (dateString == nil || [dateString length] <= 0)
-    {
-        return nil;
-    }
+    static dispatch_once_t once;
+    static NSDateFormatter *dateFormatter;
+    dispatch_once(&once, ^{
+        dateFormatter = [[NSDateFormatter alloc] init];
+        dateFormatter.timeZone = [NSTimeZone GMT];
+        dateFormatter.locale = [NSLocale currentLocale];
+    });
+    return dateFormatter;
+}
 
-    /* INIT ------------------------------------------------------------------*/
-    NSDateFormatter *dateFormatter = nil;
-
-    /* LOGIC -----------------------------------------------------------------*/
-    dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.locale = [NSLocale autoupdatingCurrentLocale];
++ (NSDate*)dateFromFormat:(NSString*)dateFormat dateString:(NSString*)dateString withTimeZone:(NSTimeZone*)timeZone
+{
+    NSDateFormatter *dateFormatter = [self sharedDateFormatter];
+    if ([dateFormatter.timeZone isEqualToTimeZone:timeZone] == NO)
+    {
+        dateFormatter.timeZone = timeZone;
+    }
+    
     [dateFormatter setDateFormat:dateFormat];
-    if (dateFormat != nil)
-    {
-        [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:timeZone]];
-    }
     
     return [dateFormatter dateFromString:dateString];
 }
@@ -41,24 +40,15 @@
 {
     return [self dateFromFormat:dateFormat
                      dateString:dateString
-                       timeZone:@"GMT"];
+                   withTimeZone:[NSTimeZone GMT]];
 }
 
-- (NSString*)stringFromFormat:(NSString*)parm_stringFormat timeZone:(NSString*)parm_timeZone
+- (NSString*)stringFromFormat:(NSString*)parm_stringFormat withTimeZone:(NSTimeZone*)timeZone
 {
-    /* CHECK -----------------------------------------------------------------*/
-    if (parm_stringFormat == nil || [parm_stringFormat length] <= 0)
+    NSDateFormatter *dateFormatter = [NSDate sharedDateFormatter];
+    if ([dateFormatter.timeZone isEqualToTimeZone:timeZone] == NO)
     {
-        return nil;
-    }
-
-    /* LOGIC -----------------------------------------------------------------*/
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.locale = [NSLocale autoupdatingCurrentLocale];
-    [dateFormatter setDateFormat:parm_stringFormat];
-    if (parm_timeZone != nil)
-    {
-        [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:parm_timeZone]];
+        dateFormatter.timeZone = timeZone;
     }
     
     return [dateFormatter stringFromDate:self];
@@ -67,7 +57,16 @@
 - (NSString*)stringFromFormat:(NSString*)parm_stringFormat
 {
     return [self stringFromFormat:parm_stringFormat
-                         timeZone:@"GMT"];
+                     withTimeZone:[NSTimeZone GMT]];
+}
+
+- (NSDate*)dateByAddingYear:(NSInteger)parm_year
+{
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:self];
+    [components setCalendar:[NSCalendar currentCalendar]];
+    [components setYear:[components year] + parm_year];
+    
+    return [components date];
 }
 
 @end

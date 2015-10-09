@@ -10,10 +10,12 @@
 
 @interface NSDate (Additions)
 
-+ (NSDate*)dateFromFormat:(NSString*)dateFormat dateString:(NSString*)dateString timeZone:(NSString*)timeZone;
++ (NSDate*)dateFromFormat:(NSString*)dateFormat dateString:(NSString*)dateString withTimeZone:(NSTimeZone*)timeZone;
 + (NSDate*)dateFromFormat:(NSString*)dateFormat dateString:(NSString*)dateString;
 
-- (NSString*)stringFromFormat:(NSString*)parm_stringFormat timeZone:(NSString*)parm_timeZone;
+- (NSString*)stringFromFormat:(NSString*)parm_stringFormat withTimeZone:(NSTimeZone*)timeZone;
 - (NSString*)stringFromFormat:(NSString*)parm_stringFormat;
+
+- (NSDate*)dateByAddingYear:(NSInteger)parm_year;
 
 @end

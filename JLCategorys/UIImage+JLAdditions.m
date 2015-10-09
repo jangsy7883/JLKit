@@ -61,12 +61,12 @@
     return self;
 }
 
-- (CGSize)sizeToFitWidth:(CGFloat)width originalSizeMax:(BOOL)originalSizeMax
+- (CGSize)sizeToFitWidth:(CGFloat)width scaleAspectFit:(BOOL)scaleAspectFit
 {
     CGSize fitSize = CGSizeZero;
     CGFloat ratio = (self.size.width * self.scale) / width;
     
-    if (ratio > 1 || originalSizeMax == NO)
+    if (ratio > 1 || scaleAspectFit == NO)
     {
         fitSize.width = ceil((self.size.width * self.scale) / ratio);
         fitSize.height = ceil((self.size.height * self.scale) / ratio);

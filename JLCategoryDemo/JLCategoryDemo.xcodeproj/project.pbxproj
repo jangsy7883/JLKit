@@ -32,6 +32,7 @@
 		0FAABE4B1BC0E7E300AE9BBE /* UITableView+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE361BC0E7E300AE9BBE /* UITableView+JLAdditions.m */; settings = {ASSET_TAGS = (); }; };
 		0FAABE4C1BC0E7E300AE9BBE /* UITableViewCell+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE381BC0E7E300AE9BBE /* UITableViewCell+JLAdditions.m */; settings = {ASSET_TAGS = (); }; };
 		0FAABE4D1BC0E7E300AE9BBE /* UIView+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE3A1BC0E7E300AE9BBE /* UIView+JLAdditions.m */; settings = {ASSET_TAGS = (); }; };
+		0FE627491BC7C99300FC8321 /* NSTimeZone+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE627481BC7C99300FC8321 /* NSTimeZone+JLAdditions.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,8 @@
 		0FAABE381BC0E7E300AE9BBE /* UITableViewCell+JLAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+JLAdditions.m"; sourceTree = "<group>"; };
 		0FAABE391BC0E7E300AE9BBE /* UIView+JLAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JLAdditions.h"; sourceTree = "<group>"; };
 		0FAABE3A1BC0E7E300AE9BBE /* UIView+JLAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JLAdditions.m"; sourceTree = "<group>"; };
+		0FE627471BC7C99300FC8321 /* NSTimeZone+JLAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimeZone+JLAdditions.h"; sourceTree = "<group>"; };
+		0FE627481BC7C99300FC8321 /* NSTimeZone+JLAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimeZone+JLAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +183,8 @@
 				0FAABE3A1BC0E7E300AE9BBE /* UIView+JLAdditions.m */,
 				0F59E6131BC0FC9C00B213A8 /* UINavigationController+JLStatusBarStyle.h */,
 				0F59E6141BC0FC9C00B213A8 /* UINavigationController+JLStatusBarStyle.m */,
+				0FE627471BC7C99300FC8321 /* NSTimeZone+JLAdditions.h */,
+				0FE627481BC7C99300FC8321 /* NSTimeZone+JLAdditions.m */,
 			);
 			name = JLCategorys;
 			path = ../JLCategorys;
@@ -267,6 +272,7 @@
 				0FAABE4C1BC0E7E300AE9BBE /* UITableViewCell+JLAdditions.m in Sources */,
 				0FAABE3F1BC0E7E300AE9BBE /* NSIndexPath+JLAdditions.m in Sources */,
 				0FAABE451BC0E7E300AE9BBE /* UIColor+JLAdditions.m in Sources */,
+				0FE627491BC7C99300FC8321 /* NSTimeZone+JLAdditions.m in Sources */,
 				0FAABE011BC0E7DA00AE9BBE /* AppDelegate.m in Sources */,
 				0FAABE431BC0E7E300AE9BBE /* UIBarButtonItem+JLAdditions.m in Sources */,
 				0FAABDFE1BC0E7DA00AE9BBE /* main.m in Sources */,
