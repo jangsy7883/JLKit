@@ -18,7 +18,9 @@
 
 - (UIImage *)imageWithTintColor:(UIColor *)color;
 
-- (CGSize)sizeToFitWidth:(CGFloat)width originalSizeMax:(BOOL)originalSizeMax;
+- (CGSize)sizeToFitWidth:(CGFloat)width scaleAspectFit:(BOOL)scaleAspectFit;
+
+- (CGSize)sizeToFit:(CGSize)size scaleAspectFit:(BOOL)scaleAspectFit;
 
 - (UIImage*)resizeRetinaHDImage;
 
