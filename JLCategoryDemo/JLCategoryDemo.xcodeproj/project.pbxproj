@@ -7,35 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F59E6151BC0FC9C00B213A8 /* UINavigationController+JLStatusBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F59E6141BC0FC9C00B213A8 /* UINavigationController+JLStatusBarStyle.m */; settings = {ASSET_TAGS = (); }; };
+		0F389BDB1BDB71C10089D35F /* UIFont+JLStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F389BDA1BDB71C10089D35F /* UIFont+JLStyle.m */; };
+		0F59E6151BC0FC9C00B213A8 /* UINavigationController+JLStatusBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F59E6141BC0FC9C00B213A8 /* UINavigationController+JLStatusBarStyle.m */; };
 		0FAABDFE1BC0E7DA00AE9BBE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABDFD1BC0E7DA00AE9BBE /* main.m */; };
 		0FAABE011BC0E7DA00AE9BBE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE001BC0E7DA00AE9BBE /* AppDelegate.m */; };
 		0FAABE041BC0E7DA00AE9BBE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE031BC0E7DA00AE9BBE /* ViewController.m */; };
 		0FAABE071BC0E7DA00AE9BBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FAABE051BC0E7DA00AE9BBE /* Main.storyboard */; };
 		0FAABE091BC0E7DA00AE9BBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FAABE081BC0E7DA00AE9BBE /* Assets.xcassets */; };
 		0FAABE0C1BC0E7DA00AE9BBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FAABE0A1BC0E7DA00AE9BBE /* LaunchScreen.storyboard */; };
-		0FAABE3B1BC0E7E300AE9BBE /* NSArray+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE161BC0E7E300AE9BBE /* NSArray+JLAdditions.m */; settings = {ASSET_TAGS = (); }; };
-		0FAABE3C1BC0E7E300AE9BBE /* NSBundle+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE181BC0E7E300AE9BBE /* NSBundle+JLAdditions.m */; settings = {ASSET_TAGS = (); }; };
-		0FAABE3D1BC0E7E300AE9BBE /* NSDate+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE1A1BC0E7E300AE9BBE /* NSDate+JLAdditions.m */; settings = {ASSET_TAGS = (); }; };
-		0FAABE3E1BC0E7E300AE9BBE /* NSDictionary+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE1C1BC0E7E300AE9BBE /* NSDictionary+JLAdditions.m */; settings = {ASSET_TAGS = (); }; };
-		0FAABE3F1BC0E7E300AE9BBE /* NSIndexPath+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE1E1BC0E7E300AE9BBE /* NSIndexPath+JLAdditions.m */; settings = {ASSET_TAGS = (); }; };
-		0FAABE401BC0E7E300AE9BBE /* NSLocale+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE201BC0E7E300AE9BBE /* NSLocale+JLAdditions.m */; settings = {ASSET_TAGS = (); }; };
-		0FAABE411BC0E7E300AE9BBE /* NSString+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE221BC0E7E300AE9BBE /* NSString+JLAdditions.m */; settings = {ASSET_TAGS = (); }; };
-		0FAABE421BC0E7E300AE9BBE /* NSThread+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE241BC0E7E300AE9BBE /* NSThread+JLAdditions.m */; settings = {ASSET_TAGS = (); }; };
-		0FAABE431BC0E7E300AE9BBE /* UIBarButtonItem+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE261BC0E7E300AE9BBE /* UIBarButtonItem+JLAdditions.m */; settings = {ASSET_TAGS = (); }; };
-		0FAABE441BC0E7E300AE9BBE /* UIButton+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE281BC0E7E300AE9BBE /* UIButton+JLAdditions.m */; settings = {ASSET_TAGS = (); }; };
-		0FAABE451BC0E7E300AE9BBE /* UIColor+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE2A1BC0E7E300AE9BBE /* UIColor+JLAdditions.m */; settings = {ASSET_TAGS = (); }; };
-		0FAABE461BC0E7E300AE9BBE /* UIDevice+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE2C1BC0E7E300AE9BBE /* UIDevice+JLAdditions.m */; settings = {ASSET_TAGS = (); }; };
-		0FAABE481BC0E7E300AE9BBE /* UIImage+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE301BC0E7E300AE9BBE /* UIImage+JLAdditions.m */; settings = {ASSET_TAGS = (); }; };
-		0FAABE491BC0E7E300AE9BBE /* UILabel+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE321BC0E7E300AE9BBE /* UILabel+JLAdditions.m */; settings = {ASSET_TAGS = (); }; };
-		0FAABE4A1BC0E7E300AE9BBE /* UIScreen+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE341BC0E7E300AE9BBE /* UIScreen+JLAdditions.m */; settings = {ASSET_TAGS = (); }; };
-		0FAABE4B1BC0E7E300AE9BBE /* UITableView+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE361BC0E7E300AE9BBE /* UITableView+JLAdditions.m */; settings = {ASSET_TAGS = (); }; };
-		0FAABE4C1BC0E7E300AE9BBE /* UITableViewCell+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE381BC0E7E300AE9BBE /* UITableViewCell+JLAdditions.m */; settings = {ASSET_TAGS = (); }; };
-		0FAABE4D1BC0E7E300AE9BBE /* UIView+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE3A1BC0E7E300AE9BBE /* UIView+JLAdditions.m */; settings = {ASSET_TAGS = (); }; };
-		0FE627491BC7C99300FC8321 /* NSTimeZone+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE627481BC7C99300FC8321 /* NSTimeZone+JLAdditions.m */; settings = {ASSET_TAGS = (); }; };
+		0FAABE3B1BC0E7E300AE9BBE /* NSArray+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE161BC0E7E300AE9BBE /* NSArray+JLAdditions.m */; };
+		0FAABE3C1BC0E7E300AE9BBE /* NSBundle+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE181BC0E7E300AE9BBE /* NSBundle+JLAdditions.m */; };
+		0FAABE3D1BC0E7E300AE9BBE /* NSDate+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE1A1BC0E7E300AE9BBE /* NSDate+JLAdditions.m */; };
+		0FAABE3E1BC0E7E300AE9BBE /* NSDictionary+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE1C1BC0E7E300AE9BBE /* NSDictionary+JLAdditions.m */; };
+		0FAABE3F1BC0E7E300AE9BBE /* NSIndexPath+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE1E1BC0E7E300AE9BBE /* NSIndexPath+JLAdditions.m */; };
+		0FAABE401BC0E7E300AE9BBE /* NSLocale+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE201BC0E7E300AE9BBE /* NSLocale+JLAdditions.m */; };
+		0FAABE411BC0E7E300AE9BBE /* NSString+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE221BC0E7E300AE9BBE /* NSString+JLAdditions.m */; };
+		0FAABE421BC0E7E300AE9BBE /* NSThread+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE241BC0E7E300AE9BBE /* NSThread+JLAdditions.m */; };
+		0FAABE431BC0E7E300AE9BBE /* UIBarButtonItem+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE261BC0E7E300AE9BBE /* UIBarButtonItem+JLAdditions.m */; };
+		0FAABE441BC0E7E300AE9BBE /* UIButton+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE281BC0E7E300AE9BBE /* UIButton+JLAdditions.m */; };
+		0FAABE451BC0E7E300AE9BBE /* UIColor+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE2A1BC0E7E300AE9BBE /* UIColor+JLAdditions.m */; };
+		0FAABE461BC0E7E300AE9BBE /* UIDevice+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE2C1BC0E7E300AE9BBE /* UIDevice+JLAdditions.m */; };
+		0FAABE481BC0E7E300AE9BBE /* UIImage+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE301BC0E7E300AE9BBE /* UIImage+JLAdditions.m */; };
+		0FAABE491BC0E7E300AE9BBE /* UILabel+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE321BC0E7E300AE9BBE /* UILabel+JLAdditions.m */; };
+		0FAABE4A1BC0E7E300AE9BBE /* UIScreen+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE341BC0E7E300AE9BBE /* UIScreen+JLAdditions.m */; };
+		0FAABE4B1BC0E7E300AE9BBE /* UITableView+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE361BC0E7E300AE9BBE /* UITableView+JLAdditions.m */; };
+		0FAABE4C1BC0E7E300AE9BBE /* UITableViewCell+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE381BC0E7E300AE9BBE /* UITableViewCell+JLAdditions.m */; };
+		0FAABE4D1BC0E7E300AE9BBE /* UIView+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE3A1BC0E7E300AE9BBE /* UIView+JLAdditions.m */; };
+		0FE627491BC7C99300FC8321 /* NSTimeZone+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE627481BC7C99300FC8321 /* NSTimeZone+JLAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F389BD91BDB71C10089D35F /* UIFont+JLStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+JLStyle.h"; sourceTree = "<group>"; };
+		0F389BDA1BDB71C10089D35F /* UIFont+JLStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+JLStyle.m"; sourceTree = "<group>"; };
 		0F59E6131BC0FC9C00B213A8 /* UINavigationController+JLStatusBarStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+JLStatusBarStyle.h"; sourceTree = "<group>"; };
 		0F59E6141BC0FC9C00B213A8 /* UINavigationController+JLStatusBarStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+JLStatusBarStyle.m"; sourceTree = "<group>"; };
 		0FAABDF91BC0E7DA00AE9BBE /* JLCategoryDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLCategoryDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +188,8 @@
 				0F59E6141BC0FC9C00B213A8 /* UINavigationController+JLStatusBarStyle.m */,
 				0FE627471BC7C99300FC8321 /* NSTimeZone+JLAdditions.h */,
 				0FE627481BC7C99300FC8321 /* NSTimeZone+JLAdditions.m */,
+				0F389BD91BDB71C10089D35F /* UIFont+JLStyle.h */,
+				0F389BDA1BDB71C10089D35F /* UIFont+JLStyle.m */,
 			);
 			name = JLCategorys;
 			path = ../JLCategorys;
@@ -270,6 +275,7 @@
 				0F59E6151BC0FC9C00B213A8 /* UINavigationController+JLStatusBarStyle.m in Sources */,
 				0FAABE461BC0E7E300AE9BBE /* UIDevice+JLAdditions.m in Sources */,
 				0FAABE4C1BC0E7E300AE9BBE /* UITableViewCell+JLAdditions.m in Sources */,
+				0F389BDB1BDB71C10089D35F /* UIFont+JLStyle.m in Sources */,
 				0FAABE3F1BC0E7E300AE9BBE /* NSIndexPath+JLAdditions.m in Sources */,
 				0FAABE451BC0E7E300AE9BBE /* UIColor+JLAdditions.m in Sources */,
 				0FE627491BC7C99300FC8321 /* NSTimeZone+JLAdditions.m in Sources */,
