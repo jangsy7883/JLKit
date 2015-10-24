@@ -12,7 +12,7 @@
 
 + (UIFont*)systemFontOfSize:(CGFloat)fontSize style:(UIFontStyle)style
 {
-    if ([[UIFont class] resolveClassMethod:@selector(systemFontOfSize:weight:)])
+    if ([[UIFont class] respondsToSelector:@selector(systemFontOfSize:weight:)])
     {
         CGFloat weight = [self weightForFontStyle:style];
         
