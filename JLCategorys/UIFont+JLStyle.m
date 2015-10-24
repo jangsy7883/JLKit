@@ -10,48 +10,66 @@
 
 @implementation UIFont (JLStyle)
 
-+ (UIFont*)heavySystemFontOfSize:(CGFloat)fontSize
++ (UIFont*)systemFontOfSize:(CGFloat)fontSize style:(UIFontStyle)style
 {
-    UIFont *font = [UIFont fontWithName:@".SFUIText-Heavy" size:fontSize]; //San Francisco
-    
-    if (font == nil) //iOS8
+    if ([[UIFont class] resolveClassMethod:@selector(systemFontOfSize:weight:)])
     {
-        font = [UIFont fontWithName:@".HelveticaNeueInterface-Heavy" size:fontSize];
+        CGFloat weight = [self weightForFontStyle:style];
+        
+        return [UIFont systemFontOfSize:fontSize weight:weight];
     }
-    return font;
+    else
+    {
+        NSString *fontName = [self fontNameForFontStyle:style];
+        
+        return [UIFont fontWithName:fontName size:fontSize];
+    }
 }
 
-+ (UIFont*)lightSystemFontOfSize:(CGFloat)fontSize
++ (CGFloat)weightForFontStyle:(UIFontStyle)style
 {
-    UIFont *font = [UIFont fontWithName:@".SFUIText-Light" size:fontSize]; //San Francisco
-    
-    if (font == nil) //Helvetica
-    {
-        font = [UIFont fontWithName:@".HelveticaNeueInterface-Light" size:fontSize];
+    switch (style) {
+        case UIFontStyleLight:
+            return  UIFontWeightLight;
+            break;
+        case UIFontStyleMedium:
+            return  UIFontWeightMedium;
+            break;
+        case UIFontStyleSemibold:
+            return  UIFontWeightSemibold;
+            break;
+        case UIFontStyleBold:
+            return  UIFontWeightBold;
+            break;
+        case UIFontStyleHeavy:
+            return  UIFontWeightHeavy;
+            break;
+        default: //UIFontStyleRegular
+            return UIFontWeightRegular;
+            break;
     }
-    return font;
 }
 
-+ (UIFont*)semiBoldSystemFontOfSize:(CGFloat)fontSize
++ (NSString*)fontNameForFontStyle:(UIFontStyle)style
 {
-    UIFont *font = [UIFont fontWithName:@".SFUIText-Semibold" size:fontSize]; //San Francisco
-    
-    if (font == nil) //Helvetica
-    {
-        font = [UIFont fontWithName:@".HelveticaNeueInterface-MediumP4" size:fontSize];
+    switch (style) {
+        case UIFontStyleLight:
+            return  @"HelveticaNeue-Light";
+            break;
+        case UIFontStyleMedium:
+            return  @"HelveticaNeue-Medium";
+            break;
+        case UIFontStyleSemibold:
+        case UIFontStyleHeavy:
+            return  @"HelveticaNeue-Bold";
+            break;
+        case UIFontStyleBold:
+            return  @"HelveticaNeue-Light";
+            break;
+        default: //UIFontStyleRegular
+            return @"HelveticaNeue";
+            break;
     }
-    return font;
-}
-
-+ (UIFont*)mediumSystemFontOfSize:(CGFloat)fontSize
-{
-    UIFont *font = [UIFont fontWithName:@".SFUIText-Medium" size:fontSize];// San Francisco
-    
-    if (font == nil) //Helvetica
-    {
-        font = [UIFont fontWithName:@".HelveticaNeueInterface-MediumP4" size:fontSize];
-    }
-    return font;
 }
 
 @end

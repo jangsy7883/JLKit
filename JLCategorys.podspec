@@ -1,4 +1,4 @@
-@version = "0.2.6"
+@version = "0.2.8"
 Pod::Spec.new do |s|
   s.name         = "JLCategorys"
   s.version      = @version
