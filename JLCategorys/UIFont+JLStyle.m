@@ -61,10 +61,8 @@
             break;
         case UIFontStyleSemibold:
         case UIFontStyleHeavy:
-            return  @"HelveticaNeue-Bold";
-            break;
         case UIFontStyleBold:
-            return  @"HelveticaNeue-Light";
+            return  @"HelveticaNeue-Bold";
             break;
         default: //UIFontStyleRegular
             return @"HelveticaNeue";

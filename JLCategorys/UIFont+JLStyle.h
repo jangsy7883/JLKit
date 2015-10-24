@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+
 typedef enum
 {
     UIFontStyleRegular,
@@ -16,6 +17,8 @@ typedef enum
     UIFontStyleBold,
     UIFontStyleHeavy,
 }UIFontStyle;
+
+#define SystemFont(fontSize,style) [UIFont systemFontOfSize:fontSize style:style]
 
 @interface UIFont (JLStyle)
 
