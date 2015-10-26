@@ -18,7 +18,7 @@ typedef enum
     UIFontStyleHeavy,
 }UIFontStyle;
 
-#define SystemFont(fontSize,style) [UIFont systemFontOfSize:fontSize style:style]
+#define SystemFont(fontSize,fontStyle) [UIFont systemFontOfSize:fontSize style:fontStyle]
 
 @interface UIFont (JLStyle)
 
