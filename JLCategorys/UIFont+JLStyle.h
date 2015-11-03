@@ -13,7 +13,7 @@ typedef enum
     UIFontStyleRegular,
     UIFontStyleLight,
     UIFontStyleMedium,
-    UIFontStyleSemibold,
+    UIFontStyleSemiBold,
     UIFontStyleBold,
     UIFontStyleHeavy,
 }UIFontStyle;

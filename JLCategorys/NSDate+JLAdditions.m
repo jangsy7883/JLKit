@@ -43,13 +43,15 @@
                    withTimeZone:[NSTimeZone GMT]];
 }
 
-- (NSString*)stringFromFormat:(NSString*)parm_stringFormat withTimeZone:(NSTimeZone*)timeZone
+- (NSString*)stringFromFormat:(NSString*)stringFormat withTimeZone:(NSTimeZone*)timeZone
 {
     NSDateFormatter *dateFormatter = [NSDate sharedDateFormatter];
     if ([dateFormatter.timeZone isEqualToTimeZone:timeZone] == NO)
     {
         dateFormatter.timeZone = timeZone;
     }
+
+    [dateFormatter setDateFormat:stringFormat];
     
     return [dateFormatter stringFromDate:self];
 }

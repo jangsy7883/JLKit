@@ -35,7 +35,7 @@
         case UIFontStyleMedium:
             return  UIFontWeightMedium;
             break;
-        case UIFontStyleSemibold:
+        case UIFontStyleSemiBold:
             return  UIFontWeightSemibold;
             break;
         case UIFontStyleBold:
@@ -54,18 +54,20 @@
 {
     switch (style) {
         case UIFontStyleLight:
-            return  @"HelveticaNeue-Light";
+            return  @".HelveticaNeueInterface-Light";
             break;
         case UIFontStyleMedium:
             return  @"HelveticaNeue-Medium";
             break;
-        case UIFontStyleSemibold:
-        case UIFontStyleHeavy:
+        case UIFontStyleSemiBold:
         case UIFontStyleBold:
-            return  @"HelveticaNeue-Bold";
+            return  @".HelveticaNeueInterface-MediumP4";
+            break;
+        case UIFontStyleHeavy:
+            return  @".HelveticaNeueInterface-Heavy";
             break;
         default: //UIFontStyleRegular
-            return @"HelveticaNeue";
+            return @".HelveticaNeueInterface-Regular";
             break;
     }
 }
