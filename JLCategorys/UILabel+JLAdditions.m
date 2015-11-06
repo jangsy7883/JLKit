@@ -10,7 +10,18 @@
 
 @implementation UILabel (Additions)
 
-- (CGSize) fitWithSize:(CGSize)parm_size
++ (UILabel*)labelWithText:(NSString*)text font:(UIFont*)font textColor:(UIColor*)textColor
+{
+    UILabel* label = [UILabel new];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.text = text;
+    label.textColor = textColor;
+    label.font = font;
+    
+    return label;
+}
+
+- (CGSize)fitWithSize:(CGSize)parm_size
 {
     CGSize size = CGSizeZero;
     
@@ -34,14 +45,10 @@
                                                  }
                                        context:nil].size;
     }
-    /*------------------------------------------------------------------------*/
-    /* FINAL -----------------------------------------------------------------*/
-    /*------------------------------------------------------------------------*/
-    __goto_end__ :
     return CGSizeMake(ceil(size.width), ceil(size.height));
 }
 
-- (CGSize) fitSize
+- (CGSize)fitSize
 {
     return [self fitWithSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)];
 }
