@@ -28,3 +28,4 @@
 #import "UINavigationController+JLStatusBarStyle.h"
 #import "NSTimeZone+JLAdditions.h"
 #import "UIFont+JLStyle.h"
+#import "UIViewController+JLAdditions.h"
