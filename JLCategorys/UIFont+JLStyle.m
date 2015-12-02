@@ -12,18 +12,36 @@
 
 + (UIFont*)systemFontOfSize:(CGFloat)fontSize style:(UIFontStyle)style
 {
+    UIFont *font = nil;
+
     if ([[UIFont class] respondsToSelector:@selector(systemFontOfSize:weight:)])
     {
         CGFloat weight = [self weightForFontStyle:style];
         
-        return [UIFont systemFontOfSize:fontSize weight:weight];
+        font = [UIFont systemFontOfSize:fontSize weight:weight];
     }
     else
     {
         NSString *fontName = [self fontNameForFontStyle:style];
         
-        return [UIFont fontWithName:fontName size:fontSize];
+        font = [UIFont fontWithName:fontName size:fontSize];
     }
+    
+    if (font == nil)
+    {
+        switch (style)
+        {
+            case UIFontStyleSemiBold:
+            case UIFontStyleBold:
+                font = [UIFont boldSystemFontOfSize:fontSize];
+                break;
+            default:
+                font = [UIFont systemFontOfSize:fontSize];
+                break;
+        }
+    }
+    
+    return font;
 }
 
 + (CGFloat)weightForFontStyle:(UIFontStyle)style
