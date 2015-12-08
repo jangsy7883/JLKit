@@ -10,7 +10,7 @@
 
 @interface UIViewController (Additions)
 
-- (UIViewController*)rootViewContoller;
-+ (UIViewController*)rootViewContollerForViewController:(UIViewController*)viewController;
+@property (nonatomic, readonly, strong) UIViewController *superViewContoller;
++ (UIViewController*)superViewContollerForViewController:(UIViewController*)viewController;
 
 @end

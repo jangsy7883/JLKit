@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef enum
+typedef NS_ENUM(unsigned int, UIFontStyle)
 {
     UIFontStyleRegular,
     UIFontStyleLight,
@@ -16,7 +16,7 @@ typedef enum
     UIFontStyleSemiBold,
     UIFontStyleBold,
     UIFontStyleHeavy,
-}UIFontStyle;
+};
 
 #define SystemFont(fontSize,fontStyle) [UIFont systemFontOfSize:fontSize style:fontStyle]
 

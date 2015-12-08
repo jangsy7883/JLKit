@@ -10,17 +10,20 @@
 
 @implementation UIView (Additions)
 
-+ (id)viewWithNibNamed:(NSString*)nibNameOrNil
++ (instancetype)viewWithNibNamed:(NSString*)nibNameOrNil
 {
-    NSArray* xibs = [[NSBundle mainBundle] loadNibNamed:nibNameOrNil owner:self options:nil];
-    for (UIView *xib in xibs)
-    {
-        if ([[[self class] description] isEqualToString:[[xib class] description]])
+    @try {
+        NSArray* xibs = [[NSBundle mainBundle] loadNibNamed:nibNameOrNil owner:self options:nil];
+        for (UIView *xib in xibs)
         {
-            return xib;
-            break;
+            if ([[[self class] description] isEqualToString:[[xib class] description]])
+            {
+                return xib;
+            }
         }
     }
+    @catch (NSException *exception) {}
+
     return nil;
 }
 

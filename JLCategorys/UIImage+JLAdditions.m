@@ -42,10 +42,10 @@
 {
     if (color)
     {
-        UIGraphicsBeginImageContextWithOptions([self size], NO, [UIScreen mainScreen].scale);
+        UIGraphicsBeginImageContextWithOptions(self.size, NO, [UIScreen mainScreen].scale);
         
         CGRect rect = CGRectZero;
-        rect.size = [self size];
+        rect.size = self.size;
         
         [color set];
         UIRectFill(rect);

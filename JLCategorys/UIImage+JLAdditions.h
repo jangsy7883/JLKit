@@ -10,7 +10,7 @@
 
 @interface UIImage (Additions)
 
-- (UIImage*)resizableToCenter;
+@property (nonatomic, readonly, strong) UIImage *resizableToCenter;
 
 + (UIImage *)patternImageWithColor:(UIColor *)color;
 
@@ -22,6 +22,6 @@
 
 - (CGSize)sizeToFit:(CGSize)size scaleAspectFit:(BOOL)scaleAspectFit;
 
-- (UIImage*)resizeRetinaHDImage;
+@property (nonatomic, readonly, strong) UIImage *resizeRetinaHDImage;
 
 @end

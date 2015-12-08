@@ -10,7 +10,7 @@
 
 @interface NSBundle (Additions)
 
-- (NSString*)appVersion;
-- (NSString*)buildVersion;
+@property (nonatomic, readonly, copy) NSString *appVersion;
+@property (nonatomic, readonly, copy) NSString *buildVersion;
 
 @end

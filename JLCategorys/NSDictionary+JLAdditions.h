@@ -10,7 +10,7 @@
 
 @interface NSDictionary (Additions)
 
-- (NSString*)stringValue;
+@property (nonatomic, readonly, copy) NSString *JSONValue;
 
 @end
 

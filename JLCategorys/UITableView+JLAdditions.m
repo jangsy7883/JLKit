@@ -12,14 +12,15 @@
 
 - (NSIndexPath *)indexPathForCellContainingView:(UIView *)view
 {
-    while (view != nil) {
+    while (view != nil)
+    {
         if ([view isKindOfClass:[UITableViewCell class]])
         {
             return [self indexPathForCell:(UITableViewCell *)view];
         }
         else
         {
-            view = [view superview];
+            view = view.superview;
         }
     }
     return nil;

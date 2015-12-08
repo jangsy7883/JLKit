@@ -10,26 +10,26 @@
 
 @implementation UIViewController (Additions)
 
-- (UIViewController*)rootViewContoller
+- (UIViewController*)superViewContoller
 {
-    return [UIViewController rootViewContollerForViewController:self];
+    return [UIViewController superViewContollerForViewController:self];
 }
 
-+ (UIViewController*)rootViewContollerForViewController:(UIViewController*)viewController
++ (UIViewController*)superViewContollerForViewController:(UIViewController*)viewController
 {
     if ([viewController isKindOfClass:[UINavigationController class]])
     {
         UINavigationController *navigationController = (UINavigationController *)viewController;
-        return [self rootViewContollerForViewController:[navigationController.viewControllers lastObject]];
+        return [self superViewContollerForViewController:(navigationController.viewControllers).lastObject];
     }
     else if ([viewController isKindOfClass:[UITabBarController class]])
     {
         UITabBarController *tabController = (UITabBarController *)viewController;
-        return [self rootViewContollerForViewController:tabController.selectedViewController];
+        return [self superViewContollerForViewController:tabController.selectedViewController];
     }
     else if (viewController.presentedViewController)
     {
-        return [self rootViewContollerForViewController:viewController.presentedViewController];
+        return [self superViewContollerForViewController:viewController.presentedViewController];
     }
     return viewController;
 }

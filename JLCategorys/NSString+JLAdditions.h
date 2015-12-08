@@ -21,17 +21,17 @@
              alignment:(NSTextAlignment)alignment
          lineBreakMode:(NSLineBreakMode)lineBreakMode;
 
-- (NSString*)deleteEmptySpace;
-- (NSString*)deleteLineSpace;
-- (NSString*)deleteEmptyAndLineSpace;
+@property (nonatomic, readonly, copy) NSString *deleteEmptySpace;
+@property (nonatomic, readonly, copy) NSString *deleteLineSpace;
+@property (nonatomic, readonly, copy) NSString *deleteEmptyAndLineSpace;
 
 - (BOOL)startsWith:(NSString *)prefix;
 - (BOOL)endWith:(NSString *)prefix;
 
 + (BOOL)emptyString:(NSString *)parm_string;
 
-- (NSString*)MD5;
-- (NSString*)UTF8Encoding;
+@property (nonatomic, readonly, copy) NSString *MD5;
+@property (nonatomic, readonly, copy) NSString *UTF8Encoding;
 + (NSString*)UUID;
 
 @end

@@ -36,8 +36,8 @@
 
 - (BOOL)isEqualToColor:(UIColor *)color;
 
-- (UIColor *) lighterColor;
-- (UIColor *) darkerColor;
+@property (nonatomic, readonly, copy) UIColor *lighterColor;
+@property (nonatomic, readonly, copy) UIColor *darkerColor;
 
 + (UIColor*)randomColor;
 @end

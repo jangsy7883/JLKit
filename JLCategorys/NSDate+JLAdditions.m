@@ -31,7 +31,7 @@
         dateFormatter.timeZone = timeZone;
     }
     
-    [dateFormatter setDateFormat:dateFormat];
+    dateFormatter.dateFormat = dateFormat;
     
     return [dateFormatter dateFromString:dateString];
 }
@@ -51,7 +51,7 @@
         dateFormatter.timeZone = timeZone;
     }
 
-    [dateFormatter setDateFormat:stringFormat];
+    dateFormatter.dateFormat = stringFormat;
     
     return [dateFormatter stringFromDate:self];
 }
@@ -65,10 +65,10 @@
 - (NSDate*)dateByAddingYear:(NSInteger)parm_year
 {
     NSDateComponents *components = [[NSCalendar currentCalendar] components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:self];
-    [components setCalendar:[NSCalendar currentCalendar]];
-    [components setYear:[components year] + parm_year];
+    components.calendar = [NSCalendar currentCalendar];
+    components.year = components.year + parm_year;
     
-    return [components date];
+    return components.date;
 }
 
 @end

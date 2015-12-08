@@ -25,13 +25,13 @@
 {
     CGSize size = CGSizeZero;
     
-    if ([self.attributedText length] > 0)
+    if ((self.attributedText).length > 0)
     {
         size = [self.attributedText boundingRectWithSize:parm_size
                                                  options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading)
                                                  context:nil].size;
     }
-    else if ([self.text length] > 0)
+    else if ((self.text).length > 0)
     {
         NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
         paragraphStyle.alignment = self.textAlignment;

@@ -22,12 +22,21 @@
     {
         object = self[index];
     }
-    @catch (NSException *exception)
-    {
-        
-    }
+    @catch (NSException *exception){}
     
     return object;
+}
+
+@end
+
+@implementation NSMutableArray (Additions)
+
+- (void)addSafeObject:(id)anObject
+{
+    @try {
+        [self addObject:anObject];
+    }
+    @catch (NSException *exception) {}
 }
 
 @end

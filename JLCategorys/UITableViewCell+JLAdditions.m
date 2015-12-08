@@ -12,11 +12,14 @@
 
 - (UITableView *)superTabieView
 {
-    id view = [self superview];
+    id view = self.superview;
     while (view != nil) {
-        if ([view isKindOfClass:[UITableView class]]) {
+        if ([view isKindOfClass:[UITableView class]])
+        {
             return view;
-        } else {
+        }
+        else
+        {
             view = [view superview];
         }
     }

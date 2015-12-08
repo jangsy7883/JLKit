@@ -12,12 +12,12 @@
 
 - (NSString*)appVersion
 {
-    return [[self infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    return self.infoDictionary[@"CFBundleShortVersionString"];
 }
 
 - (NSString*)buildVersion
 {
-    return [[self infoDictionary] objectForKey:(NSString*)kCFBundleVersionKey];
+    return self.infoDictionary[(NSString*)kCFBundleVersionKey];
 
 }
 

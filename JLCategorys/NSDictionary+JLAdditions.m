@@ -10,7 +10,7 @@
 
 @implementation NSDictionary (Additions)
 
-- (NSString*)stringValue
+- (NSString*)JSONValue
 {
     NSError *error = nil;
     NSData* kData = [NSJSONSerialization dataWithJSONObject:self
@@ -42,7 +42,7 @@
         return;
     }
     
-    [self setObject:anObject forKey:aKey];
+    self[aKey] = anObject;
 }
 
 

@@ -13,6 +13,6 @@
 + (UILabel*)labelWithText:(NSString*)text font:(UIFont*)font textColor:(UIColor*)textColor;
 
 - (CGSize) fitWithSize:(CGSize)parm_size;
-- (CGSize) fitSize;
+@property (nonatomic, readonly) CGSize fitSize;
 
 @end

@@ -63,16 +63,16 @@
 
 - (BOOL)startsWith:(NSString *)prefix
 {
-    if ([self length] == 0) return FALSE;
-    if ([self length] < [prefix length]) return FALSE;
-    return [[self substringToIndex:[prefix length]] isEqualToString:prefix];
+    if (self.length == 0) return FALSE;
+    if (self.length < prefix.length) return FALSE;
+    return [[self substringToIndex:prefix.length] isEqualToString:prefix];
 }
 
 - (BOOL)endWith:(NSString *)prefix
 {
-    if ([self length] == 0) return FALSE;
-    if ([self length] < [prefix length]) return FALSE;
-    return [[self substringFromIndex:[self length]-[prefix length]] isEqualToString:prefix];
+    if (self.length == 0) return FALSE;
+    if (self.length < prefix.length) return FALSE;
+    return [[self substringFromIndex:self.length-prefix.length] isEqualToString:prefix];
 }
 
 + (BOOL)emptyString:(NSString *)parm_string
@@ -108,9 +108,9 @@
 
 - (NSString*)MD5
 {
-    if(self == nil || [self length] == 0) return nil;
+    if(self == nil || self.length == 0) return nil;
     
-    const char *value = [self UTF8String];
+    const char *value = self.UTF8String;
     
     unsigned char outputBuffer[CC_MD5_DIGEST_LENGTH];
     CC_MD5(value, (CC_LONG)strlen(value), outputBuffer);

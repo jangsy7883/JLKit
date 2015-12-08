@@ -13,6 +13,6 @@
 
 @interface UIView (Additions)
 
-+ (id)viewWithNibNamed:(NSString*)nibNameOrNil;
++ (instancetype)viewWithNibNamed:(NSString*)nibNameOrNil;
 
 @end

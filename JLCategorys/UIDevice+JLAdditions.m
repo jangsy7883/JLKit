@@ -21,7 +21,7 @@
 
 - (BOOL)compareSystemVersion:(CGFloat)compare
 {
-    return ([[[UIDevice currentDevice] systemVersion] compare:[NSString stringWithFormat:@"%f",compare] options:NSNumericSearch] != NSOrderedAscending);
+    return ([[UIDevice currentDevice].systemVersion compare:[NSString stringWithFormat:@"%f",compare] options:NSNumericSearch] != NSOrderedAscending);
 }
 
 #pragma mark - getters
@@ -30,14 +30,14 @@
 {
     NSError *error = nil;
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSDictionary *dictionary = [[NSFileManager defaultManager] attributesOfFileSystemForPath:[paths lastObject] error: &error];
+    NSDictionary *dictionary = [[NSFileManager defaultManager] attributesOfFileSystemForPath:paths.lastObject error: &error];
     
 	if (error) {
-		NSLog(@"Error Obtaining System Memory Info: Domain = %@, Code = %ld", [error domain], (long)[error code]);
+		NSLog(@"Error Obtaining System Memory Info: Domain = %@, Code = %ld", error.domain, (long)error.code);
 	}else{
 		if (dictionary) {
-			NSNumber *sizeInBytes = [dictionary objectForKey:NSFileSystemSize];
-			return [sizeInBytes unsignedLongLongValue];
+			NSNumber *sizeInBytes = dictionary[NSFileSystemSize];
+			return sizeInBytes.unsignedLongLongValue;
 		}
 	}
 	return 0;
@@ -47,14 +47,14 @@
 {
     NSError *error = nil;
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSDictionary *dictionary = [[NSFileManager defaultManager] attributesOfFileSystemForPath:[paths lastObject] error: &error];
+    NSDictionary *dictionary = [[NSFileManager defaultManager] attributesOfFileSystemForPath:paths.lastObject error: &error];
     
 	if (error) {
-		NSLog(@"Error Obtaining System Memory Info: Domain = %@, Code = %ld", [error domain], (long)[error code]);
+		NSLog(@"Error Obtaining System Memory Info: Domain = %@, Code = %ld", error.domain, (long)error.code);
 	}else{
 		if (dictionary) {
-			NSNumber *sizeInBytes = [dictionary objectForKey:NSFileSystemFreeSize];
-			return [sizeInBytes unsignedLongLongValue];
+			NSNumber *sizeInBytes = dictionary[NSFileSystemFreeSize];
+			return sizeInBytes.unsignedLongLongValue;
 		}
 	}
 	return 0;
@@ -73,9 +73,9 @@
         while (cursor != NULL) {
             if (cursor->ifa_addr->sa_family == AF_INET && (cursor->ifa_flags & IFF_LOOPBACK) == 0)
             {
-                NSString *name = [NSString stringWithUTF8String:cursor->ifa_name];
+                NSString *name = @(cursor->ifa_name);
                 if ([name isEqualToString:interface])  // Wi-Fi adapter
-                    return [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)cursor->ifa_addr)->sin_addr)];
+                    return @(inet_ntoa(((struct sockaddr_in *)cursor->ifa_addr)->sin_addr));
             }
             cursor = cursor->ifa_next;
         }

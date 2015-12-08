@@ -15,3 +15,9 @@
 - (id)objectAtSafeIndex:(NSInteger)index;
 
 @end
+
+@interface NSMutableArray (Additions)
+
+- (void)addSafeObject:(id)anObject;
+
+@end
