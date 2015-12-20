@@ -36,5 +36,17 @@
                                            action:action];
 }
 
++ (UIBarButtonItem*)barButtonItemWithCustomView:(UIView*)customView
+{
+    return [[UIBarButtonItem alloc] initWithCustomView:customView];
+}
+
++ (UIBarButtonItem*)barButtonItemWithFixedSpace:(CGFloat)fixedSpace
+{
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    item.width = fixedSpace;
+    
+    return item;
+}
 
 @end

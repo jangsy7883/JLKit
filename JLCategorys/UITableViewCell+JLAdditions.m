@@ -10,6 +10,15 @@
 
 @implementation UITableViewCell (Additions)
 
+- (NSIndexPath*)indexPath
+{
+    UITableView *tableView = [self superTabieView];
+    if (tableView) {
+        return [tableView indexPathForCell:self];
+    }
+    return nil;
+}
+
 - (UITableView *)superTabieView
 {
     id view = self.superview;

@@ -17,13 +17,6 @@
 
 @implementation UIDevice (Additions)
 
-#pragma mark - compare version
-
-- (BOOL)compareSystemVersion:(CGFloat)compare
-{
-    return ([[UIDevice currentDevice].systemVersion compare:[NSString stringWithFormat:@"%f",compare] options:NSNumericSearch] != NSOrderedAscending);
-}
-
 #pragma mark - getters
 
 - (unsigned long long)systemTotalSize

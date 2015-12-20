@@ -12,19 +12,27 @@
 
 - (NSDictionary*)queryParameters
 {
-    NSMutableDictionary* queryParams = [NSMutableDictionary dictionary];
-    NSURLComponents* urlComponents = [NSURLComponents componentsWithURL:self resolvingAgainstBaseURL:NO];
-
-    
-    for (NSURLQueryItem* queryItem in [urlComponents queryItems])
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    for (NSString *param in [[self query] componentsSeparatedByString:@"&"])
     {
-        if (queryItem.value != nil)
-        {
-            [queryParams setObject:queryItem.value forKey:queryItem.name];
-        }
+        NSArray *parts = [param componentsSeparatedByString:@"="];
+        if([parts count] < 2) continue;
+        [params setObject:[parts objectAtIndex:1] forKey:[parts objectAtIndex:0]];
     }
-    
-    return queryParams;
+    return params;
+//    NSMutableDictionary* queryParams = [NSMutableDictionary dictionary];
+//    NSURLComponents* urlComponents = [NSURLComponents componentsWithURL:self resolvingAgainstBaseURL:NO];
+//
+//    
+//    for (NSURLQueryItem* queryItem in [urlComponents queryItems])
+//    {
+//        if (queryItem.value != nil)
+//        {
+//            [queryParams setObject:queryItem.value forKey:queryItem.name];
+//        }
+//    }
+//    
+//    return queryParams;
 }
 
 @end

@@ -10,5 +10,7 @@
 
 @interface UITableViewCell (Additions)
 
+@property (nonatomic, readonly) NSIndexPath *indexPath;
 @property (nonatomic, readonly) UITableView *superTabieView;
+
 @end

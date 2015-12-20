@@ -20,10 +20,14 @@
     id object = nil;
     @try
     {
-        object = self[index];
+        if (index != NSNotFound && self.count > index)
+        {
+            object = self[index];
+        }
     }
-    @catch (NSException *exception){}
-    
+    @catch (NSException *exception)
+    {
+    }
     return object;
 }
 

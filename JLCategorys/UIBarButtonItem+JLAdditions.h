@@ -23,4 +23,7 @@
                                      target:(id)target
                                      action:(SEL)action;
 
++ (UIBarButtonItem*)barButtonItemWithCustomView:(UIView*)customView;
++ (UIBarButtonItem*)barButtonItemWithFixedSpace:(CGFloat)fixedSpace;
+
 @end

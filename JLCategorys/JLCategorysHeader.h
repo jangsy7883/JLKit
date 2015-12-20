@@ -30,3 +30,5 @@
 #import "UIFont+JLStyle.h"
 #import "UIViewController+JLAdditions.h"
 #import "CALayer+JLAdditions.h"
+#import "UICollectionView+JLAdditions.h"
+#import "UICollectionViewCell+JLAdditions.h"
