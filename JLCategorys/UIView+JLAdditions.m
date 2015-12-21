@@ -27,4 +27,27 @@
     return nil;
 }
 
+#pragma mark - GETTERS
+
+- (UIViewController*)superViewController
+{
+    for (UIView* next = [self superview]; next; next = next.superview)
+    {
+        UIResponder* nextResponder = [next nextResponder];
+        
+        if ([nextResponder isKindOfClass:[UIViewController class]])
+        {
+            return (UIViewController*)nextResponder;
+        }
+    }
+    return nil;
+}
+
+#pragma mark - SETTERS
+
+- (void)setTransformScale:(CGFloat)scale
+{
+    self.transform = CGAffineTransformScale(self.transform, scale, scale);
+}
+
 @end

@@ -16,7 +16,7 @@
         if ([view isKindOfClass:[UICollectionViewCell class]]) {
             return [self indexPathForCell:(UICollectionViewCell *)view];
         } else {
-            view = [view superview];
+            view = view.superview;
         }
     }
     return nil;

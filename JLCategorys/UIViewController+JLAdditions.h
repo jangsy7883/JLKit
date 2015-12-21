@@ -11,6 +11,8 @@
 @interface UIViewController (Additions)
 
 @property (nonatomic, readonly, strong) UIViewController *superViewContoller;
+
++ (UIViewController*)superViewController;
 + (UIViewController*)superViewContollerForViewController:(UIViewController*)viewController;
 
 @end

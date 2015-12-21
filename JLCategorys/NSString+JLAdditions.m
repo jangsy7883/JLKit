@@ -58,7 +58,7 @@
 
 - (NSString*)deleteEmptyAndLineSpace
 {
-    return [[self deleteEmptySpace] deleteLineSpace];
+    return self.deleteEmptySpace.deleteLineSpace;
 }
 
 - (BOOL)startsWith:(NSString *)prefix

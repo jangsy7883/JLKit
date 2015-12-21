@@ -15,6 +15,48 @@
     return [UIViewController superViewContollerForViewController:self];
 }
 
++ (UIViewController*)superViewController
+{
+    UIViewController* viewController;
+    
+    if ([[UIApplication sharedApplication].keyWindow.rootViewController isKindOfClass:[UIViewController class]])
+    {
+        viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    }
+    else if ([[UIApplication sharedApplication].delegate respondsToSelector:@selector(window)])
+    {
+        UIWindow *window = [[UIApplication sharedApplication].delegate performSelector:@selector(window)];
+        
+        if ([window.rootViewController isKindOfClass:[UIViewController class]])
+        {
+            viewController = window.rootViewController;
+        }
+    }
+    else
+    {
+        for (UIWindow *window in [UIApplication sharedApplication].windows)
+        {
+            if ([window isKindOfClass:[UIWindow class]])
+            {
+                if ([window.rootViewController isKindOfClass:[UIViewController class]])
+                {
+                    viewController = window.rootViewController;
+                    break;
+                }
+            }
+        }
+    }
+    
+    if (viewController)
+    {
+        return [UIViewController superViewContollerForViewController:viewController];
+    }
+    else
+    {
+        return nil;
+    }
+}
+
 + (UIViewController*)superViewContollerForViewController:(UIViewController*)viewController
 {
     if ([viewController isKindOfClass:[UINavigationController class]])

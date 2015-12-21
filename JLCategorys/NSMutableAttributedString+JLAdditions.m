@@ -15,7 +15,7 @@
 {
     @try
     {
-        NSRange range = [[self string] rangeOfString:text];
+        NSRange range = [self.string rangeOfString:text];
         if (range.length > 0)
         {
             [self addAttributes:attrs range:range];

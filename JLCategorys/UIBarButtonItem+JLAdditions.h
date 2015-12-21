@@ -10,7 +10,14 @@
 
 @interface UIBarButtonItem (Additions)
 
++ (UIBarButtonItem*)barButtonItemWithTtitle:(NSString *)parm_title
+                                       font:(UIFont *)parm_font
+                                  textColor:(UIColor*)parm_textColor
+                                     target:(id)target
+                                     action:(SEL)action;
+
 + (UIBarButtonItem*)barButtonItemWithtButtonImage:(UIImage *)image
+                                 highlightedImage:(UIImage *)highlightedImage
                                            target:(id)target
                                            action:(SEL)action;
 

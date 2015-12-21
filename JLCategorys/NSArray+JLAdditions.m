@@ -35,6 +35,20 @@
 
 @implementation NSMutableArray (Additions)
 
+- (void)removeObjectAtSafeIndex:(NSUInteger)index
+{
+    @try
+    {
+        if (index != NSNotFound && [self emptyAtIndex:index] == NO)
+        {
+            [self removeObjectAtIndex:index];
+        }
+    }
+    @catch (NSException *exception)
+    {
+    }
+}
+
 - (void)addSafeObject:(id)anObject
 {
     @try {

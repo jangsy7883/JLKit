@@ -7,13 +7,40 @@
 //
 
 #import "UIBarButtonItem+JLAdditions.h"
-
+#import "UIColor+JLAdditions.h"
 @implementation UIBarButtonItem (Additions)
 
-+ (UIBarButtonItem*)barButtonItemWithtButtonImage:(UIImage *)image target:(id)target action:(SEL)action
++ (UIBarButtonItem*)barButtonItemWithTtitle:(NSString *)title
+                                       font:(UIFont *)font
+                                  textColor:(UIColor*)textColor
+                                     target:(id)target
+                                     action:(SEL)action
+{
+
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:title
+                                                             style:UIBarButtonItemStylePlain
+                                                            target:target
+                                                            action:action];
+    
+    [item setTitleTextAttributes:@{
+                                   NSFontAttributeName:font,
+                                   NSForegroundColorAttributeName:textColor,
+                                   }
+                        forState:UIControlStateNormal];
+    [item setTitleTextAttributes:@{
+                                   NSFontAttributeName:font,
+                                   NSForegroundColorAttributeName:textColor.darkerColor,
+                                   }
+                        forState:UIControlStateHighlighted];
+    
+    return item;
+}
+
++ (UIBarButtonItem*)barButtonItemWithtButtonImage:(UIImage *)image highlightedImage:(UIImage*)highlightedImage target:(id)target action:(SEL)action
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setImage:image forState:UIControlStateNormal];
+    [button setImage:highlightedImage forState:UIControlStateHighlighted];
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     [button sizeToFit];
     

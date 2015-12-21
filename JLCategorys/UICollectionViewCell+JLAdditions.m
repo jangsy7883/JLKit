@@ -12,7 +12,7 @@
 
 - (NSIndexPath*)indexPath
 {
-    UICollectionView*collectionView = [self superCollectionView];
+    UICollectionView*collectionView = self.superCollectionView;
     if (collectionView) {
         return [collectionView indexPathForCell:self];
     }
@@ -21,7 +21,7 @@
 
 - (UICollectionView *)superCollectionView
 {
-    id view = [self superview];
+    id view = self.superview;
     while (view != nil) {
         if ([view isKindOfClass:[UICollectionView class]]) {
             return view;

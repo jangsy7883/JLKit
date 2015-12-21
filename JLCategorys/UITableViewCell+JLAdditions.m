@@ -12,7 +12,7 @@
 
 - (NSIndexPath*)indexPath
 {
-    UITableView *tableView = [self superTabieView];
+    UITableView *tableView = self.superTabieView;
     if (tableView) {
         return [tableView indexPathForCell:self];
     }

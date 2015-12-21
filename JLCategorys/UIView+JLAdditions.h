@@ -13,6 +13,10 @@
 
 @interface UIView (Additions)
 
+@property (nonatomic, readonly) UIViewController *superViewController;
+
 + (instancetype)viewWithNibNamed:(NSString*)nibNameOrNil;
+
+- (void)setTransformScale:(CGFloat)scale;
 
 @end
