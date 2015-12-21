@@ -18,6 +18,7 @@
 
 @interface NSMutableArray (Additions)
 
+- (void)removeObjectAtSafeIndex:(NSUInteger)index;
 - (void)addSafeObject:(id)anObject;
 
 @end
