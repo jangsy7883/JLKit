@@ -32,3 +32,5 @@
 #import "CALayer+JLAdditions.h"
 #import "UICollectionView+JLAdditions.h"
 #import "UICollectionViewCell+JLAdditions.h"
+#import "UITabBarItem+JLAdditions.h"
+#import "UIApplication+JLAdditions.h"
