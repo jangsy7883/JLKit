@@ -36,7 +36,12 @@
     return item;
 }
 
-+ (UIBarButtonItem*)barButtonItemWithtButtonImage:(UIImage *)image highlightedImage:(UIImage*)highlightedImage target:(id)target action:(SEL)action
++ (UIBarButtonItem*)barButtonItemWithtCustomImage:(UIImage *)image target:(id)target action:(SEL)action
+{
+    return [self barButtonItemWithtCustomImage:image highlightedImage:nil target:target action:action];
+}
+
++ (UIBarButtonItem*)barButtonItemWithtCustomImage:(UIImage *)image highlightedImage:(UIImage*)highlightedImage target:(id)target action:(SEL)action
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setImage:image forState:UIControlStateNormal];
@@ -45,14 +50,6 @@
     [button sizeToFit];
     
     return [[UIBarButtonItem alloc] initWithCustomView:button];
-}
-
-+ (UIBarButtonItem*)barButtonItemWithtImage:(UIImage *)image style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action
-{
-    return [[UIBarButtonItem alloc] initWithImage:image
-                                            style:style
-                                           target:target
-                                           action:action];
 }
 
 + (UIBarButtonItem*)barButtonItemWithtImage:(UIImage *)image target:(id)target action:(SEL)action

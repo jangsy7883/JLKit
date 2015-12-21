@@ -16,15 +16,14 @@
                                      target:(id)target
                                      action:(SEL)action;
 
-+ (UIBarButtonItem*)barButtonItemWithtButtonImage:(UIImage *)image
++ (UIBarButtonItem*)barButtonItemWithtCustomImage:(UIImage *)image
                                  highlightedImage:(UIImage *)highlightedImage
                                            target:(id)target
                                            action:(SEL)action;
 
-+ (UIBarButtonItem*)barButtonItemWithtImage:(UIImage *)image
-                                      style:(UIBarButtonItemStyle)style
-                                     target:(id)target
-                                     action:(SEL)action;
++ (UIBarButtonItem*)barButtonItemWithtCustomImage:(UIImage *)image
+                                           target:(id)target
+                                           action:(SEL)action;
 
 + (UIBarButtonItem*)barButtonItemWithtImage:(UIImage *)image
                                      target:(id)target
