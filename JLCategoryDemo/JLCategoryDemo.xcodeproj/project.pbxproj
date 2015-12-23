@@ -43,6 +43,7 @@
 		0FAABE4D1BC0E7E300AE9BBE /* UIView+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE3A1BC0E7E300AE9BBE /* UIView+JLAdditions.m */; };
 		0FD7F8991C03EA1E00236C0D /* UIViewController+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD7F8981C03EA1E00236C0D /* UIViewController+JLAdditions.m */; };
 		0FE627491BC7C99300FC8321 /* NSTimeZone+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE627481BC7C99300FC8321 /* NSTimeZone+JLAdditions.m */; };
+		8BEF9F1C1C2A8C7B00F802CB /* NSDate+JLAge.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEF9F1B1C2A8C7B00F802CB /* NSDate+JLAge.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +117,8 @@
 		0FD7F8981C03EA1E00236C0D /* UIViewController+JLAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JLAdditions.m"; sourceTree = "<group>"; };
 		0FE627471BC7C99300FC8321 /* NSTimeZone+JLAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimeZone+JLAdditions.h"; sourceTree = "<group>"; };
 		0FE627481BC7C99300FC8321 /* NSTimeZone+JLAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimeZone+JLAdditions.m"; sourceTree = "<group>"; };
+		8BEF9F1A1C2A8C7B00F802CB /* NSDate+JLAge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+JLAge.h"; sourceTree = "<group>"; };
+		8BEF9F1B1C2A8C7B00F802CB /* NSDate+JLAge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+JLAge.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +236,8 @@
 				0F1E10591C26A361009912A6 /* UIApplication+JLAdditions.m */,
 				0F1E105B1C27996C009912A6 /* UITabBarItem+JLAdditions.h */,
 				0F1E105C1C27996C009912A6 /* UITabBarItem+JLAdditions.m */,
+				8BEF9F1A1C2A8C7B00F802CB /* NSDate+JLAge.h */,
+				8BEF9F1B1C2A8C7B00F802CB /* NSDate+JLAge.m */,
 			);
 			name = JLCategorys;
 			path = ../JLCategorys;
@@ -328,6 +333,7 @@
 				0FAABE4C1BC0E7E300AE9BBE /* UITableViewCell+JLAdditions.m in Sources */,
 				0F389BDB1BDB71C10089D35F /* UIFont+JLStyle.m in Sources */,
 				0FAABE3F1BC0E7E300AE9BBE /* NSIndexPath+JLAdditions.m in Sources */,
+				8BEF9F1C1C2A8C7B00F802CB /* NSDate+JLAge.m in Sources */,
 				0FAABE451BC0E7E300AE9BBE /* UIColor+JLAdditions.m in Sources */,
 				0FE627491BC7C99300FC8321 /* NSTimeZone+JLAdditions.m in Sources */,
 				0FAABE011BC0E7DA00AE9BBE /* AppDelegate.m in Sources */,

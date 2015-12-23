@@ -22,6 +22,8 @@
 
 - (CGSize)sizeToFit:(CGSize)size scaleAspectFit:(BOOL)scaleAspectFit;
 
+- (UIImage*)imageRotate:(CGFloat)rotate;
+
 @property (nonatomic, readonly, strong) UIImage *resizeRetinaHDImage;
 
 @end
