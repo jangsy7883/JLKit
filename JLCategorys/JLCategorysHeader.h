@@ -35,3 +35,4 @@
 #import "UITabBarItem+JLAdditions.h"
 #import "UIApplication+JLAdditions.h"
 #import "NSMutableAttributedString+JLAdditions.h"
+#import "NSURL+JLAdditions.h"
