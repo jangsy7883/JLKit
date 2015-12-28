@@ -23,6 +23,16 @@
     return dateFormatter;
 }
 
++ (NSCalendar *) currentCalendar
+{
+    static dispatch_once_t once;
+    static NSCalendar *sharedCalendar;
+    dispatch_once(&once, ^{
+        sharedCalendar = [NSCalendar autoupdatingCurrentCalendar];
+    });
+    return sharedCalendar;
+}
+
 + (NSDate*)dateFromFormat:(NSString*)dateFormat dateString:(NSString*)dateString withTimeZone:(NSTimeZone*)timeZone
 {
     NSDateFormatter *dateFormatter = [self sharedDateFormatter];
@@ -69,6 +79,30 @@
     components.year = components.year + parm_year;
     
     return components.date;
+}
+
+- (BOOL)isToday
+{
+    return [self isEqualToDateIgnoringTime:[NSDate date]];
+}
+
+- (BOOL) isEqualToDateIgnoringTime: (NSDate *) aDate
+{
+    NSCalendarUnit componentFlags = (NSYearCalendarUnit|
+                                     NSMonthCalendarUnit |
+                                     NSDayCalendarUnit |
+                                     NSWeekCalendarUnit |
+                                     NSHourCalendarUnit |
+                                     NSMinuteCalendarUnit |
+                                     NSSecondCalendarUnit |
+                                     NSWeekdayCalendarUnit |
+                                     NSWeekdayOrdinalCalendarUnit);
+    
+    NSDateComponents *components1 = [[NSDate currentCalendar] components:componentFlags fromDate:self];
+    NSDateComponents *components2 = [[NSDate currentCalendar] components:componentFlags fromDate:aDate];
+    return ((components1.year == components2.year) &&
+            (components1.month == components2.month) &&
+            (components1.day == components2.day));
 }
 
 @end

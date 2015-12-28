@@ -10,6 +10,8 @@
 
 @interface NSDate (Additions)
 
+@property (nonatomic, readonly, getter=isToday) BOOL today;
+
 + (NSDate*)dateFromFormat:(NSString*)dateFormat dateString:(NSString*)dateString withTimeZone:(NSTimeZone*)timeZone;
 + (NSDate*)dateFromFormat:(NSString*)dateFormat dateString:(NSString*)dateString;
 
