@@ -10,7 +10,7 @@
 
 @implementation UITabBarItem (JLAdditions)
 
-- (UITabBarItem*)tabBarItemWithTitle:(NSString *)title image:(UIImage *)image selectedImage:(UIImage *)selectedImage
++ (UITabBarItem*)tabBarItemWithTitle:(NSString *)title image:(UIImage *)image selectedImage:(UIImage *)selectedImage
 {
     return [[UITabBarItem alloc] initWithTitle:title
                                          image:image
