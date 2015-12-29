@@ -10,4 +10,7 @@
 
 @interface NSDate (JLAge)
 
+- (NSInteger)age;
+- (NSInteger)koreanAge;
+
 @end
