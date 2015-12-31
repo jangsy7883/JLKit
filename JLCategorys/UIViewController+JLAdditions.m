@@ -10,12 +10,12 @@
 
 @implementation UIViewController (Additions)
 
-- (UIViewController*)superViewContoller
+- (UIViewController*)visibleViewController
 {
-    return [UIViewController superViewContollerForViewController:self];
+    return [UIViewController visibleViewControllerForViewController:self];
 }
 
-+ (UIViewController*)superViewController
++ (UIViewController*)visibleViewController
 {
     UIViewController* viewController;
     
@@ -49,7 +49,7 @@
     
     if (viewController)
     {
-        return [UIViewController superViewContollerForViewController:viewController];
+        return [UIViewController visibleViewControllerForViewController:viewController];
     }
     else
     {
@@ -57,7 +57,7 @@
     }
 }
 
-+ (UIViewController*)superViewContollerForViewController:(UIViewController*)viewController
++ (UIViewController*)visibleViewControllerForViewController:(UIViewController*)viewController
 {
     if ([viewController isKindOfClass:[UINavigationController class]])
     {
