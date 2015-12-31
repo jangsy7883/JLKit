@@ -10,6 +10,19 @@
 
 @implementation NSArray (Additions)
 
+- (NSString*)JSONValue
+{
+    NSError *error = nil;
+    NSData* kData = [NSJSONSerialization dataWithJSONObject:self
+                                                    options:NSJSONWritingPrettyPrinted
+                                                      error:&error];    
+    if (error == nil)
+    {
+        return [[NSString alloc] initWithData:kData encoding:NSUTF8StringEncoding];
+    }
+    return nil;
+}
+
 - (BOOL)emptyAtIndex:(NSInteger)index
 {
     return ([self objectAtSafeIndex:index] == nil);
@@ -20,7 +33,7 @@
     id object = nil;
     @try
     {
-        if (index != NSNotFound && self.count > index)
+        if (index != NSNotFound && self.count > index && self.count > 0)
         {
             object = self[index];
         }

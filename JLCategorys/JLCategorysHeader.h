@@ -36,3 +36,5 @@
 #import "UIApplication+JLAdditions.h"
 #import "NSMutableAttributedString+JLAdditions.h"
 #import "NSURL+JLAdditions.h"
+#import "NSObject+JLAdditions.h"
+#import "NSData+JLAdditions.h"

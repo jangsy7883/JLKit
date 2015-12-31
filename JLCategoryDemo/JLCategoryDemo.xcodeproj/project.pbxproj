@@ -41,6 +41,8 @@
 		0FAABE4B1BC0E7E300AE9BBE /* UITableView+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE361BC0E7E300AE9BBE /* UITableView+JLAdditions.m */; };
 		0FAABE4C1BC0E7E300AE9BBE /* UITableViewCell+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE381BC0E7E300AE9BBE /* UITableViewCell+JLAdditions.m */; };
 		0FAABE4D1BC0E7E300AE9BBE /* UIView+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE3A1BC0E7E300AE9BBE /* UIView+JLAdditions.m */; };
+		0FAC35041C34FBF9007F3E56 /* NSObject+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAC35031C34FBF9007F3E56 /* NSObject+JLAdditions.m */; };
+		0FAC35071C34FCC7007F3E56 /* NSData+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAC35061C34FCC7007F3E56 /* NSData+JLAdditions.m */; };
 		0FD7F8991C03EA1E00236C0D /* UIViewController+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD7F8981C03EA1E00236C0D /* UIViewController+JLAdditions.m */; };
 		0FE627491BC7C99300FC8321 /* NSTimeZone+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE627481BC7C99300FC8321 /* NSTimeZone+JLAdditions.m */; };
 		8BEF9F1C1C2A8C7B00F802CB /* NSDate+JLAge.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEF9F1B1C2A8C7B00F802CB /* NSDate+JLAge.m */; };
@@ -113,6 +115,10 @@
 		0FAABE381BC0E7E300AE9BBE /* UITableViewCell+JLAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+JLAdditions.m"; sourceTree = "<group>"; };
 		0FAABE391BC0E7E300AE9BBE /* UIView+JLAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JLAdditions.h"; sourceTree = "<group>"; };
 		0FAABE3A1BC0E7E300AE9BBE /* UIView+JLAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JLAdditions.m"; sourceTree = "<group>"; };
+		0FAC35021C34FBF9007F3E56 /* NSObject+JLAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JLAdditions.h"; sourceTree = "<group>"; };
+		0FAC35031C34FBF9007F3E56 /* NSObject+JLAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JLAdditions.m"; sourceTree = "<group>"; };
+		0FAC35051C34FCC7007F3E56 /* NSData+JLAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+JLAdditions.h"; sourceTree = "<group>"; };
+		0FAC35061C34FCC7007F3E56 /* NSData+JLAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+JLAdditions.m"; sourceTree = "<group>"; };
 		0FD7F8971C03EA1E00236C0D /* UIViewController+JLAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JLAdditions.h"; sourceTree = "<group>"; };
 		0FD7F8981C03EA1E00236C0D /* UIViewController+JLAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JLAdditions.m"; sourceTree = "<group>"; };
 		0FE627471BC7C99300FC8321 /* NSTimeZone+JLAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimeZone+JLAdditions.h"; sourceTree = "<group>"; };
@@ -238,6 +244,10 @@
 				0F1E105C1C27996C009912A6 /* UITabBarItem+JLAdditions.m */,
 				8BEF9F1A1C2A8C7B00F802CB /* NSDate+JLAge.h */,
 				8BEF9F1B1C2A8C7B00F802CB /* NSDate+JLAge.m */,
+				0FAC35021C34FBF9007F3E56 /* NSObject+JLAdditions.h */,
+				0FAC35031C34FBF9007F3E56 /* NSObject+JLAdditions.m */,
+				0FAC35051C34FCC7007F3E56 /* NSData+JLAdditions.h */,
+				0FAC35061C34FCC7007F3E56 /* NSData+JLAdditions.m */,
 			);
 			name = JLCategorys;
 			path = ../JLCategorys;
@@ -317,6 +327,7 @@
 				0FAABE401BC0E7E300AE9BBE /* NSLocale+JLAdditions.m in Sources */,
 				0FAABE3B1BC0E7E300AE9BBE /* NSArray+JLAdditions.m in Sources */,
 				0FD7F8991C03EA1E00236C0D /* UIViewController+JLAdditions.m in Sources */,
+				0FAC35041C34FBF9007F3E56 /* NSObject+JLAdditions.m in Sources */,
 				0F1E105A1C26A361009912A6 /* UIApplication+JLAdditions.m in Sources */,
 				0FAABE041BC0E7DA00AE9BBE /* ViewController.m in Sources */,
 				0F1E10541C269B75009912A6 /* UICollectionView+JLAdditions.m in Sources */,
@@ -340,6 +351,7 @@
 				0FAABE431BC0E7E300AE9BBE /* UIBarButtonItem+JLAdditions.m in Sources */,
 				0FAABDFE1BC0E7DA00AE9BBE /* main.m in Sources */,
 				0FAABE3D1BC0E7E300AE9BBE /* NSDate+JLAdditions.m in Sources */,
+				0FAC35071C34FCC7007F3E56 /* NSData+JLAdditions.m in Sources */,
 				0FAABE421BC0E7E300AE9BBE /* NSThread+JLAdditions.m in Sources */,
 				0F1E10571C269BC2009912A6 /* UICollectionViewCell+JLAdditions.m in Sources */,
 				0FAABE441BC0E7E300AE9BBE /* UIButton+JLAdditions.m in Sources */,

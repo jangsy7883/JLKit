@@ -26,5 +26,6 @@
 @interface UIScreen (Additions)
 
 @property (nonatomic, readonly ,getter = isRetinaDisplay) BOOL retinaDisplay; //현재 단말기가 레티나 디스플레이인지 알려준다.
+@property (nonatomic, readonly ,getter = isRetinaHDDisplay) BOOL retinaHDDisplay;
 
 @end
