@@ -59,20 +59,27 @@
 
 + (UIViewController*)visibleViewControllerForViewController:(UIViewController*)viewController
 {
-    if ([viewController isKindOfClass:[UINavigationController class]])
+    if (viewController.presentedViewController)
+    {
+        return [self visibleViewControllerForViewController:viewController.presentedViewController];
+    }
+    else if ([viewController isKindOfClass:[UINavigationController class]])
     {
         UINavigationController *navigationController = (UINavigationController *)viewController;
-        return [self visibleViewControllerForViewController:(navigationController.viewControllers).lastObject];
+        if (navigationController.visibleViewController)
+        {
+            return [self visibleViewControllerForViewController:navigationController.visibleViewController];
+        }
     }
     else if ([viewController isKindOfClass:[UITabBarController class]])
     {
         UITabBarController *tabController = (UITabBarController *)viewController;
-        return [self visibleViewControllerForViewController:tabController.selectedViewController];
+        if (tabController.selectedViewController)
+        {
+            return [self visibleViewControllerForViewController:tabController.selectedViewController];
+        }
     }
-    else if (viewController.presentedViewController)
-    {
-        return [self visibleViewControllerForViewController:viewController.presentedViewController];
-    }
+    
     return viewController;
 }
 

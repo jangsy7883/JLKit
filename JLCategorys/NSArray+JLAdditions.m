@@ -52,7 +52,7 @@
 {
     @try
     {
-        if (index != NSNotFound && [self emptyAtIndex:index] == NO)
+        if ([self emptyAtIndex:index] == NO)
         {
             [self removeObjectAtIndex:index];
         }
@@ -65,7 +65,10 @@
 - (void)addSafeObject:(id)anObject
 {
     @try {
-        [self addObject:anObject];
+        if (anObject != nil)
+        {
+            [self addObject:anObject];
+        }
     }
     @catch (NSException *exception) {}
 }
