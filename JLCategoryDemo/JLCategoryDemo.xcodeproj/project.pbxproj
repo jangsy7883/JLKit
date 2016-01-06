@@ -15,7 +15,6 @@
 		0F1E105D1C27996C009912A6 /* UITabBarItem+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1E105C1C27996C009912A6 /* UITabBarItem+JLAdditions.m */; };
 		0F389BDB1BDB71C10089D35F /* UIFont+JLStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F389BDA1BDB71C10089D35F /* UIFont+JLStyle.m */; };
 		0F568C3F1C16EF1200415AB7 /* NSURL+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F568C3E1C16EF1200415AB7 /* NSURL+JLAdditions.m */; };
-		0F59E6151BC0FC9C00B213A8 /* UINavigationController+JLStatusBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F59E6141BC0FC9C00B213A8 /* UINavigationController+JLStatusBarStyle.m */; };
 		0F976DC11C0E749000AD0C32 /* CALayer+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F976DC01C0E749000AD0C32 /* CALayer+JLAdditions.m */; };
 		0FAABDFE1BC0E7DA00AE9BBE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABDFD1BC0E7DA00AE9BBE /* main.m */; };
 		0FAABE011BC0E7DA00AE9BBE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE001BC0E7DA00AE9BBE /* AppDelegate.m */; };
@@ -64,8 +63,6 @@
 		0F389BDA1BDB71C10089D35F /* UIFont+JLStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+JLStyle.m"; sourceTree = "<group>"; };
 		0F568C3D1C16EF1200415AB7 /* NSURL+JLAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+JLAdditions.h"; sourceTree = "<group>"; };
 		0F568C3E1C16EF1200415AB7 /* NSURL+JLAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+JLAdditions.m"; sourceTree = "<group>"; };
-		0F59E6131BC0FC9C00B213A8 /* UINavigationController+JLStatusBarStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+JLStatusBarStyle.h"; sourceTree = "<group>"; };
-		0F59E6141BC0FC9C00B213A8 /* UINavigationController+JLStatusBarStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+JLStatusBarStyle.m"; sourceTree = "<group>"; };
 		0F976DBF1C0E749000AD0C32 /* CALayer+JLAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+JLAdditions.h"; sourceTree = "<group>"; };
 		0F976DC01C0E749000AD0C32 /* CALayer+JLAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+JLAdditions.m"; sourceTree = "<group>"; };
 		0FAABDF91BC0E7DA00AE9BBE /* JLCategoryDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLCategoryDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,8 +217,6 @@
 				0FAABE381BC0E7E300AE9BBE /* UITableViewCell+JLAdditions.m */,
 				0FAABE391BC0E7E300AE9BBE /* UIView+JLAdditions.h */,
 				0FAABE3A1BC0E7E300AE9BBE /* UIView+JLAdditions.m */,
-				0F59E6131BC0FC9C00B213A8 /* UINavigationController+JLStatusBarStyle.h */,
-				0F59E6141BC0FC9C00B213A8 /* UINavigationController+JLStatusBarStyle.m */,
 				0FE627471BC7C99300FC8321 /* NSTimeZone+JLAdditions.h */,
 				0FE627481BC7C99300FC8321 /* NSTimeZone+JLAdditions.m */,
 				0F389BD91BDB71C10089D35F /* UIFont+JLStyle.h */,
@@ -336,7 +331,6 @@
 				0FAABE411BC0E7E300AE9BBE /* NSString+JLAdditions.m in Sources */,
 				0F976DC11C0E749000AD0C32 /* CALayer+JLAdditions.m in Sources */,
 				0FAABE481BC0E7E300AE9BBE /* UIImage+JLAdditions.m in Sources */,
-				0F59E6151BC0FC9C00B213A8 /* UINavigationController+JLStatusBarStyle.m in Sources */,
 				0FAABE461BC0E7E300AE9BBE /* UIDevice+JLAdditions.m in Sources */,
 				0F568C3F1C16EF1200415AB7 /* NSURL+JLAdditions.m in Sources */,
 				0F1E105D1C27996C009912A6 /* UITabBarItem+JLAdditions.m in Sources */,
