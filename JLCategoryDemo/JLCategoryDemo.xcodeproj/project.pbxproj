@@ -50,7 +50,6 @@
 
 /* Begin PBXFileReference section */
 		0F06C9021BDB87F300076A59 /* JLCategorys.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = JLCategorys.podspec; path = ../JLCategorys.podspec; sourceTree = "<group>"; };
-		0F69154B1C3D03C1008EFEDF /* JLFoundationCategorysHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLFoundationCategorysHeader.h; sourceTree = "<group>"; };
 		0F69154C1C3D03C1008EFEDF /* NSArray+JLAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+JLAdditions.h"; sourceTree = "<group>"; };
 		0F69154D1C3D03C1008EFEDF /* NSArray+JLAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JLAdditions.m"; sourceTree = "<group>"; };
 		0F69154E1C3D03C1008EFEDF /* NSBundle+JLAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+JLAdditions.h"; sourceTree = "<group>"; };
@@ -83,7 +82,6 @@
 		0F69156A1C3D03C2008EFEDF /* UINavigationController+JLStatusBarStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+JLStatusBarStyle.m"; sourceTree = "<group>"; };
 		0F69156C1C3D03C2008EFEDF /* CALayer+JLAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+JLAdditions.h"; sourceTree = "<group>"; };
 		0F69156D1C3D03C2008EFEDF /* CALayer+JLAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+JLAdditions.m"; sourceTree = "<group>"; };
-		0F69156E1C3D03C2008EFEDF /* JLUICategorysHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLUICategorysHeader.h; sourceTree = "<group>"; };
 		0F69156F1C3D03C2008EFEDF /* UIApplication+JLAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+JLAdditions.h"; sourceTree = "<group>"; };
 		0F6915701C3D03C2008EFEDF /* UIApplication+JLAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+JLAdditions.m"; sourceTree = "<group>"; };
 		0F6915711C3D03C2008EFEDF /* UIBarButtonItem+JLAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+JLAdditions.h"; sourceTree = "<group>"; };
@@ -116,6 +114,7 @@
 		0F69158C1C3D03C2008EFEDF /* UIView+JLAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JLAdditions.m"; sourceTree = "<group>"; };
 		0F69158D1C3D03C2008EFEDF /* UIViewController+JLAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JLAdditions.h"; sourceTree = "<group>"; };
 		0F69158E1C3D03C2008EFEDF /* UIViewController+JLAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JLAdditions.m"; sourceTree = "<group>"; };
+		0F6915AF1C3D07CA008EFEDF /* JLCategorys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLCategorys.h; sourceTree = "<group>"; };
 		0FAABDF91BC0E7DA00AE9BBE /* JLCategoryDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLCategoryDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FAABDFD1BC0E7DA00AE9BBE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0FAABDFF1BC0E7DA00AE9BBE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -142,7 +141,6 @@
 		0F69154A1C3D03C1008EFEDF /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				0F69154B1C3D03C1008EFEDF /* JLFoundationCategorysHeader.h */,
 				0F69154C1C3D03C1008EFEDF /* NSArray+JLAdditions.h */,
 				0F69154D1C3D03C1008EFEDF /* NSArray+JLAdditions.m */,
 				0F69154E1C3D03C1008EFEDF /* NSBundle+JLAdditions.h */,
@@ -189,7 +187,6 @@
 			children = (
 				0F69156C1C3D03C2008EFEDF /* CALayer+JLAdditions.h */,
 				0F69156D1C3D03C2008EFEDF /* CALayer+JLAdditions.m */,
-				0F69156E1C3D03C2008EFEDF /* JLUICategorysHeader.h */,
 				0F69156F1C3D03C2008EFEDF /* UIApplication+JLAdditions.h */,
 				0F6915701C3D03C2008EFEDF /* UIApplication+JLAdditions.m */,
 				0F6915711C3D03C2008EFEDF /* UIBarButtonItem+JLAdditions.h */,
@@ -274,6 +271,7 @@
 				0F69154A1C3D03C1008EFEDF /* Foundation */,
 				0F6915681C3D03C1008EFEDF /* StatusBarStyle */,
 				0F69156B1C3D03C2008EFEDF /* UI */,
+				0F6915AF1C3D07CA008EFEDF /* JLCategorys.h */,
 			);
 			name = JLCategorys;
 			path = ../JLCategorys;
