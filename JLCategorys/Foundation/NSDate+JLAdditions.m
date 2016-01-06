@@ -88,15 +88,15 @@
 
 - (BOOL) isEqualToDateIgnoringTime: (NSDate *) aDate
 {
-    NSCalendarUnit componentFlags = (NSYearCalendarUnit|
-                                     NSMonthCalendarUnit |
-                                     NSDayCalendarUnit |
-                                     NSWeekCalendarUnit |
-                                     NSHourCalendarUnit |
-                                     NSMinuteCalendarUnit |
-                                     NSSecondCalendarUnit |
-                                     NSWeekdayCalendarUnit |
-                                     NSWeekdayOrdinalCalendarUnit);
+    NSCalendarUnit componentFlags = (NSCalendarUnitYear|
+                                     NSCalendarUnitMonth |
+                                     NSCalendarUnitDay |
+                                     NSCalendarUnitWeekOfMonth |
+                                     NSCalendarUnitHour |
+                                     NSCalendarUnitMinute |
+                                     NSCalendarUnitSecond |
+                                     NSCalendarUnitWeekday |
+                                     NSCalendarUnitWeekdayOrdinal);
     
     NSDateComponents *components1 = [[NSDate currentCalendar] components:componentFlags fromDate:self];
     NSDateComponents *components2 = [[NSDate currentCalendar] components:componentFlags fromDate:aDate];
