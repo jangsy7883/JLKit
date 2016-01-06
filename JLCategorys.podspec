@@ -1,4 +1,4 @@
-@version = "0.2.33"
+@version = "0.2.34"
 Pod::Spec.new do |s|
   s.name            = "JLCategorys"
   s.version         = @version
@@ -13,9 +13,11 @@ Pod::Spec.new do |s|
 
   s.subspec 'Core' do |core|
    core.source_files = 'JLCategorys/Foundation/*.{h,m}','JLCategorys/UI/*.{h,m}'
-end
+  end
 
   s.subspec 'StatusBarStyle' do |nsudp|
    nsudp.dependency 'JLCategorys/Core'
    nsudp.source_files = 'JLCategorys/StatusBarStyle/*.{h,m}'
+  end
+
 end
