@@ -7,6 +7,7 @@
 //
 
 #import "NSString+JLAdditions.h"
+
 #include <CommonCrypto/CommonDigest.h>
 
 @implementation NSString (Additions)

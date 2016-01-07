@@ -7,6 +7,7 @@
 //
 
 #import "NSIndexPath+JLAdditions.h"
+#import <UIKit/UIKit.h>
 
 @implementation NSIndexPath (Additions)
 

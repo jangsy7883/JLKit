@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 
 #define NSIndexPathMake(row,section) [NSIndexPath indexPathForRow:row inSection:section]
 

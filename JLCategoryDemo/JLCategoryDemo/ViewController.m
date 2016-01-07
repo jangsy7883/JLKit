@@ -7,8 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "JLFoundationCategorysHeader.h"
-#import "JLUICategorysHeader.h"
+#import "JLCategorys.h"
 
 @interface ViewController ()
 

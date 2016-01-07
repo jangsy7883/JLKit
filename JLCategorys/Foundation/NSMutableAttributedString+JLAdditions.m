@@ -6,7 +6,6 @@
 //  Copyright © 2015년 Dalkomm. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "NSMutableAttributedString+JLAdditions.h"
 
 @implementation NSMutableAttributedString (JLAdditions)
