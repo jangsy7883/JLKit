@@ -22,6 +22,6 @@
 
 - (CGSize)sizeToFit:(CGSize)size scaleAspectFit:(BOOL)scaleAspectFit;
 
-@property (nonatomic, readonly, strong) UIImage *resizeRetinaHDImage;
+- (UIImage *)autoScaleWithOriginalScale:(CGFloat)scale;
 
 @end

@@ -98,9 +98,9 @@
     return fitSize;
 }
 
-- (UIImage*)resizeRetinaHDImage
+- (UIImage *)autoScaleWithOriginalScale:(CGFloat)scale
 {
-    CGRect newRect = CGRectMake(0.0, 0.0, self.size.width/3, self.size.height/3);
+    CGRect newRect = CGRectMake(0.0, 0.0, self.size.width/scale, self.size.height/scale);
     
     UIGraphicsBeginImageContextWithOptions(newRect.size, NO, [UIScreen mainScreen].scale);
     [self drawInRect:newRect];
