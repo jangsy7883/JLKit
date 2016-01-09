@@ -10,7 +10,7 @@
 
 @implementation UIImage (Additions)
 
-- (UIImage*)resizableToCenter
+- (UIImage*)centerResizableImage
 {
     return [self resizableImageWithCapInsets:UIEdgeInsetsMake(self.size.height/2-1,
                                                               self.size.width/2-1,
