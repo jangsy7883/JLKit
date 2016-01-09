@@ -19,12 +19,57 @@
                                 resizingMode:UIImageResizingModeStretch];
 }
 
-+ (UIImage *)patternImageWithColor:(UIColor *)color
+
+- (UIImage*)squareCropImage
 {
-    return [UIImage imageWithColor:color size:CGSizeMake(1, 1)];
+    CGRect cropRect = CGRectZero;
+    
+    CGSize imageSize = self.size;
+    CGFloat squareSize = MIN(imageSize.width, imageSize.width);
+    
+    cropRect.origin.x = (imageSize.width - squareSize) / 2;
+    cropRect.origin.y = (imageSize.height - squareSize) / 2;
+    cropRect.size.width = squareSize;
+    cropRect.size.height = squareSize;
+    
+    CGFloat x = CGRectGetMinX(cropRect);
+    CGFloat y = CGRectGetMinY(cropRect);
+    CGFloat width = CGRectGetWidth(cropRect);
+    CGFloat height = CGRectGetHeight(cropRect);
+    
+    UIImageOrientation imageOrientation = self.imageOrientation;
+    if (imageOrientation == UIImageOrientationRight || imageOrientation == UIImageOrientationRightMirrored)
+    {
+        cropRect.origin.x = y;
+        cropRect.origin.y = imageSize.width - CGRectGetWidth(cropRect) - x;
+        cropRect.size.width = height;
+        cropRect.size.height = width;
+    }
+    else if (imageOrientation == UIImageOrientationLeft || imageOrientation == UIImageOrientationLeftMirrored)
+    {
+        cropRect.origin.x = imageSize.height - CGRectGetHeight(cropRect) - y;
+        cropRect.origin.y = x;
+        cropRect.size.width = height;
+        cropRect.size.height = width;
+    }
+    else if (imageOrientation == UIImageOrientationDown || imageOrientation == UIImageOrientationDownMirrored)
+    {
+        cropRect.origin.x = imageSize.width - CGRectGetWidth(cropRect) - x;;
+        cropRect.origin.y = imageSize.height - CGRectGetHeight(cropRect) - y;
+    }
+    
+    CGImageRef croppedCGImage = CGImageCreateWithImageInRect(self.CGImage, cropRect);
+    UIImage *croppedImage = [UIImage imageWithCGImage:croppedCGImage scale:1.0f orientation:self.imageOrientation];
+    CGImageRelease(croppedCGImage);
+    return croppedImage;
 }
 
-+ (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size
++ (UIImage *)patternImageWithColor:(UIColor *)color
+{
+    return [UIImage patternImageWithColor:color size:CGSizeMake(1, 1)];
+}
+
++ (UIImage *)patternImageWithColor:(UIColor *)color size:(CGSize)size
 {
     UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
     CGContextRef context = UIGraphicsGetCurrentContext();

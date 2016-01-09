@@ -10,16 +10,15 @@
 
 @interface UIImage (Additions)
 
-@property (nonatomic, readonly, strong) UIImage *resizableToCenter;
+@property (nonatomic, readonly, strong) UIImage *centerResizableImage;
+@property (nonatomic, readonly, strong) UIImage *squareCropImage;
 
 + (UIImage *)patternImageWithColor:(UIColor *)color;
-
-+ (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size;
++ (UIImage *)patternImageWithColor:(UIColor *)color size:(CGSize)size;
 
 - (UIImage *)imageWithTintColor:(UIColor *)color;
 
 - (CGSize)sizeToFitWidth:(CGFloat)width scaleAspectFit:(BOOL)scaleAspectFit;
-
 - (CGSize)sizeToFit:(CGSize)size scaleAspectFit:(BOOL)scaleAspectFit;
 
 - (UIImage *)autoScaleWithOriginalScale:(CGFloat)scale;
