@@ -23,4 +23,7 @@
 
 - (UIImage *)autoScaleWithOriginalScale:(CGFloat)scale;
 
++ (void)isEqual:(UIImage*)iamge toImage:(UIImage*)toImage completion:(void (^)(BOOL isEqual))completion;
+- (BOOL)isEqualToImage:(UIImage*)toImage;
+
 @end

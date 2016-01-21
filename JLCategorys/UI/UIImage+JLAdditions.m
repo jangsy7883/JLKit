@@ -155,4 +155,42 @@
     return newImage;
 }
 
++ (void)isEqual:(UIImage*)iamge toImage:(UIImage*)toImage completion:(void (^)(BOOL isEqual))completion
+{
+    if (completion == nil) return;
+    
+    if ((iamge == nil && toImage == nil) || [iamge isEqual:toImage])
+    {
+        completion(YES);
+    }
+    else if (iamge == nil || toImage == nil)
+    {
+        completion(NO);
+    }
+    else
+    {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
+                       ^{
+                           BOOL isEqual = [iamge isEqualToImage:toImage];
+                           
+                           dispatch_async(dispatch_get_main_queue(), ^{
+                               completion(isEqual);
+                           });
+                       });
+    }
+}
+
+- (BOOL)isEqualToImage:(UIImage*)toImage
+{
+    if (toImage == nil)
+    {
+        return NO;
+    }
+    
+    NSData *data1 = UIImagePNGRepresentation(self);
+    NSData *data2 = UIImagePNGRepresentation(toImage);
+    
+    return [data1 isEqualToData:data2];
+}
+
 @end
