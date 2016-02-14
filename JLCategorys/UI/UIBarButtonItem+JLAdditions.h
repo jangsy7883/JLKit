@@ -10,26 +10,26 @@
 
 @interface UIBarButtonItem (Additions)
 
-+ (UIBarButtonItem*)barButtonItemWithTtitle:(NSString *)parm_title
++ (UIBarButtonItem *)barButtonItemWithTitle:(NSString *)parm_title
                                        font:(UIFont *)parm_font
-                                  textColor:(UIColor*)parm_textColor
+                                  textColor:(UIColor *)parm_textColor
                                      target:(id)target
                                      action:(SEL)action;
 
-+ (UIBarButtonItem*)barButtonItemWithtCustomImage:(UIImage *)image
++ (UIBarButtonItem *)barButtonItemWithCustomImage:(UIImage *)image
                                  highlightedImage:(UIImage *)highlightedImage
                                            target:(id)target
                                            action:(SEL)action;
 
-+ (UIBarButtonItem*)barButtonItemWithtCustomImage:(UIImage *)image
++ (UIBarButtonItem *)barButtonItemWithCustomImage:(UIImage *)image
                                            target:(id)target
                                            action:(SEL)action;
 
-+ (UIBarButtonItem*)barButtonItemWithtImage:(UIImage *)image
++ (UIBarButtonItem *)barButtonItemWithImage:(UIImage *)image
                                      target:(id)target
                                      action:(SEL)action;
 
-+ (UIBarButtonItem*)barButtonItemWithCustomView:(UIView*)customView;
-+ (UIBarButtonItem*)barButtonItemWithFixedSpace:(CGFloat)fixedSpace;
++ (UIBarButtonItem *)barButtonItemWithCustomView:(UIView *)customView;
++ (UIBarButtonItem *)barButtonItemWithFixedSpace:(CGFloat)fixedSpace;
 
 @end

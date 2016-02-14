@@ -10,7 +10,7 @@
 #import "UIColor+JLAdditions.h"
 @implementation UIBarButtonItem (Additions)
 
-+ (UIBarButtonItem*)barButtonItemWithTtitle:(NSString *)title
++ (UIBarButtonItem*)barButtonItemWithTitle:(NSString *)title
                                        font:(UIFont *)font
                                   textColor:(UIColor*)textColor
                                      target:(id)target
@@ -36,7 +36,7 @@
     return item;
 }
 
-+ (UIBarButtonItem*)barButtonItemWithtCustomImage:(UIImage *)image target:(id)target action:(SEL)action
++ (UIBarButtonItem*)barButtonItemWithCustomImage:(UIImage *)image target:(id)target action:(SEL)action
 {
     return [self barButtonItemWithtCustomImage:image highlightedImage:nil target:target action:action];
 }
@@ -52,7 +52,7 @@
     return [[UIBarButtonItem alloc] initWithCustomView:button];
 }
 
-+ (UIBarButtonItem*)barButtonItemWithtImage:(UIImage *)image target:(id)target action:(SEL)action
++ (UIBarButtonItem*)barButtonItemWithImage:(UIImage *)image target:(id)target action:(SEL)action
 {
     return [[UIBarButtonItem alloc] initWithImage:image
                                             style:UIBarButtonItemStylePlain
