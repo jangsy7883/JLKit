@@ -38,10 +38,10 @@
 
 + (UIBarButtonItem*)barButtonItemWithCustomImage:(UIImage *)image target:(id)target action:(SEL)action
 {
-    return [self barButtonItemWithtCustomImage:image highlightedImage:nil target:target action:action];
+    return [self barButtonItemWithCustomImage:image highlightedImage:nil target:target action:action];
 }
 
-+ (UIBarButtonItem*)barButtonItemWithtCustomImage:(UIImage *)image highlightedImage:(UIImage*)highlightedImage target:(id)target action:(SEL)action
++ (UIBarButtonItem*)barButtonItemWithCustomImage:(UIImage *)image highlightedImage:(UIImage*)highlightedImage target:(id)target action:(SEL)action
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setImage:image forState:UIControlStateNormal];
