@@ -12,4 +12,6 @@
 
 - (void)setBackgroundColor:(UIColor *)backgroundColor forState:(UIControlState)state;
 
+- (void)centerVerticallyWithPadding:(float)padding;
+
 @end
