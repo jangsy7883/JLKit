@@ -10,6 +10,11 @@
 
 @implementation UIView (Additions)
 
++ (instancetype)viewWithClass:(Class)viewClass
+{
+    return [self viewWithNibNamed:NSStringFromClass(viewClass)];
+}
+
 + (instancetype)viewWithNibNamed:(NSString*)nibNameOrNil
 {
     @try {

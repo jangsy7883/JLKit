@@ -15,6 +15,7 @@
 
 @property (nonatomic, readonly) UIViewController *superViewController;
 
++ (instancetype)viewWithClass:(Class)viewClass;
 + (instancetype)viewWithNibNamed:(NSString*)nibNameOrNil;
 
 - (void)setTransformScale:(CGFloat)scale;
