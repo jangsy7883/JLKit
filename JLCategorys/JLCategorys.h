@@ -2,7 +2,7 @@
 //  JLCategorys.h
 //  JLCategory
 //
-//  Created by IM049 on 2016. 1. 6..
+//  Created by Jangsy7883 on 2016. 1. 6..
 //  Copyright © 2016년 Dalkomm. All rights reserved.
 //
 

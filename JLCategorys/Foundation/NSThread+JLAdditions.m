@@ -2,8 +2,8 @@
 //  NSThread+Additions.m
 //  onekm
 //
-//  Created by IM049 on 2015. 5. 31..
-//  Copyright (c) 2015년 ces. All rights reserved.
+//  Created by Jangsy7883 on 2015. 5. 31..
+//  Copyright © 2015년 ces. All rights reserved.
 //
 
 #import "NSThread+JLAdditions.h"

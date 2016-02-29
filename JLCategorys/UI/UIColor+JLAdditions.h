@@ -2,8 +2,8 @@
 //  UIColor+JLAdditions.h
 //  JLCategory
 //
-//  Created by Jang_sy on 12. 7. 15..
-//  Copyright (c) 2012년 jang_sy. All rights reserved.
+//  Created by Jangsy7883 on 12. 7. 15..
+//  Copyright © 2012년 Dalkomm All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -20,7 +20,7 @@
  * @param hex String형의 컬러코드
  * @return 입력된 컬러코드에 대한 RGB컬러값
  * @date 2012.07.31
- * @author Jang_sy,
+ * @author Jangsy7883,
  */
 + (UIColor*)colorWithHex:(NSString*)hex;
 
@@ -30,7 +30,7 @@
  * @param alpha 해당 컬러의 alpha값
  * @return 입력된 컬러코드에 대한 RGB컬러값
  * @date 2012.07.31
- * @author Jang_sy,
+ * @author Jangsy7883,
  */
 + (UIColor*)colorWithHex:(NSString*)hex alpha:(CGFloat)alpha;
 

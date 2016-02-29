@@ -2,8 +2,8 @@
 //  UIDevice+IdentifierAddition.h
 //  JLCategory
 //
-//  Created by jang_sy on 11. 9. 5..
-//  Copyright 2011년 Aurora Apps. All rights reserved.
+//  Created by Jangsy7883 on 11. 9. 5..
+//  Copyright © 2012년 Dalkomm Apps. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -2,7 +2,7 @@
 //  NSMutableAttributedString+JLAdditions.h
 //  JLCategoryDemo
 //
-//  Created by IM049 on 2015. 12. 10..
+//  Created by Jangsy7883 on 2015. 12. 10..
 //  Copyright © 2015년 Dalkomm. All rights reserved.
 //
 

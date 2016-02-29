@@ -2,7 +2,7 @@
 //  UIViewController+JLAdditions.m
 //  JLCategoryDemo
 //
-//  Created by IM049 on 2015. 11. 24..
+//  Created by Jangsy7883 on 2015. 11. 24..
 //  Copyright © 2015년 Dalkomm. All rights reserved.
 //
 

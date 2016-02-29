@@ -2,8 +2,8 @@
 //  UIColor+JLAdditions.m
 //  JLCategory
 //
-//  Created by Jang_sy on 12. 7. 15..
-//  Copyright (c) 2012년 jang_sy. All rights reserved.
+//  Created by Jangsy7883 on 12. 7. 15..
+//  Copyright © 2012년 Dalkomm All rights reserved.
 //
 
 #import "UIColor+JLAdditions.h"

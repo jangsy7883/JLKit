@@ -46,6 +46,7 @@
 		0FAABE071BC0E7DA00AE9BBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FAABE051BC0E7DA00AE9BBE /* Main.storyboard */; };
 		0FAABE091BC0E7DA00AE9BBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FAABE081BC0E7DA00AE9BBE /* Assets.xcassets */; };
 		0FAABE0C1BC0E7DA00AE9BBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FAABE0A1BC0E7DA00AE9BBE /* LaunchScreen.storyboard */; };
+		7E73A0E61C8492D900D51473 /* SKProduct+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E73A0E51C8492D900D51473 /* SKProduct+JLAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,6 +126,8 @@
 		0FAABE081BC0E7DA00AE9BBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0FAABE0B1BC0E7DA00AE9BBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0FAABE0D1BC0E7DA00AE9BBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E73A0E41C8492D900D51473 /* SKProduct+JLAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKProduct+JLAdditions.h"; sourceTree = "<group>"; };
+		7E73A0E51C8492D900D51473 /* SKProduct+JLAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKProduct+JLAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +172,8 @@
 				0F6915651C3D03C1008EFEDF /* NSTimeZone+JLAdditions.m */,
 				0F6915661C3D03C1008EFEDF /* NSURL+JLAdditions.h */,
 				0F6915671C3D03C1008EFEDF /* NSURL+JLAdditions.m */,
+				7E73A0E41C8492D900D51473 /* SKProduct+JLAdditions.h */,
+				7E73A0E51C8492D900D51473 /* SKProduct+JLAdditions.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 				0F6915AA1C3D03C2008EFEDF /* UITabBarItem+JLAdditions.m in Sources */,
 				0F6915911C3D03C2008EFEDF /* NSData+JLAdditions.m in Sources */,
 				0F6915AD1C3D03C2008EFEDF /* UIView+JLAdditions.m in Sources */,
+				7E73A0E61C8492D900D51473 /* SKProduct+JLAdditions.m in Sources */,
 				0F6915991C3D03C2008EFEDF /* NSString+JLAdditions.m in Sources */,
 				0F69158F1C3D03C2008EFEDF /* NSArray+JLAdditions.m in Sources */,
 				0F6915A91C3D03C2008EFEDF /* UIScreen+JLAdditions.m in Sources */,

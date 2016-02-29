@@ -2,7 +2,7 @@
 //  UIFont+JLStyle.h
 //  JLCategoryDemo
 //
-//  Created by IM049 on 2015. 10. 24..
+//  Created by Jangsy7883 on 2015. 10. 24..
 //  Copyright © 2015년 Dalkomm. All rights reserved.
 //
 
