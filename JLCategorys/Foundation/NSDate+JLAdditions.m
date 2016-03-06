@@ -35,15 +35,19 @@
 
 + (NSDate*)dateFromFormat:(NSString*)dateFormat dateString:(NSString*)dateString withTimeZone:(NSTimeZone*)timeZone
 {
-    NSDateFormatter *dateFormatter = [self sharedDateFormatter];
-    if ([dateFormatter.timeZone isEqualToTimeZone:timeZone] == NO)
+    if ([dateString isKindOfClass:[NSString class]] && dateString.length > 0)
     {
-        dateFormatter.timeZone = timeZone;
+        NSDateFormatter *dateFormatter = [self sharedDateFormatter];
+        if ([dateFormatter.timeZone isEqualToTimeZone:timeZone] == NO)
+        {
+            dateFormatter.timeZone = timeZone;
+        }
+        
+        dateFormatter.dateFormat = dateFormat;
+        
+        return [dateFormatter dateFromString:dateString];
     }
-    
-    dateFormatter.dateFormat = dateFormat;
-    
-    return [dateFormatter dateFromString:dateString];
+    return nil;
 }
 
 + (NSDate*)dateFromFormat:(NSString*)dateFormat dateString:(NSString*)dateString
