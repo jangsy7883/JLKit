@@ -16,8 +16,8 @@
     if (signature)
     {
         NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
-        [invocation setTarget:self];
-        [invocation setSelector:aSelector];
+        invocation.target = self;
+        invocation.selector = aSelector;
         
         va_list args;
         va_start(args, object);

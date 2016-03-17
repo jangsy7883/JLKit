@@ -10,7 +10,7 @@
 
 @interface NSDate (JLAge)
 
-- (NSInteger)age;
-- (NSInteger)koreanAge;
+@property (NS_NONATOMIC_IOSONLY, readonly) NSInteger age;
+@property (NS_NONATOMIC_IOSONLY, readonly) NSInteger koreanAge;
 
 @end

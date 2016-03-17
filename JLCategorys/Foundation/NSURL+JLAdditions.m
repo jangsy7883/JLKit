@@ -13,11 +13,11 @@
 - (NSDictionary*)queryParameters
 {
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
-    for (NSString *param in [[self query] componentsSeparatedByString:@"&"])
+    for (NSString *param in [self.query componentsSeparatedByString:@"&"])
     {
         NSArray *parts = [param componentsSeparatedByString:@"="];
-        if([parts count] < 2) continue;
-        [params setObject:[parts objectAtIndex:1] forKey:[parts objectAtIndex:0]];
+        if(parts.count < 2) continue;
+        params[parts[0]] = parts[1];
     }
     return params;
 //    NSMutableDictionary* queryParams = [NSMutableDictionary dictionary];

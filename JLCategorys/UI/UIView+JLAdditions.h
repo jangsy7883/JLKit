@@ -14,10 +14,13 @@
 @interface UIView (Additions)
 
 @property (nonatomic, readonly) UIViewController *superViewController;
+@property (nonatomic, assign) CGFloat cornerRadius;
 
 + (instancetype)viewWithClass:(Class)viewClass;
 + (instancetype)viewWithNibNamed:(NSString*)nibNameOrNil;
 
 - (void)setTransformScale:(CGFloat)scale;
+
+- (void)removeAllSubviews;
 
 @end

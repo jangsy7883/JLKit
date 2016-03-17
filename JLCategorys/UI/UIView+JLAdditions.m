@@ -32,6 +32,14 @@
     return nil;
 }
 
+- (void)removeAllSubviews
+{
+    for (UIView *subview in self.subviews)
+    {
+        [subview removeFromSuperview];
+    }
+}
+
 #pragma mark - GETTERS
 
 - (UIViewController*)superViewController
@@ -48,11 +56,26 @@
     return nil;
 }
 
+- (CGFloat)cornerRadius
+{
+    return self.layer.cornerRadius;
+}
+
 #pragma mark - SETTERS
 
 - (void)setTransformScale:(CGFloat)scale
 {
     self.transform = CGAffineTransformScale(self.transform, scale, scale);
+}
+
+- (void)setCornerRadius:(CGFloat)parm_cornerRadius
+{
+    self.layer.cornerRadius = parm_cornerRadius;
+    
+    if (parm_cornerRadius > 0)
+    {
+        self.clipsToBounds = YES;
+    }
 }
 
 @end

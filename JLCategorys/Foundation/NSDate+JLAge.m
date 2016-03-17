@@ -18,11 +18,11 @@
     NSDateComponents *toComponents = [[NSCalendar currentCalendar] components:NSCalendarUnitYear
                                                    fromDate:[NSDate date]];
 
-    NSInteger year = [toComponents year] - [components year];
+    NSInteger year = toComponents.year - components.year;
     
     toComponents.year = components.year;
     
-    if([[components date] compare:[toComponents date]] == NSOrderedAscending)
+    if([components.date compare:toComponents.date] == NSOrderedAscending)
     {
         return MAX(1, year) - 1;
     }
@@ -39,7 +39,7 @@
     NSDateComponents *toComponents = [[NSCalendar currentCalendar] components:NSCalendarUnitYear
                                                                      fromDate:[NSDate date]];
     
-    NSInteger year = [toComponents year] - [components year];
+    NSInteger year = toComponents.year - components.year;
     
     toComponents.year = components.year;
     
