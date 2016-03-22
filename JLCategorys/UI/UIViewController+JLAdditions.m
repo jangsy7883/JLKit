@@ -19,11 +19,7 @@
 {
     UIViewController* viewController;
     
-    if ([[UIApplication sharedApplication].keyWindow.rootViewController isKindOfClass:[UIViewController class]])
-    {
-        viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
-    }
-    else if ([[UIApplication sharedApplication].delegate respondsToSelector:@selector(window)])
+    if ([[UIApplication sharedApplication].delegate respondsToSelector:@selector(window)])
     {
         UIWindow *window = [[UIApplication sharedApplication].delegate performSelector:@selector(window)];
         
@@ -31,6 +27,10 @@
         {
             viewController = window.rootViewController;
         }
+    }
+    else if ([[UIApplication sharedApplication].keyWindow.rootViewController isKindOfClass:[UIViewController class]])
+    {
+        viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
     }
     else
     {
