@@ -107,6 +107,12 @@
     return NO;
 }
 
+- (BOOL)isValidForRegex:(NSString*)regex
+{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+    return [predicate evaluateWithObject:self];
+}
+
 - (NSString*)MD5
 {
     if(self == nil || self.length == 0) return nil;
