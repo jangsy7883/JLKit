@@ -7,6 +7,7 @@
 //
 
 #import "UITabBarItem+JLAdditions.h"
+#import "UIImage+JLAdditions.h"
 
 @implementation UITabBarItem (JLAdditions)
 
@@ -14,6 +15,13 @@
 {
     return [[UITabBarItem alloc] initWithTitle:title
                                          image:image
+                                 selectedImage:selectedImage];
+}
+
++ (UITabBarItem*)tabBarItemWithTitle:(NSString *)title selectedImage:(UIImage *)selectedImage deselectTintColor:(UIColor*)deselectTintColor
+{
+    return [[UITabBarItem alloc] initWithTitle:title
+                                         image:[selectedImage imageWithTintColor:deselectTintColor]
                                  selectedImage:selectedImage];
 }
 
