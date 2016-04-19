@@ -13,16 +13,16 @@
 
 + (UITabBarItem*)tabBarItemWithTitle:(NSString *)title image:(UIImage *)image selectedImage:(UIImage *)selectedImage
 {
-    return [[UITabBarItem alloc] initWithTitle:title
-                                         image:image
-                                 selectedImage:selectedImage];
+    return [[self alloc] initWithTitle:title
+                                 image:image
+                         selectedImage:selectedImage];
 }
 
 + (UITabBarItem*)tabBarItemWithTitle:(NSString *)title selectedImage:(UIImage *)selectedImage deselectTintColor:(UIColor*)deselectTintColor
 {
-    return [[UITabBarItem alloc] initWithTitle:title
-                                         image:[selectedImage imageWithTintColor:deselectTintColor]
-                                 selectedImage:selectedImage];
+    return [[self alloc] initWithTitle:title
+                                 image:[selectedImage imageWithTintColor:deselectTintColor]
+                         selectedImage:selectedImage];
 }
 
 @end
