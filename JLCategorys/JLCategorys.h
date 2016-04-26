@@ -20,6 +20,8 @@
 #import "NSURL+JLAdditions.h"
 #import "NSObject+JLAdditions.h"
 #import "NSData+JLAdditions.h"
+#import "NSNumber+JLAdditions.h"
+#import "SKProduct+JLAdditions.h"
 
 //UI
 #import "UIColor+JLAdditions.h"

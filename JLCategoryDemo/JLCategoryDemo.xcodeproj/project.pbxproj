@@ -47,6 +47,7 @@
 		0FAABE091BC0E7DA00AE9BBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FAABE081BC0E7DA00AE9BBE /* Assets.xcassets */; };
 		0FAABE0C1BC0E7DA00AE9BBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FAABE0A1BC0E7DA00AE9BBE /* LaunchScreen.storyboard */; };
 		7E73A0E61C8492D900D51473 /* SKProduct+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E73A0E51C8492D900D51473 /* SKProduct+JLAdditions.m */; };
+		7ED1D3A31CCF248900EB56B2 /* NSNumber+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED1D3A21CCF248900EB56B2 /* NSNumber+JLAdditions.m */; };
 		7EFE51111CC616A900087C34 /* UISearchBar+JLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFE51101CC616A900087C34 /* UISearchBar+JLAdditions.m */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +130,8 @@
 		0FAABE0D1BC0E7DA00AE9BBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E73A0E41C8492D900D51473 /* SKProduct+JLAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKProduct+JLAdditions.h"; sourceTree = "<group>"; };
 		7E73A0E51C8492D900D51473 /* SKProduct+JLAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKProduct+JLAdditions.m"; sourceTree = "<group>"; };
+		7ED1D3A11CCF248900EB56B2 /* NSNumber+JLAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+JLAdditions.h"; sourceTree = "<group>"; };
+		7ED1D3A21CCF248900EB56B2 /* NSNumber+JLAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+JLAdditions.m"; sourceTree = "<group>"; };
 		7EFE510F1CC616A900087C34 /* UISearchBar+JLAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+JLAdditions.h"; sourceTree = "<group>"; };
 		7EFE51101CC616A900087C34 /* UISearchBar+JLAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+JLAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -177,6 +180,8 @@
 				0F6915671C3D03C1008EFEDF /* NSURL+JLAdditions.m */,
 				7E73A0E41C8492D900D51473 /* SKProduct+JLAdditions.h */,
 				7E73A0E51C8492D900D51473 /* SKProduct+JLAdditions.m */,
+				7ED1D3A11CCF248900EB56B2 /* NSNumber+JLAdditions.h */,
+				7ED1D3A21CCF248900EB56B2 /* NSNumber+JLAdditions.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -371,6 +376,7 @@
 				0F69159A1C3D03C2008EFEDF /* NSThread+JLAdditions.m in Sources */,
 				0F6915951C3D03C2008EFEDF /* NSIndexPath+JLAdditions.m in Sources */,
 				0F6915A81C3D03C2008EFEDF /* UILabel+JLAdditions.m in Sources */,
+				7ED1D3A31CCF248900EB56B2 /* NSNumber+JLAdditions.m in Sources */,
 				0F6915961C3D03C2008EFEDF /* NSLocale+JLAdditions.m in Sources */,
 				0FAABE041BC0E7DA00AE9BBE /* ViewController.m in Sources */,
 				0F69159D1C3D03C2008EFEDF /* UINavigationController+JLStatusBarStyle.m in Sources */,
