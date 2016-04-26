@@ -193,4 +193,8 @@
     return [data1 isEqualToData:data2];
 }
 
+- (UIImage*)originalRenderingImage
+{
+    [self imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+}
 @end
