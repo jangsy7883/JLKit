@@ -195,6 +195,6 @@
 
 - (UIImage*)originalRenderingImage
 {
-    [self imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    return [self imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 }
 @end
