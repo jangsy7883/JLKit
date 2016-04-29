@@ -76,37 +76,168 @@
                      withTimeZone:[NSTimeZone GMT]];
 }
 
-- (NSDate*)dateByAddingYear:(NSInteger)parm_year
+
+#pragma mark - Unit
+
+- (NSInteger)valueForUnit:(NSCalendarUnit)unit
 {
-    NSDateComponents *components = [[NSCalendar currentCalendar] components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:self];
-    components.calendar = [NSCalendar currentCalendar];
-    components.year = components.year + parm_year;
+    NSDateComponents *components = [[NSDate currentCalendar] components:unit fromDate:self];
     
+    switch (unit)
+    {
+        case NSCalendarUnitEra:
+            return components.era;
+            break;
+        case NSCalendarUnitYear:
+            return components.year;
+            break;
+        case NSCalendarUnitMonth:
+            return components.month;
+            break;
+        case NSCalendarUnitDay:
+            return components.day;
+            break;
+        case NSCalendarUnitHour:
+            return components.hour;
+            break;
+        case NSCalendarUnitMinute:
+            return components.month;
+            break;
+        case NSCalendarUnitSecond:
+            return components.second;
+            break;
+        case NSCalendarUnitNanosecond:
+            return components.nanosecond;
+            break;
+        case NSCalendarUnitWeekday:
+            return components.weekday;
+            break;
+        case NSCalendarUnitWeekdayOrdinal:
+            return components.weekdayOrdinal;
+            break;
+        case NSCalendarUnitQuarter:
+            return components.quarter;
+            break;
+        case NSCalendarUnitWeekOfMonth:
+            return components.weekOfMonth;
+            break;
+        case NSCalendarUnitWeekOfYear:
+            return components.weekOfYear;
+            break;
+        case NSCalendarUnitYearForWeekOfYear:
+            return components.yearForWeekOfYear;
+            break;
+        default:
+            return 0;
+            break;
+    }
+}
+
+- (NSDate*)dateByAddingCount:(NSInteger)count forUnit:(NSCalendarUnit)unit
+{
+    NSDateComponents *components = [[NSDate currentCalendar] components:unit fromDate:self];
+    
+    switch (unit)
+    {
+        case NSCalendarUnitEra:
+            components.era = components.era + count;
+            break;
+        case NSCalendarUnitYear:
+            components.year = components.year + count;
+            break;
+        case NSCalendarUnitMonth:
+            components.month = components.month + count;
+            break;
+        case NSCalendarUnitDay:
+            components.day = components.day + count;
+            break;
+        case NSCalendarUnitHour:
+            components.hour = components.hour + count;
+            break;
+        case NSCalendarUnitMinute:
+            components.month = components.month + count;
+            break;
+        case NSCalendarUnitSecond:
+            components.second = components.second + count;
+            break;
+        case NSCalendarUnitNanosecond:
+            components.nanosecond = components.nanosecond + count;
+            break;
+        case NSCalendarUnitWeekday:
+            components.weekday = components.era + count;
+            break;
+        case NSCalendarUnitWeekdayOrdinal:
+            components.weekdayOrdinal = components.weekdayOrdinal + count;
+            break;
+        case NSCalendarUnitQuarter:
+            components.quarter = components.quarter + count;
+            break;
+        case NSCalendarUnitWeekOfMonth:
+            components.weekOfMonth = components.weekOfMonth + count;
+            break;
+        case NSCalendarUnitWeekOfYear:
+            components.weekOfYear = components.weekOfYear + count;
+            break;
+        case NSCalendarUnitYearForWeekOfYear:
+            components.yearForWeekOfYear = components.yearForWeekOfYear + count;
+            break;
+            
+        default:
+            break;
+    }
     return components.date;
 }
 
-- (BOOL)isToday
-{
-    return [self isEqualToDateIgnoringTime:[NSDate date]];
-}
+#pragma mark - Equal
 
-- (BOOL) isEqualToDateIgnoringTime: (NSDate *) aDate
+- (BOOL)isEqualDayToDate:(NSDate *)date
 {
     NSCalendarUnit componentFlags = (NSCalendarUnitYear|
                                      NSCalendarUnitMonth |
-                                     NSCalendarUnitDay |
-                                     NSCalendarUnitWeekOfMonth |
-                                     NSCalendarUnitHour |
-                                     NSCalendarUnitMinute |
-                                     NSCalendarUnitSecond |
-                                     NSCalendarUnitWeekday |
-                                     NSCalendarUnitWeekdayOrdinal);
+                                     NSCalendarUnitDay);
     
     NSDateComponents *components1 = [[NSDate currentCalendar] components:componentFlags fromDate:self];
-    NSDateComponents *components2 = [[NSDate currentCalendar] components:componentFlags fromDate:aDate];
+    NSDateComponents *components2 = [[NSDate currentCalendar] components:componentFlags fromDate:date];
     return ((components1.year == components2.year) &&
             (components1.month == components2.month) &&
             (components1.day == components2.day));
+}
+
+#pragma mark - GETTERS
+
+- (BOOL)isToday
+{
+    return [self isEqualDayToDate:[NSDate date]];
+}
+
+- (NSInteger)year
+{
+    return [self valueForUnit:NSCalendarUnitYear];
+}
+
+- (NSInteger)month
+{
+    return [self valueForUnit:NSCalendarUnitMonth];
+}
+
+- (NSInteger)day
+{
+    return [self valueForUnit:NSCalendarUnitDay];
+}
+
+- (NSInteger)hour
+{
+    return [self valueForUnit:NSCalendarUnitHour];
+}
+
+- (NSInteger)minute
+{
+    return [self valueForUnit:NSCalendarUnitMinute];
+}
+
+- (NSInteger)second
+{
+    return [self valueForUnit:NSCalendarUnitSecond];
 }
 
 @end
