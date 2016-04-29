@@ -101,7 +101,7 @@
             return components.hour;
             break;
         case NSCalendarUnitMinute:
-            return components.month;
+            return components.minute;
             break;
         case NSCalendarUnitSecond:
             return components.second;
@@ -155,7 +155,7 @@
             components.hour = components.hour + count;
             break;
         case NSCalendarUnitMinute:
-            components.month = components.month + count;
+            components.minute = components.minute + count;
             break;
         case NSCalendarUnitSecond:
             components.second = components.second + count;

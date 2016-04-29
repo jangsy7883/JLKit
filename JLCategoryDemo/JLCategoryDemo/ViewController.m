@@ -18,12 +18,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
-    // Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSDate *date = [NSDate date];
+    
+    NSLog(@"NSCalendarUnitEra : %ld",(long)[date valueForUnit:NSCalendarUnitEra]);
+    NSLog(@"NSCalendarUnitYear : %ld",(long)[date valueForUnit:NSCalendarUnitYear]);
+    NSLog(@"NSCalendarUnitMonth : %ld",(long)[date valueForUnit:NSCalendarUnitMonth]);
+    NSLog(@"NSCalendarUnitDay : %ld",(long)[date valueForUnit:NSCalendarUnitDay]);
+    NSLog(@"NSCalendarUnitHour : %ld",(long)[date valueForUnit:NSCalendarUnitHour]);
+    NSLog(@"NSCalendarUnitMinute : %ld",(long)[date valueForUnit:NSCalendarUnitMinute]);
+    NSLog(@"NSCalendarUnitSecond : %ld",(long)[date valueForUnit:NSCalendarUnitSecond]);
+    NSLog(@"NSCalendarUnitNanosecond : %ld",(long)[date valueForUnit:NSCalendarUnitNanosecond]);
+    NSLog(@"NSCalendarUnitWeekday : %ld",(long)[date valueForUnit:NSCalendarUnitWeekday]);
+    NSLog(@"NSCalendarUnitWeekdayOrdinal : %ld",(long)[date valueForUnit:NSCalendarUnitWeekdayOrdinal]);
+    NSLog(@"NSCalendarUnitQuarter : %ld",(long)[date valueForUnit:NSCalendarUnitQuarter]);
+    NSLog(@"NSCalendarUnitWeekOfMonth : %ld",(long)[date valueForUnit:NSCalendarUnitWeekOfMonth]);
+    NSLog(@"NSCalendarUnitWeekOfYear : %ld",(long)[date valueForUnit:NSCalendarUnitWeekOfYear]);
+    NSLog(@"NSCalendarUnitYearForWeekOfYear : %ld",(long)[date valueForUnit:NSCalendarUnitYearForWeekOfYear]);
 }
 
 @end
