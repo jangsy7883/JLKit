@@ -33,6 +33,26 @@
     return sharedCalendar;
 }
 
+- (NSCalendarUnit)componentFlags
+{
+    return (
+            NSCalendarUnitEra |
+            NSCalendarUnitYear |
+            NSCalendarUnitMonth |
+            NSCalendarUnitDay |
+            NSCalendarUnitHour |
+            NSCalendarUnitMinute |
+            NSCalendarUnitSecond |
+            NSCalendarUnitNanosecond |
+            NSCalendarUnitWeekday |
+            NSCalendarUnitWeekdayOrdinal |
+            NSCalendarUnitQuarter |
+            NSCalendarUnitWeekOfMonth |
+            NSCalendarUnitWeekOfYear |
+            NSCalendarUnitYearForWeekOfYear
+            );
+}
+
 + (NSDate*)dateFromFormat:(NSString*)dateFormat dateString:(NSString*)dateString withTimeZone:(NSTimeZone*)timeZone
 {
     if ([dateString isKindOfClass:[NSString class]] && dateString.length > 0)
@@ -81,7 +101,7 @@
 
 - (NSInteger)valueForUnit:(NSCalendarUnit)unit
 {
-    NSDateComponents *components = [[NSCalendar autoupdatingCurrentCalendar] components:unit fromDate:self];
+    NSDateComponents *components = [[NSCalendar autoupdatingCurrentCalendar] components:[self componentFlags] fromDate:self];
     components.calendar = [NSCalendar autoupdatingCurrentCalendar];
 
     switch (unit)
@@ -136,7 +156,7 @@
 
 - (NSDate*)dateByAddingCount:(NSInteger)count forUnit:(NSCalendarUnit)unit
 {
-    NSDateComponents *components = [[NSCalendar autoupdatingCurrentCalendar] components:unit fromDate:self];
+    NSDateComponents *components = [[NSCalendar autoupdatingCurrentCalendar] components:[self componentFlags] fromDate:self];
     components.calendar = [NSCalendar autoupdatingCurrentCalendar];
     switch (unit)
     {
@@ -193,12 +213,8 @@
 
 - (BOOL)isEqualDayToDate:(NSDate *)date
 {
-    NSCalendarUnit componentFlags = (NSCalendarUnitYear|
-                                     NSCalendarUnitMonth |
-                                     NSCalendarUnitDay);
-    
-    NSDateComponents *components1 = [[NSDate currentCalendar] components:componentFlags fromDate:self];
-    NSDateComponents *components2 = [[NSDate currentCalendar] components:componentFlags fromDate:date];
+    NSDateComponents *components1 = [[NSDate currentCalendar] components:[self componentFlags] fromDate:self];
+    NSDateComponents *components2 = [[NSDate currentCalendar] components:[self componentFlags] fromDate:date];
     return ((components1.year == components2.year) &&
             (components1.month == components2.month) &&
             (components1.day == components2.day));
