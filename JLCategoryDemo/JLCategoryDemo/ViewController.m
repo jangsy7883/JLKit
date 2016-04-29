@@ -34,6 +34,9 @@
     NSLog(@"NSCalendarUnitWeekOfMonth : %ld",(long)[date valueForUnit:NSCalendarUnitWeekOfMonth]);
     NSLog(@"NSCalendarUnitWeekOfYear : %ld",(long)[date valueForUnit:NSCalendarUnitWeekOfYear]);
     NSLog(@"NSCalendarUnitYearForWeekOfYear : %ld",(long)[date valueForUnit:NSCalendarUnitYearForWeekOfYear]);
+    
+    
+    NSLog(@"%@",[[NSDate date] dateByAddingCount:-69 forUnit:NSCalendarUnitYear]);
 }
 
 @end

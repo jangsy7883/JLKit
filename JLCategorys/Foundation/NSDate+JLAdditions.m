@@ -81,8 +81,9 @@
 
 - (NSInteger)valueForUnit:(NSCalendarUnit)unit
 {
-    NSDateComponents *components = [[NSDate currentCalendar] components:unit fromDate:self];
-    
+    NSDateComponents *components = [[NSCalendar autoupdatingCurrentCalendar] components:unit fromDate:self];
+    components.calendar = [NSCalendar autoupdatingCurrentCalendar];
+
     switch (unit)
     {
         case NSCalendarUnitEra:
@@ -135,8 +136,8 @@
 
 - (NSDate*)dateByAddingCount:(NSInteger)count forUnit:(NSCalendarUnit)unit
 {
-    NSDateComponents *components = [[NSDate currentCalendar] components:unit fromDate:self];
-    
+    NSDateComponents *components = [[NSCalendar autoupdatingCurrentCalendar] components:unit fromDate:self];
+    components.calendar = [NSCalendar autoupdatingCurrentCalendar];
     switch (unit)
     {
         case NSCalendarUnitEra:
