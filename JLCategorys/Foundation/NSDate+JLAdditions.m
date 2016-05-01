@@ -28,7 +28,7 @@
     static dispatch_once_t once;
     static NSCalendar *sharedCalendar;
     dispatch_once(&once, ^{
-        sharedCalendar = [NSCalendar autoupdatingCurrentCalendar];
+        sharedCalendar = [NSCalendar currentCalendar];
         sharedCalendar.locale = [NSLocale currentLocale];
         
     });
@@ -102,8 +102,8 @@
 
 - (NSInteger)valueForUnit:(NSCalendarUnit)unit
 {
-    NSDateComponents *components = [[NSCalendar autoupdatingCurrentCalendar] components:[self componentFlags] fromDate:self];
-    components.calendar = [NSCalendar autoupdatingCurrentCalendar];
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:[self componentFlags] fromDate:self];
+    components.calendar = [NSCalendar currentCalendar];
     components.timeZone = [NSTimeZone GMT];
     switch (unit)
     {
@@ -157,8 +157,8 @@
 
 - (NSDate*)dateByAddingCount:(NSInteger)count forUnit:(NSCalendarUnit)unit
 {
-    NSDateComponents *components = [[NSCalendar autoupdatingCurrentCalendar] components:[self componentFlags] fromDate:self];
-    components.calendar = [NSCalendar autoupdatingCurrentCalendar];
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:[self componentFlags] fromDate:self];
+    components.calendar = [NSCalendar currentCalendar];
     components.timeZone = [NSTimeZone GMT];
     switch (unit)
     {
