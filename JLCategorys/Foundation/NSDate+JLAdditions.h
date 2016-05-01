@@ -30,7 +30,7 @@
 
 - (BOOL)isEqualDayToDate:(NSDate *)date;
 
-- (NSInteger)valueForUnit:(NSCalendarUnit)unit;
-- (NSDate*)dateByAddingCount:(NSInteger)count forUnit:(NSCalendarUnit)unit;
+- (NSInteger)valueForComponent:(NSCalendarUnit)unit;
+- (NSDate*)dateByAddingCount:(NSInteger)count forComponent:(NSCalendarUnit)unit;
 
 @end

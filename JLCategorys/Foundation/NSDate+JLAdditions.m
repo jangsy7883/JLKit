@@ -38,20 +38,18 @@
 - (NSCalendarUnit)componentFlags
 {
     return (
-            NSCalendarUnitEra |
-            NSCalendarUnitYear |
-            NSCalendarUnitMonth |
-            NSCalendarUnitDay |
-            NSCalendarUnitHour |
-            NSCalendarUnitMinute |
-            NSCalendarUnitSecond |
-            NSCalendarUnitNanosecond |
-            NSCalendarUnitWeekday |
-            NSCalendarUnitWeekdayOrdinal |
-            NSCalendarUnitQuarter |
-            NSCalendarUnitWeekOfMonth |
-            NSCalendarUnitWeekOfYear |
-            NSCalendarUnitYearForWeekOfYear
+            NSCalendarUnitYear
+            | NSCalendarUnitMonth
+            | NSCalendarUnitDay
+            | NSCalendarUnitHour
+            | NSCalendarUnitMinute
+            | NSCalendarUnitSecond
+            | NSCalendarUnitNanosecond
+            | NSCalendarUnitWeekday
+            | NSCalendarUnitWeekdayOrdinal
+            | NSCalendarUnitQuarter
+            | NSCalendarUnitWeekOfMonth
+            | NSCalendarUnitWeekOfYear
             );
 }
 
@@ -86,7 +84,7 @@
     {
         dateFormatter.timeZone = timeZone;
     }
-
+    
     dateFormatter.dateFormat = stringFormat;
     
     return [dateFormatter stringFromDate:self];
@@ -100,114 +98,25 @@
 
 #pragma mark - Unit
 
-- (NSInteger)valueForUnit:(NSCalendarUnit)unit
+- (NSInteger)valueForComponent:(NSCalendarUnit)unit
 {
-    NSDateComponents *components = [[NSCalendar currentCalendar] components:[self componentFlags] fromDate:self];
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:unit fromDate:self];
     components.calendar = [NSCalendar currentCalendar];
     components.timeZone = [NSTimeZone GMT];
-    switch (unit)
-    {
-        case NSCalendarUnitEra:
-            return components.era;
-            break;
-        case NSCalendarUnitYear:
-            return components.year;
-            break;
-        case NSCalendarUnitMonth:
-            return components.month;
-            break;
-        case NSCalendarUnitDay:
-            return components.day;
-            break;
-        case NSCalendarUnitHour:
-            return components.hour;
-            break;
-        case NSCalendarUnitMinute:
-            return components.minute;
-            break;
-        case NSCalendarUnitSecond:
-            return components.second;
-            break;
-        case NSCalendarUnitNanosecond:
-            return components.nanosecond;
-            break;
-        case NSCalendarUnitWeekday:
-            return components.weekday;
-            break;
-        case NSCalendarUnitWeekdayOrdinal:
-            return components.weekdayOrdinal;
-            break;
-        case NSCalendarUnitQuarter:
-            return components.quarter;
-            break;
-        case NSCalendarUnitWeekOfMonth:
-            return components.weekOfMonth;
-            break;
-        case NSCalendarUnitWeekOfYear:
-            return components.weekOfYear;
-            break;
-        case NSCalendarUnitYearForWeekOfYear:
-            return components.yearForWeekOfYear;
-            break;
-        default:
-            return 0;
-            break;
-    }
+    
+    return [components valueForComponent:unit];
 }
 
-- (NSDate*)dateByAddingCount:(NSInteger)count forUnit:(NSCalendarUnit)unit
+- (NSDate*)dateByAddingCount:(NSInteger)count forComponent:(NSCalendarUnit)unit
 {
     NSDateComponents *components = [[NSCalendar currentCalendar] components:[self componentFlags] fromDate:self];
     components.calendar = [NSCalendar currentCalendar];
     components.timeZone = [NSTimeZone GMT];
-    switch (unit)
-    {
-        case NSCalendarUnitEra:
-            components.era += count;
-            break;
-        case NSCalendarUnitYear:
-            components.year += count;
-            break;
-        case NSCalendarUnitMonth:
-            components.month += count;
-            break;
-        case NSCalendarUnitDay:
-            components.day += count;
-            break;
-        case NSCalendarUnitHour:
-            components.hour += count;
-            break;
-        case NSCalendarUnitMinute:
-            components.minute += count;
-            break;
-        case NSCalendarUnitSecond:
-            components.second += count;
-            break;
-        case NSCalendarUnitNanosecond:
-            components.nanosecond += count;
-            break;
-        case NSCalendarUnitWeekday:
-            components.weekday += count;
-            break;
-        case NSCalendarUnitWeekdayOrdinal:
-            components.weekdayOrdinal += count;
-            break;
-        case NSCalendarUnitQuarter:
-            components.quarter += count;
-            break;
-        case NSCalendarUnitWeekOfMonth:
-            components.weekOfMonth += count;
-            break;
-        case NSCalendarUnitWeekOfYear:
-            components.weekOfYear += count;
-            break;
-        case NSCalendarUnitYearForWeekOfYear:
-            components.yearForWeekOfYear += count;
-            break;
-            
-        default:
-            break;
-    }
+    
+    NSInteger value =  [components valueForComponent:unit];
+    
+    [components setValue:value+count forComponent:unit];
+    
     return components.date;
 }
 
@@ -231,45 +140,44 @@
 
 - (NSInteger)year
 {
-    return [self valueForUnit:NSCalendarUnitYear];
+    return [self valueForComponent:NSCalendarUnitYear];
 }
 
 - (NSInteger)month
 {
-    return [self valueForUnit:NSCalendarUnitMonth];
+    return [self valueForComponent:NSCalendarUnitMonth];
 }
 
 - (NSInteger)day
 {
-    return [self valueForUnit:NSCalendarUnitDay];
+    return [self valueForComponent:NSCalendarUnitDay];
 }
 
 - (NSInteger)hour
 {
-    return [self valueForUnit:NSCalendarUnitHour];
+    return [self valueForComponent:NSCalendarUnitHour];
 }
 
 - (NSInteger)minute
 {
-    return [self valueForUnit:NSCalendarUnitMinute];
+    return [self valueForComponent:NSCalendarUnitMinute];
 }
 
 - (NSInteger)second
 {
-    return [self valueForUnit:NSCalendarUnitSecond];
+    return [self valueForComponent:NSCalendarUnitSecond];
 }
 - (NSInteger)weekDay
 {
-    return [self valueForUnit:NSCalendarUnitWeekday];
+    return [self valueForComponent:NSCalendarUnitWeekday];
 }
-
 
 - (NSString*)localizedShortWeekDay
 {
     NSDateFormatter *dateFormatter = [NSDate sharedDateFormatter];
 //    NSInteger index = self.weekDay - dateFormatter.calendar.firstWeekday;
 //    return [dateFormatter shortWeekdaySymbols][index];
-
+    
     [dateFormatter setDateFormat:@"EEE"];
     return [dateFormatter stringFromDate:self];
 }
@@ -279,9 +187,9 @@
     NSDateFormatter *dateFormatter = [NSDate sharedDateFormatter];
 //    NSInteger index = self.weekDay - dateFormatter.calendar.firstWeekday;
 //    return [dateFormatter weekdaySymbols][index];
-
+    
     [dateFormatter setDateFormat:@"EEE"];
     return [dateFormatter stringFromDate:self];
-
+    
 }
 @end
