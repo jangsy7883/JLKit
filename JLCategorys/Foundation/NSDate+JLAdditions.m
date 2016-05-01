@@ -29,6 +29,8 @@
     static NSCalendar *sharedCalendar;
     dispatch_once(&once, ^{
         sharedCalendar = [NSCalendar autoupdatingCurrentCalendar];
+        sharedCalendar.locale = [NSLocale currentLocale];
+        
     });
     return sharedCalendar;
 }
@@ -96,14 +98,13 @@
                      withTimeZone:[NSTimeZone GMT]];
 }
 
-
 #pragma mark - Unit
 
 - (NSInteger)valueForUnit:(NSCalendarUnit)unit
 {
     NSDateComponents *components = [[NSCalendar autoupdatingCurrentCalendar] components:[self componentFlags] fromDate:self];
     components.calendar = [NSCalendar autoupdatingCurrentCalendar];
-
+    components.timeZone = [NSTimeZone GMT];
     switch (unit)
     {
         case NSCalendarUnitEra:
@@ -158,49 +159,50 @@
 {
     NSDateComponents *components = [[NSCalendar autoupdatingCurrentCalendar] components:[self componentFlags] fromDate:self];
     components.calendar = [NSCalendar autoupdatingCurrentCalendar];
+    components.timeZone = [NSTimeZone GMT];
     switch (unit)
     {
         case NSCalendarUnitEra:
-            components.era = components.era + count;
+            components.era += count;
             break;
         case NSCalendarUnitYear:
-            components.year = components.year + count;
+            components.year += count;
             break;
         case NSCalendarUnitMonth:
-            components.month = components.month + count;
+            components.month += count;
             break;
         case NSCalendarUnitDay:
-            components.day = components.day + count;
+            components.day += count;
             break;
         case NSCalendarUnitHour:
-            components.hour = components.hour + count;
+            components.hour += count;
             break;
         case NSCalendarUnitMinute:
-            components.minute = components.minute + count;
+            components.minute += count;
             break;
         case NSCalendarUnitSecond:
-            components.second = components.second + count;
+            components.second += count;
             break;
         case NSCalendarUnitNanosecond:
-            components.nanosecond = components.nanosecond + count;
+            components.nanosecond += count;
             break;
         case NSCalendarUnitWeekday:
-            components.weekday = components.era + count;
+            components.weekday += count;
             break;
         case NSCalendarUnitWeekdayOrdinal:
-            components.weekdayOrdinal = components.weekdayOrdinal + count;
+            components.weekdayOrdinal += count;
             break;
         case NSCalendarUnitQuarter:
-            components.quarter = components.quarter + count;
+            components.quarter += count;
             break;
         case NSCalendarUnitWeekOfMonth:
-            components.weekOfMonth = components.weekOfMonth + count;
+            components.weekOfMonth += count;
             break;
         case NSCalendarUnitWeekOfYear:
-            components.weekOfYear = components.weekOfYear + count;
+            components.weekOfYear += count;
             break;
         case NSCalendarUnitYearForWeekOfYear:
-            components.yearForWeekOfYear = components.yearForWeekOfYear + count;
+            components.yearForWeekOfYear += count;
             break;
             
         default:
@@ -256,5 +258,30 @@
 {
     return [self valueForUnit:NSCalendarUnitSecond];
 }
+- (NSInteger)weekDay
+{
+    return [self valueForUnit:NSCalendarUnitWeekday];
+}
 
+
+- (NSString*)localizedShortWeekDay
+{
+    NSDateFormatter *dateFormatter = [NSDate sharedDateFormatter];
+//    NSInteger index = self.weekDay - dateFormatter.calendar.firstWeekday;
+//    return [dateFormatter shortWeekdaySymbols][index];
+
+    [dateFormatter setDateFormat:@"EEE"];
+    return [dateFormatter stringFromDate:self];
+}
+
+- (NSString*)localizedWeekDay
+{
+    NSDateFormatter *dateFormatter = [NSDate sharedDateFormatter];
+//    NSInteger index = self.weekDay - dateFormatter.calendar.firstWeekday;
+//    return [dateFormatter weekdaySymbols][index];
+
+    [dateFormatter setDateFormat:@"EEE"];
+    return [dateFormatter stringFromDate:self];
+
+}
 @end

@@ -18,6 +18,9 @@
 @property (nonatomic, readonly) NSInteger hour;
 @property (nonatomic, readonly) NSInteger minute;
 @property (nonatomic, readonly) NSInteger second;
+@property (nonatomic, readonly) NSInteger weekDay;
+
+@property (nonatomic, readonly) NSString* localizedWeekDay;
 
 + (NSDate*)dateFromFormat:(NSString*)dateFormat dateString:(NSString*)dateString withTimeZone:(NSTimeZone*)timeZone;
 + (NSDate*)dateFromFormat:(NSString*)dateFormat dateString:(NSString*)dateString;

@@ -36,6 +36,8 @@
     NSLog(@"NSCalendarUnitYearForWeekOfYear : %ld",(long)[date valueForUnit:NSCalendarUnitYearForWeekOfYear]);
     
     
+    NSLog(@"NSCalendarUnitYearForWeekOfYear : %@",[date localizedWeekDay]);
+    
     NSLog(@"%@",[[NSDate date] dateByAddingCount:-69 forUnit:NSCalendarUnitYear]);
 }
 
