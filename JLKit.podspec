@@ -12,15 +12,15 @@ Pod::Spec.new do |s|
     s.default_subspec = 'Core'
 
     s.subspec 'Core' do |core|
-    nsudp.dependency 'JLKit/Additions'
+    core.dependency 'JLKit/Additions'
+    core.dependency 'JLKit/StatusBarStyle'
     end
 
-    s.subspec 'Additions' do |core|
-    core.source_files = 'JLKit/JLKit.h','JLKit/Additions/Foundation/*.{h,m}','JLKit/Additions/UIKit/*.{h,m}'
+    s.subspec 'Additions' do |sp|
+    sp.source_files = 'JLKit/JLKit.h','JLKit/Additions/Foundation/*.{h,m}','JLKit/Additions/UIKit/*.{h,m}'
     end
 
-    s.subspec 'StatusBarStyle' do |nsudp|
-    nsudp.dependency 'JLKit/Core'
-    nsudp.source_files = 'JLKit/Additions/StatusBarStyle/*.{h,m}'
+    s.subspec 'StatusBarStyle' do |ssp|
+    ssp.source_files = 'JLKit/Additions/StatusBarStyle/*.{h,m}'
     end
 end

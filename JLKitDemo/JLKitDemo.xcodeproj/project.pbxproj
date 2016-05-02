@@ -14,6 +14,7 @@
 		0FAABE071BC0E7DA00AE9BBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FAABE051BC0E7DA00AE9BBE /* Main.storyboard */; };
 		0FAABE091BC0E7DA00AE9BBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FAABE081BC0E7DA00AE9BBE /* Assets.xcassets */; };
 		0FAABE0C1BC0E7DA00AE9BBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FAABE0A1BC0E7DA00AE9BBE /* LaunchScreen.storyboard */; };
+		7E9268BB1CD7743200AF1272 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 7E9268BA1CD7743200AF1272 /* README.md */; };
 		8BFB37C41CD637E600DBBDDB /* NSArray+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB377B1CD637E600DBBDDB /* NSArray+JLKit.m */; };
 		8BFB37C51CD637E600DBBDDB /* NSBundle+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB377D1CD637E600DBBDDB /* NSBundle+JLKit.m */; };
 		8BFB37C61CD637E600DBBDDB /* NSData+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB377F1CD637E600DBBDDB /* NSData+JLKit.m */; };
@@ -63,6 +64,7 @@
 		0FAABE081BC0E7DA00AE9BBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0FAABE0B1BC0E7DA00AE9BBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0FAABE0D1BC0E7DA00AE9BBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E9268BA1CD7743200AF1272 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		8BFB377A1CD637E600DBBDDB /* NSArray+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+JLKit.h"; sourceTree = "<group>"; };
 		8BFB377B1CD637E600DBBDDB /* NSArray+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JLKit.m"; sourceTree = "<group>"; };
 		8BFB377C1CD637E600DBBDDB /* NSBundle+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+JLKit.h"; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 		0FAABDF01BC0E7DA00AE9BBE = {
 			isa = PBXGroup;
 			children = (
+				7E9268BA1CD7743200AF1272 /* README.md */,
 				0F06C9021BDB87F300076A59 /* JLKit.podspec */,
 				8BFB37771CD637E600DBBDDB /* JLKit */,
 				0FAABDFB1BC0E7DA00AE9BBE /* JLKitDemo */,
@@ -333,7 +336,6 @@
 				TargetAttributes = {
 					0FAABDF81BC0E7DA00AE9BBE = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = 3G345889CP;
 					};
 				};
 			};
@@ -404,6 +406,7 @@
 				8BFB37C71CD637E600DBBDDB /* NSDate+JLAge.m in Sources */,
 				8BFB37DE1CD637E600DBBDDB /* UIImage+JLKit.m in Sources */,
 				8BFB37CF1CD637E600DBBDDB /* NSString+JLKit.m in Sources */,
+				7E9268BB1CD7743200AF1272 /* README.md in Sources */,
 				8BFB37D01CD637E600DBBDDB /* NSThread+JLKit.m in Sources */,
 				8BFB37E31CD637E600DBBDDB /* UITableView+JLKit.m in Sources */,
 				8BFB37C41CD637E600DBBDDB /* NSArray+JLKit.m in Sources */,
