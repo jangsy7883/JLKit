@@ -1,0 +1,576 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0F06C9031BDB87F300076A59 /* JLKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 0F06C9021BDB87F300076A59 /* JLKit.podspec */; };
+		0FAABDFE1BC0E7DA00AE9BBE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABDFD1BC0E7DA00AE9BBE /* main.m */; };
+		0FAABE011BC0E7DA00AE9BBE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE001BC0E7DA00AE9BBE /* AppDelegate.m */; };
+		0FAABE041BC0E7DA00AE9BBE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAABE031BC0E7DA00AE9BBE /* ViewController.m */; };
+		0FAABE071BC0E7DA00AE9BBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FAABE051BC0E7DA00AE9BBE /* Main.storyboard */; };
+		0FAABE091BC0E7DA00AE9BBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FAABE081BC0E7DA00AE9BBE /* Assets.xcassets */; };
+		0FAABE0C1BC0E7DA00AE9BBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FAABE0A1BC0E7DA00AE9BBE /* LaunchScreen.storyboard */; };
+		8BFB37C41CD637E600DBBDDB /* NSArray+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB377B1CD637E600DBBDDB /* NSArray+JLKit.m */; };
+		8BFB37C51CD637E600DBBDDB /* NSBundle+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB377D1CD637E600DBBDDB /* NSBundle+JLKit.m */; };
+		8BFB37C61CD637E600DBBDDB /* NSData+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB377F1CD637E600DBBDDB /* NSData+JLKit.m */; };
+		8BFB37C71CD637E600DBBDDB /* NSDate+JLAge.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB37811CD637E600DBBDDB /* NSDate+JLAge.m */; };
+		8BFB37C81CD637E600DBBDDB /* NSDate+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB37831CD637E600DBBDDB /* NSDate+JLKit.m */; };
+		8BFB37C91CD637E600DBBDDB /* NSDictionary+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB37851CD637E600DBBDDB /* NSDictionary+JLKit.m */; };
+		8BFB37CA1CD637E600DBBDDB /* NSIndexPath+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB37871CD637E600DBBDDB /* NSIndexPath+JLKit.m */; };
+		8BFB37CB1CD637E600DBBDDB /* NSLocale+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB37891CD637E600DBBDDB /* NSLocale+JLKit.m */; };
+		8BFB37CC1CD637E600DBBDDB /* NSAttributedString+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB378B1CD637E600DBBDDB /* NSAttributedString+JLKit.m */; };
+		8BFB37CD1CD637E600DBBDDB /* NSNumber+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB378D1CD637E600DBBDDB /* NSNumber+JLKit.m */; };
+		8BFB37CE1CD637E600DBBDDB /* NSObject+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB378F1CD637E600DBBDDB /* NSObject+JLKit.m */; };
+		8BFB37CF1CD637E600DBBDDB /* NSString+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB37911CD637E600DBBDDB /* NSString+JLKit.m */; };
+		8BFB37D01CD637E600DBBDDB /* NSThread+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB37931CD637E600DBBDDB /* NSThread+JLKit.m */; };
+		8BFB37D11CD637E600DBBDDB /* NSTimeZone+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB37951CD637E600DBBDDB /* NSTimeZone+JLKit.m */; };
+		8BFB37D21CD637E600DBBDDB /* NSURL+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB37971CD637E600DBBDDB /* NSURL+JLKit.m */; };
+		8BFB37D31CD637E600DBBDDB /* SKProduct+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB37991CD637E600DBBDDB /* SKProduct+JLKit.m */; };
+		8BFB37D41CD637E600DBBDDB /* UINavigationController+JLStatusBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB379C1CD637E600DBBDDB /* UINavigationController+JLStatusBarStyle.m */; };
+		8BFB37D51CD637E600DBBDDB /* CALayer+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB379F1CD637E600DBBDDB /* CALayer+JLKit.m */; };
+		8BFB37D61CD637E600DBBDDB /* UIApplication+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB37A21CD637E600DBBDDB /* UIApplication+JLKit.m */; };
+		8BFB37D71CD637E600DBBDDB /* UIBarButtonItem+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB37A41CD637E600DBBDDB /* UIBarButtonItem+JLKit.m */; };
+		8BFB37D81CD637E600DBBDDB /* UIButton+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB37A61CD637E600DBBDDB /* UIButton+JLKit.m */; };
+		8BFB37D91CD637E600DBBDDB /* UICollectionView+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB37A81CD637E600DBBDDB /* UICollectionView+JLKit.m */; };
+		8BFB37DA1CD637E600DBBDDB /* UICollectionViewCell+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB37AA1CD637E600DBBDDB /* UICollectionViewCell+JLKit.m */; };
+		8BFB37DB1CD637E600DBBDDB /* UIColor+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB37AC1CD637E600DBBDDB /* UIColor+JLKit.m */; };
+		8BFB37DC1CD637E600DBBDDB /* UIDevice+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB37AE1CD637E600DBBDDB /* UIDevice+JLKit.m */; };
+		8BFB37DD1CD637E600DBBDDB /* UIFont+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB37B01CD637E600DBBDDB /* UIFont+JLKit.m */; };
+		8BFB37DE1CD637E600DBBDDB /* UIImage+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB37B21CD637E600DBBDDB /* UIImage+JLKit.m */; };
+		8BFB37DF1CD637E600DBBDDB /* UILabel+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB37B41CD637E600DBBDDB /* UILabel+JLKit.m */; };
+		8BFB37E01CD637E600DBBDDB /* UIScreen+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB37B61CD637E600DBBDDB /* UIScreen+JLKit.m */; };
+		8BFB37E11CD637E600DBBDDB /* UISearchBar+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB37B81CD637E600DBBDDB /* UISearchBar+JLKit.m */; };
+		8BFB37E21CD637E600DBBDDB /* UITabBarItem+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB37BA1CD637E600DBBDDB /* UITabBarItem+JLKit.m */; };
+		8BFB37E31CD637E600DBBDDB /* UITableView+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB37BC1CD637E600DBBDDB /* UITableView+JLKit.m */; };
+		8BFB37E41CD637E600DBBDDB /* UITableViewCell+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB37BE1CD637E600DBBDDB /* UITableViewCell+JLKit.m */; };
+		8BFB37E51CD637E600DBBDDB /* UIView+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB37C01CD637E600DBBDDB /* UIView+JLKit.m */; };
+		8BFB37E61CD637E600DBBDDB /* UIViewController+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB37C21CD637E600DBBDDB /* UIViewController+JLKit.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0F06C9021BDB87F300076A59 /* JLKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = JLKit.podspec; path = ../JLKit.podspec; sourceTree = "<group>"; };
+		0FAABDF91BC0E7DA00AE9BBE /* JLKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FAABDFD1BC0E7DA00AE9BBE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0FAABDFF1BC0E7DA00AE9BBE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0FAABE001BC0E7DA00AE9BBE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0FAABE021BC0E7DA00AE9BBE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		0FAABE031BC0E7DA00AE9BBE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		0FAABE061BC0E7DA00AE9BBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0FAABE081BC0E7DA00AE9BBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0FAABE0B1BC0E7DA00AE9BBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0FAABE0D1BC0E7DA00AE9BBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BFB377A1CD637E600DBBDDB /* NSArray+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+JLKit.h"; sourceTree = "<group>"; };
+		8BFB377B1CD637E600DBBDDB /* NSArray+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JLKit.m"; sourceTree = "<group>"; };
+		8BFB377C1CD637E600DBBDDB /* NSBundle+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+JLKit.h"; sourceTree = "<group>"; };
+		8BFB377D1CD637E600DBBDDB /* NSBundle+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+JLKit.m"; sourceTree = "<group>"; };
+		8BFB377E1CD637E600DBBDDB /* NSData+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+JLKit.h"; sourceTree = "<group>"; };
+		8BFB377F1CD637E600DBBDDB /* NSData+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+JLKit.m"; sourceTree = "<group>"; };
+		8BFB37801CD637E600DBBDDB /* NSDate+JLAge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+JLAge.h"; sourceTree = "<group>"; };
+		8BFB37811CD637E600DBBDDB /* NSDate+JLAge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+JLAge.m"; sourceTree = "<group>"; };
+		8BFB37821CD637E600DBBDDB /* NSDate+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+JLKit.h"; sourceTree = "<group>"; };
+		8BFB37831CD637E600DBBDDB /* NSDate+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+JLKit.m"; sourceTree = "<group>"; };
+		8BFB37841CD637E600DBBDDB /* NSDictionary+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JLKit.h"; sourceTree = "<group>"; };
+		8BFB37851CD637E600DBBDDB /* NSDictionary+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JLKit.m"; sourceTree = "<group>"; };
+		8BFB37861CD637E600DBBDDB /* NSIndexPath+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+JLKit.h"; sourceTree = "<group>"; };
+		8BFB37871CD637E600DBBDDB /* NSIndexPath+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+JLKit.m"; sourceTree = "<group>"; };
+		8BFB37881CD637E600DBBDDB /* NSLocale+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLocale+JLKit.h"; sourceTree = "<group>"; };
+		8BFB37891CD637E600DBBDDB /* NSLocale+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLocale+JLKit.m"; sourceTree = "<group>"; };
+		8BFB378A1CD637E600DBBDDB /* NSAttributedString+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+JLKit.h"; sourceTree = "<group>"; };
+		8BFB378B1CD637E600DBBDDB /* NSAttributedString+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+JLKit.m"; sourceTree = "<group>"; };
+		8BFB378C1CD637E600DBBDDB /* NSNumber+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+JLKit.h"; sourceTree = "<group>"; };
+		8BFB378D1CD637E600DBBDDB /* NSNumber+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+JLKit.m"; sourceTree = "<group>"; };
+		8BFB378E1CD637E600DBBDDB /* NSObject+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JLKit.h"; sourceTree = "<group>"; };
+		8BFB378F1CD637E600DBBDDB /* NSObject+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JLKit.m"; sourceTree = "<group>"; };
+		8BFB37901CD637E600DBBDDB /* NSString+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JLKit.h"; sourceTree = "<group>"; };
+		8BFB37911CD637E600DBBDDB /* NSString+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JLKit.m"; sourceTree = "<group>"; };
+		8BFB37921CD637E600DBBDDB /* NSThread+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSThread+JLKit.h"; sourceTree = "<group>"; };
+		8BFB37931CD637E600DBBDDB /* NSThread+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSThread+JLKit.m"; sourceTree = "<group>"; };
+		8BFB37941CD637E600DBBDDB /* NSTimeZone+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimeZone+JLKit.h"; sourceTree = "<group>"; };
+		8BFB37951CD637E600DBBDDB /* NSTimeZone+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimeZone+JLKit.m"; sourceTree = "<group>"; };
+		8BFB37961CD637E600DBBDDB /* NSURL+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+JLKit.h"; sourceTree = "<group>"; };
+		8BFB37971CD637E600DBBDDB /* NSURL+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+JLKit.m"; sourceTree = "<group>"; };
+		8BFB37981CD637E600DBBDDB /* SKProduct+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKProduct+JLKit.h"; sourceTree = "<group>"; };
+		8BFB37991CD637E600DBBDDB /* SKProduct+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKProduct+JLKit.m"; sourceTree = "<group>"; };
+		8BFB379B1CD637E600DBBDDB /* UINavigationController+JLStatusBarStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+JLStatusBarStyle.h"; sourceTree = "<group>"; };
+		8BFB379C1CD637E600DBBDDB /* UINavigationController+JLStatusBarStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+JLStatusBarStyle.m"; sourceTree = "<group>"; };
+		8BFB379E1CD637E600DBBDDB /* CALayer+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+JLKit.h"; sourceTree = "<group>"; };
+		8BFB379F1CD637E600DBBDDB /* CALayer+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+JLKit.m"; sourceTree = "<group>"; };
+		8BFB37A01CD637E600DBBDDB /* JLKitUIHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLKitUIHeader.h; sourceTree = "<group>"; };
+		8BFB37A11CD637E600DBBDDB /* UIApplication+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+JLKit.h"; sourceTree = "<group>"; };
+		8BFB37A21CD637E600DBBDDB /* UIApplication+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+JLKit.m"; sourceTree = "<group>"; };
+		8BFB37A31CD637E600DBBDDB /* UIBarButtonItem+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+JLKit.h"; sourceTree = "<group>"; };
+		8BFB37A41CD637E600DBBDDB /* UIBarButtonItem+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+JLKit.m"; sourceTree = "<group>"; };
+		8BFB37A51CD637E600DBBDDB /* UIButton+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+JLKit.h"; sourceTree = "<group>"; };
+		8BFB37A61CD637E600DBBDDB /* UIButton+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+JLKit.m"; sourceTree = "<group>"; };
+		8BFB37A71CD637E600DBBDDB /* UICollectionView+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+JLKit.h"; sourceTree = "<group>"; };
+		8BFB37A81CD637E600DBBDDB /* UICollectionView+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+JLKit.m"; sourceTree = "<group>"; };
+		8BFB37A91CD637E600DBBDDB /* UICollectionViewCell+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewCell+JLKit.h"; sourceTree = "<group>"; };
+		8BFB37AA1CD637E600DBBDDB /* UICollectionViewCell+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewCell+JLKit.m"; sourceTree = "<group>"; };
+		8BFB37AB1CD637E600DBBDDB /* UIColor+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+JLKit.h"; sourceTree = "<group>"; };
+		8BFB37AC1CD637E600DBBDDB /* UIColor+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+JLKit.m"; sourceTree = "<group>"; };
+		8BFB37AD1CD637E600DBBDDB /* UIDevice+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+JLKit.h"; sourceTree = "<group>"; };
+		8BFB37AE1CD637E600DBBDDB /* UIDevice+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+JLKit.m"; sourceTree = "<group>"; };
+		8BFB37AF1CD637E600DBBDDB /* UIFont+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+JLKit.h"; sourceTree = "<group>"; };
+		8BFB37B01CD637E600DBBDDB /* UIFont+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+JLKit.m"; sourceTree = "<group>"; };
+		8BFB37B11CD637E600DBBDDB /* UIImage+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JLKit.h"; sourceTree = "<group>"; };
+		8BFB37B21CD637E600DBBDDB /* UIImage+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JLKit.m"; sourceTree = "<group>"; };
+		8BFB37B31CD637E600DBBDDB /* UILabel+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+JLKit.h"; sourceTree = "<group>"; };
+		8BFB37B41CD637E600DBBDDB /* UILabel+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+JLKit.m"; sourceTree = "<group>"; };
+		8BFB37B51CD637E600DBBDDB /* UIScreen+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+JLKit.h"; sourceTree = "<group>"; };
+		8BFB37B61CD637E600DBBDDB /* UIScreen+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+JLKit.m"; sourceTree = "<group>"; };
+		8BFB37B71CD637E600DBBDDB /* UISearchBar+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+JLKit.h"; sourceTree = "<group>"; };
+		8BFB37B81CD637E600DBBDDB /* UISearchBar+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+JLKit.m"; sourceTree = "<group>"; };
+		8BFB37B91CD637E600DBBDDB /* UITabBarItem+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarItem+JLKit.h"; sourceTree = "<group>"; };
+		8BFB37BA1CD637E600DBBDDB /* UITabBarItem+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarItem+JLKit.m"; sourceTree = "<group>"; };
+		8BFB37BB1CD637E600DBBDDB /* UITableView+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+JLKit.h"; sourceTree = "<group>"; };
+		8BFB37BC1CD637E600DBBDDB /* UITableView+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+JLKit.m"; sourceTree = "<group>"; };
+		8BFB37BD1CD637E600DBBDDB /* UITableViewCell+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+JLKit.h"; sourceTree = "<group>"; };
+		8BFB37BE1CD637E600DBBDDB /* UITableViewCell+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+JLKit.m"; sourceTree = "<group>"; };
+		8BFB37BF1CD637E600DBBDDB /* UIView+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JLKit.h"; sourceTree = "<group>"; };
+		8BFB37C01CD637E600DBBDDB /* UIView+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JLKit.m"; sourceTree = "<group>"; };
+		8BFB37C11CD637E600DBBDDB /* UIViewController+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JLKit.h"; sourceTree = "<group>"; };
+		8BFB37C21CD637E600DBBDDB /* UIViewController+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JLKit.m"; sourceTree = "<group>"; };
+		8BFB37C31CD637E600DBBDDB /* JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLKit.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0FAABDF61BC0E7DA00AE9BBE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0FAABDF01BC0E7DA00AE9BBE = {
+			isa = PBXGroup;
+			children = (
+				0F06C9021BDB87F300076A59 /* JLKit.podspec */,
+				8BFB37771CD637E600DBBDDB /* JLKit */,
+				0FAABDFB1BC0E7DA00AE9BBE /* JLKitDemo */,
+				0FAABDFA1BC0E7DA00AE9BBE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0FAABDFA1BC0E7DA00AE9BBE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0FAABDF91BC0E7DA00AE9BBE /* JLKitDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0FAABDFB1BC0E7DA00AE9BBE /* JLKitDemo */ = {
+			isa = PBXGroup;
+			children = (
+				0FAABDFF1BC0E7DA00AE9BBE /* AppDelegate.h */,
+				0FAABE001BC0E7DA00AE9BBE /* AppDelegate.m */,
+				0FAABE021BC0E7DA00AE9BBE /* ViewController.h */,
+				0FAABE031BC0E7DA00AE9BBE /* ViewController.m */,
+				0FAABE051BC0E7DA00AE9BBE /* Main.storyboard */,
+				0FAABE081BC0E7DA00AE9BBE /* Assets.xcassets */,
+				0FAABE0A1BC0E7DA00AE9BBE /* LaunchScreen.storyboard */,
+				0FAABE0D1BC0E7DA00AE9BBE /* Info.plist */,
+				0FAABDFC1BC0E7DA00AE9BBE /* Supporting Files */,
+			);
+			path = JLKitDemo;
+			sourceTree = "<group>";
+		};
+		0FAABDFC1BC0E7DA00AE9BBE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0FAABDFD1BC0E7DA00AE9BBE /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8BFB37771CD637E600DBBDDB /* JLKit */ = {
+			isa = PBXGroup;
+			children = (
+				8BFB37781CD637E600DBBDDB /* Additions */,
+				8BFB37C31CD637E600DBBDDB /* JLKit.h */,
+			);
+			name = JLKit;
+			path = ../JLKit;
+			sourceTree = "<group>";
+		};
+		8BFB37781CD637E600DBBDDB /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				8BFB37791CD637E600DBBDDB /* Foundation */,
+				8BFB379A1CD637E600DBBDDB /* StatusBarStyle */,
+				8BFB379D1CD637E600DBBDDB /* UIKit */,
+			);
+			path = Additions;
+			sourceTree = "<group>";
+		};
+		8BFB37791CD637E600DBBDDB /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				8BFB377A1CD637E600DBBDDB /* NSArray+JLKit.h */,
+				8BFB377B1CD637E600DBBDDB /* NSArray+JLKit.m */,
+				8BFB377C1CD637E600DBBDDB /* NSBundle+JLKit.h */,
+				8BFB377D1CD637E600DBBDDB /* NSBundle+JLKit.m */,
+				8BFB377E1CD637E600DBBDDB /* NSData+JLKit.h */,
+				8BFB377F1CD637E600DBBDDB /* NSData+JLKit.m */,
+				8BFB37801CD637E600DBBDDB /* NSDate+JLAge.h */,
+				8BFB37811CD637E600DBBDDB /* NSDate+JLAge.m */,
+				8BFB37821CD637E600DBBDDB /* NSDate+JLKit.h */,
+				8BFB37831CD637E600DBBDDB /* NSDate+JLKit.m */,
+				8BFB37841CD637E600DBBDDB /* NSDictionary+JLKit.h */,
+				8BFB37851CD637E600DBBDDB /* NSDictionary+JLKit.m */,
+				8BFB37861CD637E600DBBDDB /* NSIndexPath+JLKit.h */,
+				8BFB37871CD637E600DBBDDB /* NSIndexPath+JLKit.m */,
+				8BFB37881CD637E600DBBDDB /* NSLocale+JLKit.h */,
+				8BFB37891CD637E600DBBDDB /* NSLocale+JLKit.m */,
+				8BFB378A1CD637E600DBBDDB /* NSAttributedString+JLKit.h */,
+				8BFB378B1CD637E600DBBDDB /* NSAttributedString+JLKit.m */,
+				8BFB378C1CD637E600DBBDDB /* NSNumber+JLKit.h */,
+				8BFB378D1CD637E600DBBDDB /* NSNumber+JLKit.m */,
+				8BFB378E1CD637E600DBBDDB /* NSObject+JLKit.h */,
+				8BFB378F1CD637E600DBBDDB /* NSObject+JLKit.m */,
+				8BFB37901CD637E600DBBDDB /* NSString+JLKit.h */,
+				8BFB37911CD637E600DBBDDB /* NSString+JLKit.m */,
+				8BFB37921CD637E600DBBDDB /* NSThread+JLKit.h */,
+				8BFB37931CD637E600DBBDDB /* NSThread+JLKit.m */,
+				8BFB37941CD637E600DBBDDB /* NSTimeZone+JLKit.h */,
+				8BFB37951CD637E600DBBDDB /* NSTimeZone+JLKit.m */,
+				8BFB37961CD637E600DBBDDB /* NSURL+JLKit.h */,
+				8BFB37971CD637E600DBBDDB /* NSURL+JLKit.m */,
+				8BFB37981CD637E600DBBDDB /* SKProduct+JLKit.h */,
+				8BFB37991CD637E600DBBDDB /* SKProduct+JLKit.m */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		8BFB379A1CD637E600DBBDDB /* StatusBarStyle */ = {
+			isa = PBXGroup;
+			children = (
+				8BFB379B1CD637E600DBBDDB /* UINavigationController+JLStatusBarStyle.h */,
+				8BFB379C1CD637E600DBBDDB /* UINavigationController+JLStatusBarStyle.m */,
+			);
+			path = StatusBarStyle;
+			sourceTree = "<group>";
+		};
+		8BFB379D1CD637E600DBBDDB /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				8BFB379E1CD637E600DBBDDB /* CALayer+JLKit.h */,
+				8BFB379F1CD637E600DBBDDB /* CALayer+JLKit.m */,
+				8BFB37A01CD637E600DBBDDB /* JLKitUIHeader.h */,
+				8BFB37A11CD637E600DBBDDB /* UIApplication+JLKit.h */,
+				8BFB37A21CD637E600DBBDDB /* UIApplication+JLKit.m */,
+				8BFB37A31CD637E600DBBDDB /* UIBarButtonItem+JLKit.h */,
+				8BFB37A41CD637E600DBBDDB /* UIBarButtonItem+JLKit.m */,
+				8BFB37A51CD637E600DBBDDB /* UIButton+JLKit.h */,
+				8BFB37A61CD637E600DBBDDB /* UIButton+JLKit.m */,
+				8BFB37A71CD637E600DBBDDB /* UICollectionView+JLKit.h */,
+				8BFB37A81CD637E600DBBDDB /* UICollectionView+JLKit.m */,
+				8BFB37A91CD637E600DBBDDB /* UICollectionViewCell+JLKit.h */,
+				8BFB37AA1CD637E600DBBDDB /* UICollectionViewCell+JLKit.m */,
+				8BFB37AB1CD637E600DBBDDB /* UIColor+JLKit.h */,
+				8BFB37AC1CD637E600DBBDDB /* UIColor+JLKit.m */,
+				8BFB37AD1CD637E600DBBDDB /* UIDevice+JLKit.h */,
+				8BFB37AE1CD637E600DBBDDB /* UIDevice+JLKit.m */,
+				8BFB37AF1CD637E600DBBDDB /* UIFont+JLKit.h */,
+				8BFB37B01CD637E600DBBDDB /* UIFont+JLKit.m */,
+				8BFB37B11CD637E600DBBDDB /* UIImage+JLKit.h */,
+				8BFB37B21CD637E600DBBDDB /* UIImage+JLKit.m */,
+				8BFB37B31CD637E600DBBDDB /* UILabel+JLKit.h */,
+				8BFB37B41CD637E600DBBDDB /* UILabel+JLKit.m */,
+				8BFB37B51CD637E600DBBDDB /* UIScreen+JLKit.h */,
+				8BFB37B61CD637E600DBBDDB /* UIScreen+JLKit.m */,
+				8BFB37B71CD637E600DBBDDB /* UISearchBar+JLKit.h */,
+				8BFB37B81CD637E600DBBDDB /* UISearchBar+JLKit.m */,
+				8BFB37B91CD637E600DBBDDB /* UITabBarItem+JLKit.h */,
+				8BFB37BA1CD637E600DBBDDB /* UITabBarItem+JLKit.m */,
+				8BFB37BB1CD637E600DBBDDB /* UITableView+JLKit.h */,
+				8BFB37BC1CD637E600DBBDDB /* UITableView+JLKit.m */,
+				8BFB37BD1CD637E600DBBDDB /* UITableViewCell+JLKit.h */,
+				8BFB37BE1CD637E600DBBDDB /* UITableViewCell+JLKit.m */,
+				8BFB37BF1CD637E600DBBDDB /* UIView+JLKit.h */,
+				8BFB37C01CD637E600DBBDDB /* UIView+JLKit.m */,
+				8BFB37C11CD637E600DBBDDB /* UIViewController+JLKit.h */,
+				8BFB37C21CD637E600DBBDDB /* UIViewController+JLKit.m */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0FAABDF81BC0E7DA00AE9BBE /* JLKitDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FAABE101BC0E7DA00AE9BBE /* Build configuration list for PBXNativeTarget "JLKitDemo" */;
+			buildPhases = (
+				0FAABDF51BC0E7DA00AE9BBE /* Sources */,
+				0FAABDF61BC0E7DA00AE9BBE /* Frameworks */,
+				0FAABDF71BC0E7DA00AE9BBE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JLKitDemo;
+			productName = JLCategoryDemo;
+			productReference = 0FAABDF91BC0E7DA00AE9BBE /* JLKitDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0FAABDF11BC0E7DA00AE9BBE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = Dalkomm;
+				TargetAttributes = {
+					0FAABDF81BC0E7DA00AE9BBE = {
+						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 3G345889CP;
+					};
+				};
+			};
+			buildConfigurationList = 0FAABDF41BC0E7DA00AE9BBE /* Build configuration list for PBXProject "JLKitDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0FAABDF01BC0E7DA00AE9BBE;
+			productRefGroup = 0FAABDFA1BC0E7DA00AE9BBE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0FAABDF81BC0E7DA00AE9BBE /* JLKitDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0FAABDF71BC0E7DA00AE9BBE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FAABE0C1BC0E7DA00AE9BBE /* LaunchScreen.storyboard in Resources */,
+				0FAABE091BC0E7DA00AE9BBE /* Assets.xcassets in Resources */,
+				0F06C9031BDB87F300076A59 /* JLKit.podspec in Resources */,
+				0FAABE071BC0E7DA00AE9BBE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0FAABDF51BC0E7DA00AE9BBE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BFB37CE1CD637E600DBBDDB /* NSObject+JLKit.m in Sources */,
+				0FAABE041BC0E7DA00AE9BBE /* ViewController.m in Sources */,
+				8BFB37C81CD637E600DBBDDB /* NSDate+JLKit.m in Sources */,
+				8BFB37DA1CD637E600DBBDDB /* UICollectionViewCell+JLKit.m in Sources */,
+				8BFB37D91CD637E600DBBDDB /* UICollectionView+JLKit.m in Sources */,
+				8BFB37C61CD637E600DBBDDB /* NSData+JLKit.m in Sources */,
+				8BFB37CD1CD637E600DBBDDB /* NSNumber+JLKit.m in Sources */,
+				8BFB37DD1CD637E600DBBDDB /* UIFont+JLKit.m in Sources */,
+				0FAABE011BC0E7DA00AE9BBE /* AppDelegate.m in Sources */,
+				8BFB37E11CD637E600DBBDDB /* UISearchBar+JLKit.m in Sources */,
+				0FAABDFE1BC0E7DA00AE9BBE /* main.m in Sources */,
+				8BFB37D51CD637E600DBBDDB /* CALayer+JLKit.m in Sources */,
+				8BFB37D21CD637E600DBBDDB /* NSURL+JLKit.m in Sources */,
+				8BFB37CC1CD637E600DBBDDB /* NSAttributedString+JLKit.m in Sources */,
+				8BFB37CA1CD637E600DBBDDB /* NSIndexPath+JLKit.m in Sources */,
+				8BFB37DB1CD637E600DBBDDB /* UIColor+JLKit.m in Sources */,
+				8BFB37E41CD637E600DBBDDB /* UITableViewCell+JLKit.m in Sources */,
+				8BFB37C51CD637E600DBBDDB /* NSBundle+JLKit.m in Sources */,
+				8BFB37C91CD637E600DBBDDB /* NSDictionary+JLKit.m in Sources */,
+				8BFB37D61CD637E600DBBDDB /* UIApplication+JLKit.m in Sources */,
+				8BFB37E01CD637E600DBBDDB /* UIScreen+JLKit.m in Sources */,
+				8BFB37D81CD637E600DBBDDB /* UIButton+JLKit.m in Sources */,
+				8BFB37D11CD637E600DBBDDB /* NSTimeZone+JLKit.m in Sources */,
+				8BFB37D41CD637E600DBBDDB /* UINavigationController+JLStatusBarStyle.m in Sources */,
+				8BFB37DF1CD637E600DBBDDB /* UILabel+JLKit.m in Sources */,
+				8BFB37D71CD637E600DBBDDB /* UIBarButtonItem+JLKit.m in Sources */,
+				8BFB37D31CD637E600DBBDDB /* SKProduct+JLKit.m in Sources */,
+				8BFB37C71CD637E600DBBDDB /* NSDate+JLAge.m in Sources */,
+				8BFB37DE1CD637E600DBBDDB /* UIImage+JLKit.m in Sources */,
+				8BFB37CF1CD637E600DBBDDB /* NSString+JLKit.m in Sources */,
+				8BFB37D01CD637E600DBBDDB /* NSThread+JLKit.m in Sources */,
+				8BFB37E31CD637E600DBBDDB /* UITableView+JLKit.m in Sources */,
+				8BFB37C41CD637E600DBBDDB /* NSArray+JLKit.m in Sources */,
+				8BFB37E61CD637E600DBBDDB /* UIViewController+JLKit.m in Sources */,
+				8BFB37E51CD637E600DBBDDB /* UIView+JLKit.m in Sources */,
+				8BFB37E21CD637E600DBBDDB /* UITabBarItem+JLKit.m in Sources */,
+				8BFB37DC1CD637E600DBBDDB /* UIDevice+JLKit.m in Sources */,
+				8BFB37CB1CD637E600DBBDDB /* NSLocale+JLKit.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0FAABE051BC0E7DA00AE9BBE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0FAABE061BC0E7DA00AE9BBE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0FAABE0A1BC0E7DA00AE9BBE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0FAABE0B1BC0E7DA00AE9BBE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0FAABE0E1BC0E7DA00AE9BBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0FAABE0F1BC0E7DA00AE9BBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0FAABE111BC0E7DA00AE9BBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = JLKitDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dalkomm.JLKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		0FAABE121BC0E7DA00AE9BBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = JLKitDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dalkomm.JLKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0FAABDF41BC0E7DA00AE9BBE /* Build configuration list for PBXProject "JLKitDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FAABE0E1BC0E7DA00AE9BBE /* Debug */,
+				0FAABE0F1BC0E7DA00AE9BBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0FAABE101BC0E7DA00AE9BBE /* Build configuration list for PBXNativeTarget "JLKitDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FAABE111BC0E7DA00AE9BBE /* Debug */,
+				0FAABE121BC0E7DA00AE9BBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0FAABDF11BC0E7DA00AE9BBE /* Project object */;
+}
