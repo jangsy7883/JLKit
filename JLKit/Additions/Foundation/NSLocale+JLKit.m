@@ -34,9 +34,15 @@
     return languageCode;
 }
 
-+ (NSString*)localizedDisplayNameForLanguageCode:(NSString*)languageCode
++ (NSString*)displayNameForLanguageCode:(NSString*)languageCode
 {
     return [[NSLocale currentLocale] displayNameForKey:NSLocaleLanguageCode value:languageCode];
+}
+
++ (NSString*)localizedDisplayNameForLanguageCode:(NSString*)languageCode
+{
+    return [[[NSLocale alloc] initWithLocaleIdentifier:languageCode] displayNameForKey:NSLocaleLanguageCode
+                                                                                 value:languageCode];
 }
 
 @end

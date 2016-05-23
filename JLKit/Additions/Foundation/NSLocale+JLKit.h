@@ -16,6 +16,7 @@
 
 + (NSString*)languagCodeForLocaleIdentifier:(NSString*)localeIdentifier;
 
++ (NSString*)displayNameForLanguageCode:(NSString*)languageCode;
 + (NSString*)localizedDisplayNameForLanguageCode:(NSString*)languageCode;
 
 @end
