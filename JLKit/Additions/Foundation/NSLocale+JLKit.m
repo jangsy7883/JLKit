@@ -34,4 +34,9 @@
     return languageCode;
 }
 
++ (NSString*)localizedDisplayNameForLanguageCode:(NSString*)languageCode
+{
+    return [[NSLocale currentLocale] displayNameForKey:NSLocaleLanguageCode value:languageCode];
+}
+
 @end
