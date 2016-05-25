@@ -20,11 +20,13 @@
 @property (nonatomic, readonly) NSInteger second;
 @property (nonatomic, readonly) NSInteger weekDay;
 
-+ (NSDate*)dateFromFormat:(NSString*)dateFormat dateString:(NSString*)dateString timeZone:(NSTimeZone*)timeZone;
-+ (NSDate*)dateFromFormat:(NSString*)dateFormat dateString:(NSString*)dateString;
++ (NSDate*)dateFromGMTString:(NSString*)dateString;
 
-- (NSString*)stringFromFormat:(NSString*)stringFormat timeZone:(NSTimeZone*)timeZone;
-- (NSString*)stringFromFormat:(NSString*)stringFormat;
++ (NSDate*)dateFromString:(NSString*)dateString dateFormat:(NSString*)dateFormat timeZone:(NSTimeZone*)timeZone;
++ (NSDate*)dateFromString:(NSString*)dateString dateFormat:(NSString*)dateFormat;
+
+- (NSString*)stringFromDateFormat:(NSString*)stringFormat timeZone:(NSTimeZone*)timeZone;
+- (NSString*)stringFromDateFormat:(NSString*)stringFormat;
 
 - (BOOL)isEqualDayToDate:(NSDate *)date;
 

@@ -37,7 +37,7 @@
     
     NSLog(@"%@",[[NSDate date] dateByAddingCount:-69 forComponent:NSCalendarUnitYear]);
     
-    NSLog(@"%@",[[NSDate date]stringFromFormat:@"EE"]);
+    NSLog(@"%@",[[NSDate date] stringFromDateFormat:@"EE"]);
     
 }
 

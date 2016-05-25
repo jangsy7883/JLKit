@@ -17,7 +17,6 @@
     static NSDateFormatter *dateFormatter;
     dispatch_once(&once, ^{
         dateFormatter = [[NSDateFormatter alloc] init];
-        dateFormatter.timeZone = [NSTimeZone GMT];
         dateFormatter.locale = [NSLocale currentLocale];
     });
     return dateFormatter;
@@ -41,7 +40,28 @@
             );
 }
 
-+ (NSDate*)dateFromFormat:(NSString*)dateFormat dateString:(NSString*)dateString timeZone:(NSTimeZone*)timeZone
+#pragma mark - formater
+
++ (NSDate*)dateFromGMTString:(NSString*)dateString
+{
+    if ([dateString isKindOfClass:[NSString class]] && dateString.length > 0)
+    {
+        static dispatch_once_t once;
+        static NSDateFormatter *formatter;
+        dispatch_once(&once, ^{
+            formatter = [[NSDateFormatter alloc] init];
+            formatter.timeZone = [NSTimeZone GMT];
+            formatter.locale = [NSLocale currentLocale];
+        });
+        
+        formatter.dateFormat = (dateString.length == 19) ? @"yyyy-MM-dd'T'HH:mm:ss" : @"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
+        
+        return [formatter dateFromString:dateString];
+    }
+    return nil;
+}
+
++ (NSDate*)dateFromString:(NSString*)dateString dateFormat:(NSString*)dateFormat timeZone:(NSTimeZone*)timeZone
 {
     if ([dateString isKindOfClass:[NSString class]] && dateString.length > 0)
     {
@@ -58,14 +78,14 @@
     return nil;
 }
 
-+ (NSDate*)dateFromFormat:(NSString*)dateFormat dateString:(NSString*)dateString
++ (NSDate*)dateFromString:(NSString*)dateString dateFormat:(NSString*)dateFormat
 {
-    return [self dateFromFormat:dateFormat
-                     dateString:dateString
-                   timeZone:[NSTimeZone GMT]];
+    return [self dateFromString:dateString
+                     dateFormat:dateFormat
+                       timeZone:[NSTimeZone systemTimeZone]];
 }
 
-- (NSString*)stringFromFormat:(NSString*)stringFormat timeZone:(NSTimeZone*)timeZone
+- (NSString*)stringFromDateFormat:(NSString*)stringFormat timeZone:(NSTimeZone*)timeZone
 {
     NSDateFormatter *dateFormatter = [NSDate sharedDateFormatter];
     if ([dateFormatter.timeZone isEqualToTimeZone:timeZone] == NO)
@@ -78,10 +98,10 @@
     return [dateFormatter stringFromDate:self];
 }
 
-- (NSString*)stringFromFormat:(NSString*)stringFormat
+- (NSString*)stringFromDateFormat:(NSString*)stringFormat
 {
-    return [self stringFromFormat:stringFormat
-                     timeZone:[NSTimeZone GMT]];
+    return [self stringFromDateFormat:stringFormat
+                             timeZone:[NSTimeZone systemTimeZone]];
 }
 
 #pragma mark - Unit
@@ -155,6 +175,7 @@
 {
     return [self valueForComponent:NSCalendarUnitSecond];
 }
+
 - (NSInteger)weekDay
 {
     return [self valueForComponent:NSCalendarUnitWeekday];
