@@ -40,59 +40,28 @@
             );
 }
 
-#pragma mark - formater
-
-+ (NSDate*)dateFromGMTString:(NSString*)dateString
-{
-    if ([dateString isKindOfClass:[NSString class]] && dateString.length > 0)
-    {
-        static dispatch_once_t once;
-        static NSDateFormatter *formatter;
-        dispatch_once(&once, ^{
-            formatter = [[NSDateFormatter alloc] init];
-            formatter.timeZone = [NSTimeZone GMT];
-            formatter.locale = [NSLocale currentLocale];
-        });
-        
-        formatter.dateFormat = (dateString.length == 19) ? @"yyyy-MM-dd'T'HH:mm:ss" : @"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
-        
-        return [formatter dateFromString:dateString];
-    }
-    return nil;
-}
+#pragma mark - formatter
 
 + (NSDate*)dateFromString:(NSString*)dateString dateFormat:(NSString*)dateFormat timeZone:(NSTimeZone*)timeZone
 {
-    if ([dateString isKindOfClass:[NSString class]] && dateString.length > 0)
-    {
-        NSDateFormatter *dateFormatter = [self sharedDateFormatter];
-        if ([dateFormatter.timeZone isEqualToTimeZone:timeZone] == NO)
-        {
-            dateFormatter.timeZone = timeZone;
-        }
-        
-        dateFormatter.dateFormat = dateFormat;
-        
-        return [dateFormatter dateFromString:dateString];
-    }
-    return nil;
+    NSDateFormatter *dateFormatter = [self sharedDateFormatter];
+    dateFormatter.timeZone = timeZone;
+    dateFormatter.dateFormat = dateFormat;
+    
+    return [dateFormatter dateFromString:dateString];
 }
 
 + (NSDate*)dateFromString:(NSString*)dateString dateFormat:(NSString*)dateFormat
 {
     return [self dateFromString:dateString
                      dateFormat:dateFormat
-                       timeZone:[NSTimeZone systemTimeZone]];
+                       timeZone:[NSTimeZone GMT]];
 }
 
 - (NSString*)stringFromDateFormat:(NSString*)stringFormat timeZone:(NSTimeZone*)timeZone
 {
     NSDateFormatter *dateFormatter = [NSDate sharedDateFormatter];
-    if ([dateFormatter.timeZone isEqualToTimeZone:timeZone] == NO)
-    {
-        dateFormatter.timeZone = timeZone;
-    }
-    
+    dateFormatter.timeZone = timeZone;
     dateFormatter.dateFormat = stringFormat;
     
     return [dateFormatter stringFromDate:self];
@@ -110,7 +79,6 @@
 {
     NSDateComponents *components = [[NSCalendar currentCalendar] components:unit fromDate:self];
     components.calendar = [NSCalendar currentCalendar];
-    components.timeZone = [NSTimeZone GMT];
     
     return [components valueForComponent:unit];
 }
@@ -119,7 +87,6 @@
 {
     NSDateComponents *components = [[NSCalendar currentCalendar] components:[self componentFlags] fromDate:self];
     components.calendar = [NSCalendar currentCalendar];
-    components.timeZone = [NSTimeZone GMT];
     
     NSInteger value =  [components valueForComponent:unit];
     

@@ -19,7 +19,7 @@
     [super viewDidLoad];
    
     NSDate *date = [NSDate date];
-    
+    NSLog(@"%@",date);
     NSLog(@"NSCalendarUnitEra : %ld",(long)[date valueForComponent:NSCalendarUnitEra]);
     NSLog(@"NSCalendarUnitYear : %ld",(long)[date valueForComponent:NSCalendarUnitYear]);
     NSLog(@"NSCalendarUnitMonth : %ld",(long)[date valueForComponent:NSCalendarUnitMonth]);
@@ -35,10 +35,8 @@
     NSLog(@"NSCalendarUnitWeekOfYear : %ld",(long)[date valueForComponent:NSCalendarUnitWeekOfYear]);
     NSLog(@"NSCalendarUnitYearForWeekOfYear : %ld",(long)[date valueForComponent:NSCalendarUnitYearForWeekOfYear]);
     
-    NSLog(@"%@",[[NSDate date] dateByAddingCount:-69 forComponent:NSCalendarUnitYear]);
-    
-    NSLog(@"%@",[[NSDate date] stringFromDateFormat:@"EE"]);
-    
+    NSLog(@"%@",[[date dateByAddingCount:-69 forComponent:NSCalendarUnitYear] stringFromDateFormat:@"yyyy.MM.dd a HH:mm EE"]);
+    NSLog(@"%@",[date stringFromDateFormat:@"yyyy.MM.dd a HH:mm EE"]);
 }
 
 @end

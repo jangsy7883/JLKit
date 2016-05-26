@@ -20,8 +20,6 @@
 @property (nonatomic, readonly) NSInteger second;
 @property (nonatomic, readonly) NSInteger weekDay;
 
-+ (NSDate*)dateFromGMTString:(NSString*)dateString;
-
 + (NSDate*)dateFromString:(NSString*)dateString dateFormat:(NSString*)dateFormat timeZone:(NSTimeZone*)timeZone;
 + (NSDate*)dateFromString:(NSString*)dateString dateFormat:(NSString*)dateFormat;
 
