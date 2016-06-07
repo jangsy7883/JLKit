@@ -113,6 +113,20 @@
     return [predicate evaluateWithObject:self];
 }
 
+- (BOOL)isValidForRegexPattern:(NSString*)pattern
+{
+    NSError *error = nil;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:&error];
+    if (error)
+    {
+        return NO;
+    }
+    
+    NSUInteger regExMatches = [regex numberOfMatchesInString:self options:0 range:NSMakeRange(0, self.length)];
+ 
+    return (regExMatches != NSNotFound && regExMatches != 0);
+}
+
 - (NSString*)MD5
 {
     if(self == nil || self.length == 0) return nil;

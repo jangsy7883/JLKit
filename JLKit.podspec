@@ -1,4 +1,4 @@
-@version = "0.2.70"
+@version = "0.2.71"
 Pod::Spec.new do |s|
     s.name            = "JLKit"
     s.version         = @version
