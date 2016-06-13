@@ -11,6 +11,7 @@
 @interface NSDate (Additions)
 
 @property (nonatomic, readonly, getter=isToday) BOOL today;
+@property (nonatomic, readonly, getter=isYesterday) BOOL yesterday;
 
 @property (nonatomic, readonly) NSInteger year;
 @property (nonatomic, readonly) NSInteger month;

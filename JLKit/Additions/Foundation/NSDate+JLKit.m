@@ -113,6 +113,12 @@
     return [self isEqualDayToDate:[NSDate date]];
 }
 
+- (BOOL)isYesterday
+{
+    NSDate *yesterday = [[NSDate date] dateByAddingCount:-1 forComponent:NSCalendarUnitDay];
+    return [self isEqualDayToDate:yesterday];
+}
+
 - (NSInteger)year
 {
     return [self valueForComponent:NSCalendarUnitYear];
