@@ -30,9 +30,9 @@
 
 + (BOOL)emptyString:(NSString *)parm_string;
 
-- (BOOL)isValidForRegex:(NSString*)regex DEPRECATED_ATTRIBUTE;
-
-- (BOOL)isValidForRegexPattern:(NSString*)pattern;
+- (NSRange)rangeOfFirstMatchInRegexPattern:(NSString*)pattern;
+- (NSArray<NSTextCheckingResult *> *)matchesInRegexPattern:(NSString*)pattern;
+- (BOOL)isValidInRegexPattern:(NSString*)pattern;
 
 @property (nonatomic, readonly, copy) NSString *MD5;
 @property (nonatomic, readonly, copy) NSString *UTF8Encoding;

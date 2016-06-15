@@ -107,25 +107,46 @@
     return NO;
 }
 
-- (BOOL)isValidForRegex:(NSString*)regex
-{
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
-    return [predicate evaluateWithObject:self];
-}
+#pragma mark - Regex Pattern
 
-- (BOOL)isValidForRegexPattern:(NSString*)pattern
+- (NSRegularExpression*)regexWithPattern:(NSString*)pattern
 {
     NSError *error = nil;
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:&error];
     if (error)
     {
-        return NO;
+        return nil;
     }
-    
-    NSUInteger regExMatches = [regex numberOfMatchesInString:self options:0 range:NSMakeRange(0, self.length)];
- 
-    return (regExMatches != NSNotFound && regExMatches != 0);
+    return regex;
 }
+
+- (NSRange)rangeOfFirstMatchInRegexPattern:(NSString*)pattern
+{
+    NSRegularExpression *regex = [self regexWithPattern:pattern];
+    if (regex)
+    {
+        return [regex rangeOfFirstMatchInString:self options:0 range:NSMakeRange(0, self.length)];
+    }
+    return NSMakeRange(0, 0);
+}
+
+- (NSArray<NSTextCheckingResult *> *)matchesInRegexPattern:(NSString*)pattern
+{
+    NSRegularExpression *regex = [self regexWithPattern:pattern];
+    if (regex)
+    {
+        return [regex matchesInString:self options:0 range:NSMakeRange(0, self.length)];
+    }
+    return nil;
+}
+
+- (BOOL)isValidInRegexPattern:(NSString*)pattern
+{
+    NSRange range = [self rangeOfFirstMatchInRegexPattern:pattern];
+    return (range.length != NSNotFound && range.length > 0);
+}
+
+#pragma mark -
 
 - (NSString*)MD5
 {
@@ -145,10 +166,7 @@
 
 - (NSString*)UTF8Encoding
 {
-    //iOS7 Update
     return [self stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet alphanumericCharacterSet]];
-//
-//    return [self stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 }
 
 + (NSString*)UUID
