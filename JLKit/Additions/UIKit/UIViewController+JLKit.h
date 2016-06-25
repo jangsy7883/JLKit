@@ -11,6 +11,7 @@
 @interface UIViewController (Additions)
 
 @property (nonatomic, readonly, strong) UIViewController *visibleViewController;
+@property (nonatomic, readonly, getter=isPresented) BOOL presented;
 
 + (UIViewController*)visibleViewController;
 + (UIViewController*)visibleViewControllerForViewController:(UIViewController*)viewController;

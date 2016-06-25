@@ -14,6 +14,7 @@
 		0FAABE071BC0E7DA00AE9BBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FAABE051BC0E7DA00AE9BBE /* Main.storyboard */; };
 		0FAABE091BC0E7DA00AE9BBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FAABE081BC0E7DA00AE9BBE /* Assets.xcassets */; };
 		0FAABE0C1BC0E7DA00AE9BBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FAABE0A1BC0E7DA00AE9BBE /* LaunchScreen.storyboard */; };
+		7E88F9EE1D1E355700BBF27A /* NSIndexSet+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E88F9ED1D1E355700BBF27A /* NSIndexSet+JLKit.m */; };
 		7E9268BB1CD7743200AF1272 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 7E9268BA1CD7743200AF1272 /* README.md */; };
 		8BFB37C41CD637E600DBBDDB /* NSArray+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB377B1CD637E600DBBDDB /* NSArray+JLKit.m */; };
 		8BFB37C51CD637E600DBBDDB /* NSBundle+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB377D1CD637E600DBBDDB /* NSBundle+JLKit.m */; };
@@ -64,6 +65,8 @@
 		0FAABE081BC0E7DA00AE9BBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0FAABE0B1BC0E7DA00AE9BBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0FAABE0D1BC0E7DA00AE9BBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E88F9EC1D1E355700BBF27A /* NSIndexSet+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexSet+JLKit.h"; sourceTree = "<group>"; };
+		7E88F9ED1D1E355700BBF27A /* NSIndexSet+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexSet+JLKit.m"; sourceTree = "<group>"; };
 		7E9268BA1CD7743200AF1272 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		8BFB377A1CD637E600DBBDDB /* NSArray+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+JLKit.h"; sourceTree = "<group>"; };
 		8BFB377B1CD637E600DBBDDB /* NSArray+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JLKit.m"; sourceTree = "<group>"; };
@@ -101,7 +104,6 @@
 		8BFB379C1CD637E600DBBDDB /* UINavigationController+JLStatusBarStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+JLStatusBarStyle.m"; sourceTree = "<group>"; };
 		8BFB379E1CD637E600DBBDDB /* CALayer+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+JLKit.h"; sourceTree = "<group>"; };
 		8BFB379F1CD637E600DBBDDB /* CALayer+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+JLKit.m"; sourceTree = "<group>"; };
-		8BFB37A01CD637E600DBBDDB /* JLKitUIHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLKitUIHeader.h; sourceTree = "<group>"; };
 		8BFB37A11CD637E600DBBDDB /* UIApplication+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+JLKit.h"; sourceTree = "<group>"; };
 		8BFB37A21CD637E600DBBDDB /* UIApplication+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+JLKit.m"; sourceTree = "<group>"; };
 		8BFB37A31CD637E600DBBDDB /* UIBarButtonItem+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+JLKit.h"; sourceTree = "<group>"; };
@@ -218,6 +220,8 @@
 			children = (
 				8BFB377A1CD637E600DBBDDB /* NSArray+JLKit.h */,
 				8BFB377B1CD637E600DBBDDB /* NSArray+JLKit.m */,
+				8BFB378A1CD637E600DBBDDB /* NSAttributedString+JLKit.h */,
+				8BFB378B1CD637E600DBBDDB /* NSAttributedString+JLKit.m */,
 				8BFB377C1CD637E600DBBDDB /* NSBundle+JLKit.h */,
 				8BFB377D1CD637E600DBBDDB /* NSBundle+JLKit.m */,
 				8BFB377E1CD637E600DBBDDB /* NSData+JLKit.h */,
@@ -230,10 +234,10 @@
 				8BFB37851CD637E600DBBDDB /* NSDictionary+JLKit.m */,
 				8BFB37861CD637E600DBBDDB /* NSIndexPath+JLKit.h */,
 				8BFB37871CD637E600DBBDDB /* NSIndexPath+JLKit.m */,
+				7E88F9EC1D1E355700BBF27A /* NSIndexSet+JLKit.h */,
+				7E88F9ED1D1E355700BBF27A /* NSIndexSet+JLKit.m */,
 				8BFB37881CD637E600DBBDDB /* NSLocale+JLKit.h */,
 				8BFB37891CD637E600DBBDDB /* NSLocale+JLKit.m */,
-				8BFB378A1CD637E600DBBDDB /* NSAttributedString+JLKit.h */,
-				8BFB378B1CD637E600DBBDDB /* NSAttributedString+JLKit.m */,
 				8BFB378C1CD637E600DBBDDB /* NSNumber+JLKit.h */,
 				8BFB378D1CD637E600DBBDDB /* NSNumber+JLKit.m */,
 				8BFB378E1CD637E600DBBDDB /* NSObject+JLKit.h */,
@@ -266,7 +270,6 @@
 			children = (
 				8BFB379E1CD637E600DBBDDB /* CALayer+JLKit.h */,
 				8BFB379F1CD637E600DBBDDB /* CALayer+JLKit.m */,
-				8BFB37A01CD637E600DBBDDB /* JLKitUIHeader.h */,
 				8BFB37A11CD637E600DBBDDB /* UIApplication+JLKit.h */,
 				8BFB37A21CD637E600DBBDDB /* UIApplication+JLKit.m */,
 				8BFB37A31CD637E600DBBDDB /* UIBarButtonItem+JLKit.h */,
@@ -403,6 +406,7 @@
 				8BFB37DF1CD637E600DBBDDB /* UILabel+JLKit.m in Sources */,
 				8BFB37D71CD637E600DBBDDB /* UIBarButtonItem+JLKit.m in Sources */,
 				8BFB37D31CD637E600DBBDDB /* SKProduct+JLKit.m in Sources */,
+				7E88F9EE1D1E355700BBF27A /* NSIndexSet+JLKit.m in Sources */,
 				8BFB37C71CD637E600DBBDDB /* NSDate+JLAge.m in Sources */,
 				8BFB37DE1CD637E600DBBDDB /* UIImage+JLKit.m in Sources */,
 				8BFB37CF1CD637E600DBBDDB /* NSString+JLKit.m in Sources */,
