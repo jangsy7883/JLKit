@@ -12,7 +12,7 @@
 
 - (BOOL)isPresented
 {
-    if ([self.navigationController.viewControllers count] > 0)
+    if ((self.navigationController.viewControllers).count > 0)
     {
         if (self != self.navigationController.viewControllers[0])
         {
@@ -23,13 +23,13 @@
     {
         return (self.presentingViewController.presentedViewController == self ||
                 self.navigationController.presentingViewController.presentedViewController == self.navigationController ||
-                [[[self tabBarController] presentingViewController] isKindOfClass:[UITabBarController class]]);
+                [self.tabBarController.presentingViewController isKindOfClass:[UITabBarController class]]);
     }
     else
     {
         return (self.parentViewController.presentedViewController == self ||
                 self.navigationController.parentViewController.presentedViewController == self.navigationController ||
-                [[[self tabBarController] parentViewController] isKindOfClass:[UITabBarController class]]);
+                [self.tabBarController.parentViewController isKindOfClass:[UITabBarController class]]);
     }
     
     return NO;

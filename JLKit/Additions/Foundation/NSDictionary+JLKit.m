@@ -23,11 +23,23 @@
     return nil;
 }
 
+- (id)objectOfFirstMatchInKeys:(NSArray*)keys
+{
+    for (id key in keys)
+    {
+        if (self[key] != nil)
+        {
+            return self[key];
+        }
+    }
+    return nil;
+}
+
 @end
 
 @implementation NSMutableDictionary (Additions)
 
-- (void)setSafeObject:(id)anObject forKey:(id <NSCopying>)aKey
+- (void)setSafeObject:(id)anObject forKey:(id <NSCopying>)key
 {
     // skip nils and NSNull
     if(anObject == nil || anObject == [NSNull null])
@@ -41,8 +53,7 @@
         return;
     }
     
-    self[aKey] = anObject;
+    self[key] = anObject;
 }
-
 
 @end

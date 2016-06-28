@@ -26,6 +26,6 @@
 + (void)isEqual:(UIImage*)iamge toImage:(UIImage*)toImage completion:(void (^)(BOOL isEqual))completion;
 - (BOOL)isEqualToImage:(UIImage*)toImage;
 
-- (UIImage*)originalRenderingImage;
+@property (nonatomic, readonly, strong) UIImage *originalRenderingImage;
 
 @end

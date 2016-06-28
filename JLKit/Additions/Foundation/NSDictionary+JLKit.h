@@ -12,10 +12,12 @@
 
 @property (nonatomic, readonly, copy) NSString *JSONValue;
 
+- (id)objectOfFirstMatchInKeys:(NSArray*)keys;
+
 @end
 
 @interface NSMutableDictionary (Additions)
 
-- (void)setSafeObject:(id)anObject forKey:(id <NSCopying>)aKey;
+- (void)setSafeObject:(id)anObject forKey:(id <NSCopying>)key;
 
 @end
