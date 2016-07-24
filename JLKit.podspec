@@ -1,12 +1,11 @@
-@version = "0.2.75"
 Pod::Spec.new do |s|
     s.name            = "JLKit"
-    s.version         = @version
+    s.version         = "0.2.76"
     s.license         = { :type => 'MIT', :file => 'LICENSE' }
     s.summary         = "JLKit"
     s.homepage        = "https://github.com/jangsy7883/JLKit"
     s.author          = { "hmhv" => "jangsy7883@gmail.com" }
-    s.source          = { :git => "https://github.com/jangsy7883/JLKit.git", :tag => @version }
+    s.source          = { :git => "https://github.com/jangsy7883/JLKit.git", :tag => s.version }
     s.platform        = :ios, '8.0'
     s.requires_arc    = true
     s.default_subspec = 'Core'

@@ -16,6 +16,7 @@
 		0FAABE0C1BC0E7DA00AE9BBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FAABE0A1BC0E7DA00AE9BBE /* LaunchScreen.storyboard */; };
 		7E88F9EE1D1E355700BBF27A /* NSIndexSet+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E88F9ED1D1E355700BBF27A /* NSIndexSet+JLKit.m */; };
 		7E9268BB1CD7743200AF1272 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 7E9268BA1CD7743200AF1272 /* README.md */; };
+		8B9EE2201D445E0D002F0BCD /* NSError+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9EE21F1D445E0D002F0BCD /* NSError+JLKit.m */; };
 		8BFB37C41CD637E600DBBDDB /* NSArray+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB377B1CD637E600DBBDDB /* NSArray+JLKit.m */; };
 		8BFB37C51CD637E600DBBDDB /* NSBundle+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB377D1CD637E600DBBDDB /* NSBundle+JLKit.m */; };
 		8BFB37C61CD637E600DBBDDB /* NSData+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB377F1CD637E600DBBDDB /* NSData+JLKit.m */; };
@@ -68,6 +69,8 @@
 		7E88F9EC1D1E355700BBF27A /* NSIndexSet+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexSet+JLKit.h"; sourceTree = "<group>"; };
 		7E88F9ED1D1E355700BBF27A /* NSIndexSet+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexSet+JLKit.m"; sourceTree = "<group>"; };
 		7E9268BA1CD7743200AF1272 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		8B9EE21E1D445E0D002F0BCD /* NSError+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+JLKit.h"; sourceTree = "<group>"; };
+		8B9EE21F1D445E0D002F0BCD /* NSError+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+JLKit.m"; sourceTree = "<group>"; };
 		8BFB377A1CD637E600DBBDDB /* NSArray+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+JLKit.h"; sourceTree = "<group>"; };
 		8BFB377B1CD637E600DBBDDB /* NSArray+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JLKit.m"; sourceTree = "<group>"; };
 		8BFB377C1CD637E600DBBDDB /* NSBundle+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+JLKit.h"; sourceTree = "<group>"; };
@@ -252,6 +255,8 @@
 				8BFB37971CD637E600DBBDDB /* NSURL+JLKit.m */,
 				8BFB37981CD637E600DBBDDB /* SKProduct+JLKit.h */,
 				8BFB37991CD637E600DBBDDB /* SKProduct+JLKit.m */,
+				8B9EE21E1D445E0D002F0BCD /* NSError+JLKit.h */,
+				8B9EE21F1D445E0D002F0BCD /* NSError+JLKit.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -416,6 +421,7 @@
 				8BFB37C41CD637E600DBBDDB /* NSArray+JLKit.m in Sources */,
 				8BFB37E61CD637E600DBBDDB /* UIViewController+JLKit.m in Sources */,
 				8BFB37E51CD637E600DBBDDB /* UIView+JLKit.m in Sources */,
+				8B9EE2201D445E0D002F0BCD /* NSError+JLKit.m in Sources */,
 				8BFB37E21CD637E600DBBDDB /* UITabBarItem+JLKit.m in Sources */,
 				8BFB37DC1CD637E600DBBDDB /* UIDevice+JLKit.m in Sources */,
 				8BFB37CB1CD637E600DBBDDB /* NSLocale+JLKit.m in Sources */,

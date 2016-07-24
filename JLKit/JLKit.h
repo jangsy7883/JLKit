@@ -23,6 +23,7 @@
 #import "NSTimeZone+JLKit.h"
 #import "NSURL+JLKit.h"
 #import "SKProduct+JLKit.h"
+#import "NSError+JLKit.h"
 
 //UIKit
 #import "CALayer+JLKit.h"
