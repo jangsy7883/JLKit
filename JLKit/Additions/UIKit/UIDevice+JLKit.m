@@ -55,36 +55,86 @@
 
 #pragma mark - ip Address
 
-- (NSString *)ipAddressForInterface:(NSString *)interface
+- (NSString *)ipAddressForInterface:(NSString *)interface ipVersion:(NSInteger)ipVersion
 {
-    BOOL success;
-    struct ifaddrs * addrs;
-    const struct ifaddrs * cursor;
-    success = getifaddrs(&addrs) == 0;
-    if (success) {
-        cursor = addrs;
-        while (cursor != NULL) {
-            if (cursor->ifa_addr->sa_family == AF_INET && (cursor->ifa_flags & IFF_LOOPBACK) == 0)
-            {
-                NSString *name = @(cursor->ifa_name);
-                if ([name isEqualToString:interface])  // Wi-Fi adapter
-                    return @(inet_ntoa(((struct sockaddr_in *)cursor->ifa_addr)->sin_addr));
-            }
-            cursor = cursor->ifa_next;
-        }
-        freeifaddrs(addrs);
-    }
-    return nil;
+    NSString *address = nil;
+    struct ifaddrs *interfaces = NULL;
+    struct ifaddrs *temp_addr = NULL;
+    struct sockaddr_in *s4;
+    struct sockaddr_in6 *s6;
+    char buf[64];
+    int success = 0;
+    
+    // retrieve the current interfaces - returns 0 on success
+    success = getifaddrs(&interfaces);
+    if (success == 0)
+ 	  {
+          // Loop through linked list of interfaces
+          temp_addr = interfaces;
+          while(temp_addr != NULL)
+          {
+              if( (ipVersion == 4 && temp_addr->ifa_addr->sa_family == AF_INET) ||
+                 (ipVersion == 6 &&  temp_addr->ifa_addr->sa_family == AF_INET6))
+              {
+//                  NSLog(@"Network Interface: %@",[NSString stringWithUTF8String:temp_addr->ifa_name]);
+                  
+                  // Check if interface is en0 which is the wifi connection on the iPhone
+                  if([[NSString stringWithUTF8String:temp_addr->ifa_name] isEqualToString:interface])
+                  {
+                      if(ipVersion == 4)
+                      {
+                          s4 = (struct sockaddr_in *)temp_addr->ifa_addr;
+                          
+                          if (inet_ntop(temp_addr->ifa_addr->sa_family, (void *)&(s4->sin_addr), buf, sizeof(buf)) == NULL)
+                          {
+                              NSLog(@"%s: inet_ntop failed for v4!\n",temp_addr->ifa_name);
+                          }
+                          else{
+                              address = [NSString stringWithUTF8String:buf];
+                          }
+                      }
+                      if (ipVersion == 6)
+                      {
+                          s6 = (struct sockaddr_in6 *)(temp_addr->ifa_addr);
+                          
+                          if (inet_ntop(temp_addr->ifa_addr->sa_family, (void *)&(s6->sin6_addr), buf, sizeof(buf)) == NULL)
+                          {
+                              NSLog(@"%s: inet_ntop failed for v6!\n",temp_addr->ifa_name);
+                          }
+                          else{
+                              address = [NSString stringWithUTF8String:buf];
+                          }
+                      }
+                  }
+              }
+              
+              temp_addr = temp_addr->ifa_next;
+          }
+      }
+    
+    // Free memory
+    freeifaddrs(interfaces);
+    return address;
 }
 
 - (NSString *)ipAddressForWiFi
 {
-    return [self ipAddressForInterface:@"en0"];
+    NSString *address = [self ipAddressForInterface:@"en0" ipVersion:6];
+    if (address == nil)
+    {
+        address = [self ipAddressForInterface:@"en0" ipVersion:4];
+    }
+    return address;
 }
 
 - (NSString *)ipAddressForCellular
 {
-    return [self ipAddressForInterface:@"pdp_ip0"];
+    NSString *address = [self ipAddressForInterface:@"pdp_ip0" ipVersion:6];
+    if (address == nil)
+    {
+        address = [self ipAddressForInterface:@"pdp_ip0" ipVersion:4];
+    }
+    return address;
 }
 
 @end

@@ -17,6 +17,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    NSLog(@"WiFi : %@",[[UIDevice currentDevice] ipAddressForWiFi]);
+    NSLog(@"Cellular : %@",[[UIDevice currentDevice] ipAddressForCellular]);
 }
 
 @end
