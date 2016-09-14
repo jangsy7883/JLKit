@@ -12,20 +12,24 @@
 
 @property (nonatomic, readonly, strong) UIImage *centerResizableImage;
 @property (nonatomic, readonly, strong) UIImage *squareCropImage;
+@property (nonatomic, readonly) BOOL hasAlpha;
+
+@property (nonatomic, readonly, strong) UIImage *originalRenderingImage;
 
 + (UIImage *)patternImageWithColor:(UIColor *)color;
 + (UIImage *)patternImageWithColor:(UIColor *)color size:(CGSize)size;
 
-- (UIImage *)imageWithTintColor:(UIColor *)color;
++ (void)isEqual:(UIImage*)iamge toImage:(UIImage*)toImage completion:(void (^)(BOOL isEqual))completion;
 
 - (CGSize)sizeToFitWidth:(CGFloat)width scaleAspectFit:(BOOL)scaleAspectFit;
 - (CGSize)sizeToFit:(CGSize)size scaleAspectFit:(BOOL)scaleAspectFit;
 
 - (UIImage *)autoScaleWithOriginalScale:(CGFloat)scale;
 
-+ (void)isEqual:(UIImage*)iamge toImage:(UIImage*)toImage completion:(void (^)(BOOL isEqual))completion;
-- (BOOL)isEqualToImage:(UIImage*)toImage;
+- (UIImage *)imageWithTintColor:(UIColor *)color;
+- (UIImage *)imageWithCropFrame:(CGRect)frame angle:(NSInteger)angle circularClip:(BOOL)circular;
+- (UIImage *)imageWithAngle:(NSInteger)angle;
 
-@property (nonatomic, readonly, strong) UIImage *originalRenderingImage;
+- (BOOL)isEqualToImage:(UIImage*)toImage;
 
 @end

@@ -197,4 +197,56 @@
 {
     return [self imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 }
+
+- (BOOL)hasAlpha
+{
+    CGImageAlphaInfo alphaInfo = CGImageGetAlphaInfo(self.CGImage);
+    return (alphaInfo == kCGImageAlphaFirst || alphaInfo == kCGImageAlphaLast ||
+            alphaInfo == kCGImageAlphaPremultipliedFirst || alphaInfo == kCGImageAlphaPremultipliedLast);
+}
+
+- (UIImage *)imageWithCropFrame:(CGRect)frame angle:(NSInteger)angle circularClip:(BOOL)circular
+{
+    UIImage *croppedImage = nil;
+    UIGraphicsBeginImageContextWithOptions(frame.size, ![self hasAlpha] && !circular, self.scale);
+    {
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        
+        if (circular)
+        {
+            CGContextAddEllipseInRect(context, (CGRect){CGPointZero, frame.size});
+            CGContextClip(context);
+        }
+        if (angle != 0)
+        {
+            UIImageView *imageView = [[UIImageView alloc] initWithImage:self];
+            imageView.layer.minificationFilter = kCAFilterNearest;
+            imageView.layer.magnificationFilter = kCAFilterNearest;
+            imageView.transform = CGAffineTransformRotate(CGAffineTransformIdentity, angle * (M_PI/180.0f));
+            CGRect rotatedRect = CGRectApplyAffineTransform(imageView.bounds, imageView.transform);
+            UIView *containerView = [[UIView alloc] initWithFrame:(CGRect){CGPointZero, rotatedRect.size}];
+            [containerView addSubview:imageView];
+            imageView.center = containerView.center;
+            CGContextTranslateCTM(context, -frame.origin.x, -frame.origin.y);
+            [containerView.layer renderInContext:context];
+        }
+        else
+        {
+            CGContextTranslateCTM(context, -frame.origin.x, -frame.origin.y);
+            [self drawAtPoint:CGPointZero];
+        }
+        
+        croppedImage = UIGraphicsGetImageFromCurrentImageContext();
+    }
+    UIGraphicsEndImageContext();
+    
+    return [UIImage imageWithCGImage:croppedImage.CGImage scale:[UIScreen mainScreen].scale orientation:UIImageOrientationUp];
+}
+
+- (UIImage *)imageWithAngle:(NSInteger)angle
+{
+    return [self imageWithCropFrame:(CGRect){CGPointZero,self.size}
+                              angle:angle
+                       circularClip:NO];
+}
 @end
