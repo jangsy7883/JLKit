@@ -18,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSLog(@"%@",[[NSDate date] dateByAddingCount:1 forComponent:NSCalendarUnitDay]);
     
     NSLog(@"WiFi : %@",[[UIDevice currentDevice] ipAddressForWiFi]);
     NSLog(@"Cellular : %@",[[UIDevice currentDevice] ipAddressForCellular]);

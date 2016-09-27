@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
     s.homepage        = "https://github.com/jangsy7883/JLKit"
     s.author          = { "hmhv" => "jangsy7883@gmail.com" }
     s.source          = { :git => "https://github.com/jangsy7883/JLKit.git", :tag => s.version }
-    s.platform        = :ios, '8.0'
+    s.platform        = :ios, '7.0'
     s.requires_arc    = true
     s.default_subspec = 'Core'
 
