@@ -10,6 +10,8 @@
 
 @interface NSArray (Additions)
 
+@property (nonatomic, readonly, copy) NSString *JSONValue;
+
 - (BOOL)emptyAtIndex:(NSInteger)index;
 
 - (id)objectAtSafeIndex:(NSInteger)index;
