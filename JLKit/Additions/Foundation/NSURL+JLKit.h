@@ -10,7 +10,7 @@
 
 @interface NSURL (JLKit)
 
-@property (nonatomic, readonly, copy) NSDictionary * queryParameters;
+@property (nonatomic, readonly, copy) NSDictionary * parameters;
 
 + (instancetype)URLWithString:(NSString*)baseURL parameters:(NSDictionary*)parameters;
 

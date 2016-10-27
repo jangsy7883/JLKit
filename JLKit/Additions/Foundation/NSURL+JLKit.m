@@ -10,37 +10,48 @@
 
 @implementation NSURL (JLKit)
 
-- (NSDictionary*)queryParameters
+- (NSDictionary*)parameters
 {
-    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary* parameters = [NSMutableDictionary dictionary];
+    
+/*
     for (NSString *param in [self.query componentsSeparatedByString:@"&"])
     {
         NSArray *parts = [param componentsSeparatedByString:@"="];
         if(parts.count < 2) continue;
-        params[parts[0]] = parts[1];
+        parameters[parts[0]] = parts[1];
     }
-    return params;
-//    NSMutableDictionary* queryParams = [NSMutableDictionary dictionary];
-//    NSURLComponents* urlComponents = [NSURLComponents componentsWithURL:self resolvingAgainstBaseURL:NO];
-//
-//    
-//    for (NSURLQueryItem* queryItem in [urlComponents queryItems])
-//    {
-//        if (queryItem.value != nil)
-//        {
-//            [queryParams setObject:queryItem.value forKey:queryItem.name];
-//        }
-//    }
-//    
-//    return queryParams;
+    return parameters;
+*/
+    
+    NSURLComponents* urlComponents = [NSURLComponents componentsWithURL:self resolvingAgainstBaseURL:NO];
+    
+    for (NSURLQueryItem* queryItem in [urlComponents queryItems])
+    {
+        if (queryItem.value != nil)
+            [parameters setObject:queryItem.value forKey:queryItem.name];
+    }
+    
+    return parameters;
 }
 
 + (instancetype)URLWithString:(NSString*)baseURL parameters:(NSDictionary*)parameters
 {
     NSMutableArray *queryItems = [NSMutableArray array];
-    for (NSString *key in parameters)
+    for (NSString* key in parameters)
     {
-        [queryItems addObject:[NSURLQueryItem queryItemWithName:key value:parameters[key]]];
+        id value = parameters[key];
+        
+        if ([value respondsToSelector:@selector(stringValue)])
+        {
+            value = [value stringValue];
+        }
+        else if([value isKindOfClass:[NSString class]] == NO)
+        {
+            continue;
+        }
+        
+        [queryItems addObject:[NSURLQueryItem queryItemWithName:key value:value]];
     }
     
     NSURLComponents *components = [NSURLComponents componentsWithString:baseURL];
