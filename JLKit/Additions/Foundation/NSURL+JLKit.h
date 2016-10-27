@@ -12,4 +12,6 @@
 
 @property (nonatomic, readonly, copy) NSDictionary * queryParameters;
 
++ (instancetype)URLWithString:(NSString*)baseURL parameters:(NSDictionary*)parameters;
+
 @end

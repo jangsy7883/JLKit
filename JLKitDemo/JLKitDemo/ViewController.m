@@ -22,6 +22,13 @@
     
     NSLog(@"WiFi : %@",[[UIDevice currentDevice] ipAddressForWiFi]);
     NSLog(@"Cellular : %@",[[UIDevice currentDevice] ipAddressForCellular]);
+    
+    
+    NSLog(@"%@",[NSURL URLWithString:@"http://wwww.naver.com" parameters:@{
+                                                                           @"A":@"AA",
+                                                                           @"B":@"BB",
+                                                                           }]);
+    
 }
 
 @end

@@ -35,4 +35,18 @@
 //    return queryParams;
 }
 
++ (instancetype)URLWithString:(NSString*)baseURL parameters:(NSDictionary*)parameters
+{
+    NSMutableArray *queryItems = [NSMutableArray array];
+    for (NSString *key in parameters)
+    {
+        [queryItems addObject:[NSURLQueryItem queryItemWithName:key value:parameters[key]]];
+    }
+    
+    NSURLComponents *components = [NSURLComponents componentsWithString:baseURL];
+    components.queryItems = queryItems;
+    
+    return components.URL;
+}
+
 @end
