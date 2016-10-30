@@ -11,5 +11,12 @@
 @interface NSMutableAttributedString (JLKit)
 
 - (void)addAttributes:(NSDictionary*)attrs text:(NSString*)text;
+- (void)appendString:(NSString*)string attributes:(NSDictionary*)attributes;
+
+@end
+
+@interface NSAttributedString (JLKit)
+
++ (instancetype)attributedString:(NSString*)string attributes:(NSDictionary<NSString *, id> *)attrs;
 
 @end

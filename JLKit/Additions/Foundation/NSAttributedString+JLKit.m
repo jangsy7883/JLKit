@@ -26,4 +26,23 @@
     }
 }
 
+- (void)appendString:(NSString*)string attributes:(NSDictionary*)attributes
+{
+    if (string.length > 0 && attributes.allKeys.count > 0)
+    {
+        NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString:string
+                                                                               attributes:attributes];
+        [self appendAttributedString:attributedString];
+    }
+}
+
+@end
+
+@implementation NSAttributedString (JLKit)
+
++ (instancetype)attributedString:(NSString*)string attributes:(NSDictionary<NSString *, id> *)attrs
+{
+    return [[[self class] alloc] initWithString:string attributes:attrs];
+}
+
 @end

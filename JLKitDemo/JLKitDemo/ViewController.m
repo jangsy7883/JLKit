@@ -24,12 +24,16 @@
     NSLog(@"Cellular : %@",[[UIDevice currentDevice] ipAddressForCellular]);
     
     
-    NSURL *url = [NSURL URLWithString:@"http://wwww.naver.com" parameters:@{
-                                                                            @"A":@"서울역",
-                                                                            @"B":@(1),
-                                                                            }];
-    NSLog(@"%@",url);
-    NSLog(@"%@",[url parameters]);
+
+    
+    NSLog(@"%@",[NSMutableAttributedString attributedString:@"aaa" attributes:@{
+                                                                                NSFontAttributeName:Font_Light(12)
+                                                                                }]);
+    
+    NSLog(@"%@",[NSAttributedString attributedString:@"aaa" attributes:@{
+                                                                         NSFontAttributeName:Font_Light(12)
+                                                                         }]);
+    
 }
 
 @end
