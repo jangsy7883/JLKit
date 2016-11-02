@@ -16,6 +16,8 @@
 @property (nonatomic, readonly) UIViewController *superViewController;
 @property (nonatomic, assign) CGFloat cornerRadius;
 
+@property (nonatomic, readonly) UIImage* screenShot;
+
 + (instancetype)viewWithClass:(Class)viewClass;
 + (instancetype)viewWithNibNamed:(NSString*)nibNameOrNil;
 

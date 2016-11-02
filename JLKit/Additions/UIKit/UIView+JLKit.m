@@ -61,6 +61,17 @@
     return self.layer.cornerRadius;
 }
 
+- (UIImage*)screenShot
+{
+    UIGraphicsBeginImageContextWithOptions(self.frame.size,NO, [UIScreen mainScreen].scale);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [self.layer renderInContext:context];
+    UIImage *img_screenShot = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+
+    return img_screenShot;
+}
+
 #pragma mark - SETTERS
 
 - (void)setTransformScale:(CGFloat)scale
