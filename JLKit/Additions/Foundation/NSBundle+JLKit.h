@@ -13,4 +13,6 @@
 @property (nonatomic, readonly, copy) NSString *appVersion;
 @property (nonatomic, readonly, copy) NSString *buildVersion;
 
+- (BOOL)isNewerThenAppVersion:(NSString*)newVersion;
+
 @end

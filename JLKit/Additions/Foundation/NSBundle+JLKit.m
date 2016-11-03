@@ -18,7 +18,11 @@
 - (NSString*)buildVersion
 {
     return self.infoDictionary[(NSString*)kCFBundleVersionKey];
+}
 
+- (BOOL)isNewerThenAppVersion:(NSString*)version
+{
+    return [self.appVersion compare:version options:NSNumericSearch] == NSOrderedAscending;
 }
 
 @end

@@ -34,6 +34,14 @@
                                                                          NSFontAttributeName:Font_Light(12)
                                                                          }]);
     
+    
+    NSLog(@"%@",[[NSBundle mainBundle] isNewerThenAppVersion:@"0.8"] ? @"YES":@"NO");
+    NSLog(@"%@",[[NSBundle mainBundle] isNewerThenAppVersion:@"0.2"] ? @"YES":@"NO");
+    NSLog(@"%@",[[NSBundle mainBundle] isNewerThenAppVersion:@"0.1"] ? @"YES":@"NO");
+    NSLog(@"%@",[[NSBundle mainBundle] isNewerThenAppVersion:@"1.8"] ? @"YES":@"NO");
+    NSLog(@"%@",[[NSBundle mainBundle] isNewerThenAppVersion:@"2.8"] ? @"YES":@"NO");
+    NSLog(@"%@",[[NSBundle mainBundle] isNewerThenAppVersion:@"3.8.1"] ? @"YES":@"NO");
+    
 }
 
 @end
