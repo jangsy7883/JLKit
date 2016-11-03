@@ -51,6 +51,7 @@
 		8BFB37E41CD637E600DBBDDB /* UITableViewCell+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB37BE1CD637E600DBBDDB /* UITableViewCell+JLKit.m */; };
 		8BFB37E51CD637E600DBBDDB /* UIView+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB37C01CD637E600DBBDDB /* UIView+JLKit.m */; };
 		8BFB37E61CD637E600DBBDDB /* UIViewController+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB37C21CD637E600DBBDDB /* UIViewController+JLKit.m */; };
+		EF19B9F11DCB3AFE0010DD69 /* UIActivityViewController+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = EF19B9F01DCB3AFE0010DD69 /* UIActivityViewController+JLKit.m */; };
 		EF6A9EED1D9A4FAD00C31B2C /* CLLocation+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6A9EEC1D9A4FAD00C31B2C /* CLLocation+JLKit.m */; };
 /* End PBXBuildFile section */
 
@@ -141,6 +142,8 @@
 		8BFB37C11CD637E600DBBDDB /* UIViewController+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JLKit.h"; sourceTree = "<group>"; };
 		8BFB37C21CD637E600DBBDDB /* UIViewController+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JLKit.m"; sourceTree = "<group>"; };
 		8BFB37C31CD637E600DBBDDB /* JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLKit.h; sourceTree = "<group>"; };
+		EF19B9EF1DCB3AFE0010DD69 /* UIActivityViewController+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActivityViewController+JLKit.h"; sourceTree = "<group>"; };
+		EF19B9F01DCB3AFE0010DD69 /* UIActivityViewController+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActivityViewController+JLKit.m"; sourceTree = "<group>"; };
 		EF6A9EEB1D9A4FAD00C31B2C /* CLLocation+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+JLKit.h"; sourceTree = "<group>"; };
 		EF6A9EEC1D9A4FAD00C31B2C /* CLLocation+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+JLKit.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -311,6 +314,8 @@
 				8BFB37C01CD637E600DBBDDB /* UIView+JLKit.m */,
 				8BFB37C11CD637E600DBBDDB /* UIViewController+JLKit.h */,
 				8BFB37C21CD637E600DBBDDB /* UIViewController+JLKit.m */,
+				EF19B9EF1DCB3AFE0010DD69 /* UIActivityViewController+JLKit.h */,
+				EF19B9F01DCB3AFE0010DD69 /* UIActivityViewController+JLKit.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -410,6 +415,7 @@
 				8BFB37C91CD637E600DBBDDB /* NSDictionary+JLKit.m in Sources */,
 				8BFB37D61CD637E600DBBDDB /* UIApplication+JLKit.m in Sources */,
 				8BFB37E01CD637E600DBBDDB /* UIScreen+JLKit.m in Sources */,
+				EF19B9F11DCB3AFE0010DD69 /* UIActivityViewController+JLKit.m in Sources */,
 				8BFB37D81CD637E600DBBDDB /* UIButton+JLKit.m in Sources */,
 				8BFB37D11CD637E600DBBDDB /* NSTimeZone+JLKit.m in Sources */,
 				8BFB37D41CD637E600DBBDDB /* UINavigationController+JLStatusBarStyle.m in Sources */,

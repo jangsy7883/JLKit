@@ -43,3 +43,4 @@
 #import "UITableViewCell+JLKit.h"
 #import "UIView+JLKit.h"
 #import "UIViewController+JLKit.h"
+#import "UIActivityViewController+JLKit.h"
