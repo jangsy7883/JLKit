@@ -16,4 +16,13 @@
                                             numberStyle:nStyle];
 }
 
+- (NSString *)stringByRounding:(NSNumberFormatterRoundingMode)roundingMode maximumFractionDigits:(NSUInteger)maximumFractionDigits
+{
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setMaximumFractionDigits:maximumFractionDigits];
+    [formatter setRoundingMode:roundingMode];
+    NSString *numberString = [formatter stringFromNumber:self];
+    return numberString;
+}
+
 @end

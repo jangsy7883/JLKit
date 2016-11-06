@@ -17,25 +17,54 @@
 
 + (UIColor*)colorWithHex:(NSString*)hex alpha:(CGFloat)alpha
 {
-    NSString *cleanString = [hex stringByReplacingOccurrencesOfString:@"#" withString:@""];
-    if(cleanString.length == 3) {
-        cleanString = [NSString stringWithFormat:@"%@%@%@%@%@%@",
-                       [cleanString substringWithRange:NSMakeRange(0, 1)],[cleanString substringWithRange:NSMakeRange(0, 1)],
-                       [cleanString substringWithRange:NSMakeRange(1, 1)],[cleanString substringWithRange:NSMakeRange(1, 1)],
-                       [cleanString substringWithRange:NSMakeRange(2, 1)],[cleanString substringWithRange:NSMakeRange(2, 1)]];
-    }
-    if(cleanString.length == 6) {
-        cleanString = [cleanString stringByAppendingString:@"ff"];
-    }
-    
-    unsigned int baseValue;
-    [[NSScanner scannerWithString:cleanString] scanHexInt:&baseValue];
-    
-    float red = ((baseValue >> 24) & 0xFF)/255.0f;
-    float green = ((baseValue >> 16) & 0xFF)/255.0f;
-    float blue = ((baseValue >> 8) & 0xFF)/255.0f;
+    NSString *colorString = [[hex stringByReplacingOccurrencesOfString:@"#" withString:@""] uppercaseString];
 
-    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+    unsigned (^colorComponentFrom)(NSInteger, NSInteger) = ^(NSInteger start, NSInteger length)
+    {
+        NSString *substring = [colorString substringWithRange: NSMakeRange(start, length)];
+        NSString *fullHex = length == 2 ? substring : [NSString stringWithFormat:@"%@%@", substring, substring];
+        unsigned hexComponent;
+        [[NSScanner scannerWithString: fullHex] scanHexInt: &hexComponent];
+        return hexComponent;
+    };
+    
+    switch (colorString.length)
+    {
+        case 3: // #RGB
+            return RGBA(colorComponentFrom(0,1), colorComponentFrom(1,1), colorComponentFrom(2,1), alpha);
+            break;
+        case 4: // #ARGB
+            return RGBA(colorComponentFrom(1,1), colorComponentFrom(2,1), colorComponentFrom(3,1), colorComponentFrom(0,1));
+            break;
+        case 6: // #RRGGBB
+            return RGBA(colorComponentFrom(0,2), colorComponentFrom(2,2), colorComponentFrom(4,2), alpha);
+            break;
+        case 8: // #AARRGGBB
+            return RGBA(colorComponentFrom(2,2), colorComponentFrom(4,2), colorComponentFrom(6,2), colorComponentFrom(0,2));
+            break;
+        default:
+            return [UIColor blackColor];
+            break;
+    }
+ 
+ /*
+    if(colorString.length == 3)
+    {
+        colorString = [NSString stringWithFormat:@"%@%@%@%@%@%@",
+                       [colorString substringWithRange:NSMakeRange(0, 1)],[colorString substringWithRange:NSMakeRange(0, 1)],
+                       [colorString substringWithRange:NSMakeRange(1, 1)],[colorString substringWithRange:NSMakeRange(1, 1)],
+                       [colorString substringWithRange:NSMakeRange(2, 1)],[colorString substringWithRange:NSMakeRange(2, 1)]];
+    }
+    if(colorString.length == 6)
+    {
+        colorString = [colorString stringByAppendingString:@"ff"];
+    }
+
+    unsigned int baseValue;
+    [[NSScanner scannerWithString:colorString] scanHexInt:&baseValue];
+    
+    return RGBA(((baseValue >> 24) & 0xFF), ((baseValue >> 16) & 0xFF), ((baseValue >> 8) & 0xFF), alpha);
+    */
 }
 
 - (BOOL)isEqualToColor:(UIColor *)color

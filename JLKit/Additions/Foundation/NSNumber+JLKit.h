@@ -11,5 +11,6 @@
 @interface NSNumber (JLKit)
 
 - (NSString*)localizedStringForNumberStyle:(NSNumberFormatterStyle)nStyle;
+- (NSString *)stringByRounding:(NSNumberFormatterRoundingMode)roundingMode maximumFractionDigits:(NSUInteger)maximumFractionDigits;
 
 @end
