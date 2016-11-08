@@ -17,6 +17,11 @@
 
 + (UIColor*)colorWithHex:(NSString*)hex alpha:(CGFloat)alpha
 {
+    if (hex == nil || [hex isKindOfClass:[NSString class]] == NO || hex.length == 0)
+    {
+        return nil;
+    }
+    
     NSString *colorString = [[hex stringByReplacingOccurrencesOfString:@"#" withString:@""] uppercaseString];
 
     unsigned (^colorComponentFrom)(NSInteger, NSInteger) = ^(NSInteger start, NSInteger length)
