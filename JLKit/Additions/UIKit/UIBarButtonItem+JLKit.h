@@ -17,13 +17,19 @@
                                      action:(SEL)action;
 
 + (UIBarButtonItem *)barButtonItemWithCustomImage:(UIImage *)image
-                                 highlightedImage:(UIImage *)highlightedImage
                                            target:(id)target
                                            action:(SEL)action;
 
 + (UIBarButtonItem *)barButtonItemWithCustomImage:(UIImage *)image
+                                 highlightedImage:(UIImage *)highlightedImage
                                            target:(id)target
                                            action:(SEL)action;
+
++ (UIBarButtonItem*)barButtonItemWithCustomImage:(UIImage *)image
+                                highlightedImage:(UIImage*)highlightedImage
+                               contentEdgeInsets:(UIEdgeInsets)contentEdgeInsets
+                                          target:(id)target
+                                          action:(SEL)action;
 
 + (UIBarButtonItem *)barButtonItemWithImage:(UIImage *)image
                                      target:(id)target
