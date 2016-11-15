@@ -43,9 +43,15 @@
 
 + (UIBarButtonItem*)barButtonItemWithCustomImage:(UIImage *)image highlightedImage:(UIImage*)highlightedImage target:(id)target action:(SEL)action
 {
+    return [self barButtonItemWithCustomImage:image highlightedImage:highlightedImage contentEdgeInsets:UIEdgeInsetsZero target:target action:action];
+}
+
++ (UIBarButtonItem*)barButtonItemWithCustomImage:(UIImage *)image highlightedImage:(UIImage*)highlightedImage contentEdgeInsets:(UIEdgeInsets)contentEdgeInsets target:(id)target action:(SEL)action
+{
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setImage:image forState:UIControlStateNormal];
     [button setImage:highlightedImage forState:UIControlStateHighlighted];
+    [button setContentEdgeInsets:contentEdgeInsets];
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     [button sizeToFit];
     
