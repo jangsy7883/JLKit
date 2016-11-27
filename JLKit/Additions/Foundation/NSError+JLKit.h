@@ -1,6 +1,6 @@
 //
 //  NSError+JLKit.h
-//  JLKitDemo
+//  JLKit
 //
 //  Created by Studio on 2016. 7. 24..
 //  Copyright © 2016년 Dalkomm. All rights reserved.
