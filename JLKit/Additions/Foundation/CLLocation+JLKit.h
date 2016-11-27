@@ -1,6 +1,6 @@
 //
 //  CLLocation+JLKit.h
-//  JLKitDemo
+//  JLKit
 //
 //  Created by 장석용 on 2016. 9. 27..
 //  Copyright © 2016년 Dalkomm. All rights reserved.

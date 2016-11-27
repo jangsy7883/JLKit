@@ -67,6 +67,7 @@
 		0FAABE081BC0E7DA00AE9BBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0FAABE0B1BC0E7DA00AE9BBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0FAABE0D1BC0E7DA00AE9BBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DE071931DEA9E640007E831 /* JLKitDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLKitDefine.h; sourceTree = "<group>"; };
 		7E88F9EC1D1E355700BBF27A /* NSIndexSet+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexSet+JLKit.h"; sourceTree = "<group>"; };
 		7E88F9ED1D1E355700BBF27A /* NSIndexSet+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexSet+JLKit.m"; sourceTree = "<group>"; };
 		8B9EE21E1D445E0D002F0BCD /* NSError+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+JLKit.h"; sourceTree = "<group>"; };
@@ -206,6 +207,7 @@
 			children = (
 				8BFB37781CD637E600DBBDDB /* Additions */,
 				8BFB37C31CD637E600DBBDDB /* JLKit.h */,
+				3DE071931DEA9E640007E831 /* JLKitDefine.h */,
 			);
 			name = JLKit;
 			path = ../JLKit;

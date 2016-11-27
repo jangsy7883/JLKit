@@ -6,6 +6,9 @@
 //  Copyright © 2016년 Dalkomm. All rights reserved.
 //
 
+//Define
+#import "JLKitDefine.h"
+
 //Foundation
 #import "NSArray+JLKit.h"
 #import "NSAttributedString+JLKit.h"
