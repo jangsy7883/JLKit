@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
     end
 
     s.subspec 'Additions' do |sp|
-    sp.source_files = 'JLKit/JLKit.h','JLKit/Additions/Foundation/*.{h,m}','JLKit/Additions/UIKit/*.{h,m}'
+    sp.source_files = 'JLKit/JLKit.h','JLKit/JLKitDefine.h','JLKit/Additions/Foundation/*.{h,m}','JLKit/Additions/UIKit/*.{h,m}'
     end
 
     s.subspec 'StatusBarStyle' do |ssp|
