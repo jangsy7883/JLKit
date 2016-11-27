@@ -1,6 +1,6 @@
 //
 //  UIActivityViewController+JLKit.h
-//  JLKitDemo
+//  JLKit
 //
 //  Created by Woody on 2016. 11. 3..
 //  Copyright © 2016년 Dalkomm. All rights reserved.
