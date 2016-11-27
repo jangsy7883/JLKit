@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#define UIBarImageButtonItemMake(_imageNamed,_target,_action) [UIBarButtonItem barButtonItemWithCustomImage:[UIImage imageNamed:_imageNamed] highlightedImage:nil contentEdgeInsets:UIEdgeInsetsMake(0, 3, 0, 3) target:_target action:_action];
+#define UIBarImageButtonItemMake(_imageNamed,_target,_action) [UIBarButtonItem barButtonItemWithCustomImage:[UIImage imageNamed:_imageNamed] highlightedImage:nil contentEdgeInsets:UIEdgeInsetsMake(0, 3, 0, 3) target:_target action:_action]
 
 @interface UIBarButtonItem (Additions)
 
