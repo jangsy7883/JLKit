@@ -8,7 +8,8 @@
 
 #import <CoreLocation/CLLocation.h>
 
-#define CLLocationCoordinateToDistance(coordinate,toCoordinate) [[CLLocation locationWithCoordinate:coordinate] distanceFromLocation:[CLLocation locationWithCoordinate:toCoordinate]];
+#define CLLocationCoordinate2DDistanceTo(coordinate,toCoordinate) [[CLLocation locationWithCoordinate:coordinate] distanceFromLocation:[CLLocation locationWithCoordinate:toCoordinate]];
+#define CLLocationCoordinate2DEqualTo(coord1,coord2) (coord1.latitude == coord2.latitude && coord1.longitude == coord2.longitude)
 
 @interface CLLocation (JLKit)
 

@@ -14,6 +14,7 @@
 		0FAABE071BC0E7DA00AE9BBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FAABE051BC0E7DA00AE9BBE /* Main.storyboard */; };
 		0FAABE091BC0E7DA00AE9BBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FAABE081BC0E7DA00AE9BBE /* Assets.xcassets */; };
 		0FAABE0C1BC0E7DA00AE9BBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FAABE0A1BC0E7DA00AE9BBE /* LaunchScreen.storyboard */; };
+		3DE0A1691DF3DC0D001286A0 /* UIAlertController+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DE0A1681DF3DC0D001286A0 /* UIAlertController+JLKit.m */; };
 		7E88F9EE1D1E355700BBF27A /* NSIndexSet+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E88F9ED1D1E355700BBF27A /* NSIndexSet+JLKit.m */; };
 		8B9EE2201D445E0D002F0BCD /* NSError+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9EE21F1D445E0D002F0BCD /* NSError+JLKit.m */; };
 		8BFB37C41CD637E600DBBDDB /* NSArray+JLKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB377B1CD637E600DBBDDB /* NSArray+JLKit.m */; };
@@ -68,6 +69,8 @@
 		0FAABE0B1BC0E7DA00AE9BBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0FAABE0D1BC0E7DA00AE9BBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DE071931DEA9E640007E831 /* JLKitDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLKitDefine.h; sourceTree = "<group>"; };
+		3DE0A1671DF3DC0D001286A0 /* UIAlertController+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+JLKit.h"; sourceTree = "<group>"; };
+		3DE0A1681DF3DC0D001286A0 /* UIAlertController+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+JLKit.m"; sourceTree = "<group>"; };
 		7E88F9EC1D1E355700BBF27A /* NSIndexSet+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexSet+JLKit.h"; sourceTree = "<group>"; };
 		7E88F9ED1D1E355700BBF27A /* NSIndexSet+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexSet+JLKit.m"; sourceTree = "<group>"; };
 		8B9EE21E1D445E0D002F0BCD /* NSError+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+JLKit.h"; sourceTree = "<group>"; };
@@ -318,6 +321,8 @@
 				8BFB37C21CD637E600DBBDDB /* UIViewController+JLKit.m */,
 				EF19B9EF1DCB3AFE0010DD69 /* UIActivityViewController+JLKit.h */,
 				EF19B9F01DCB3AFE0010DD69 /* UIActivityViewController+JLKit.m */,
+				3DE0A1671DF3DC0D001286A0 /* UIAlertController+JLKit.h */,
+				3DE0A1681DF3DC0D001286A0 /* UIAlertController+JLKit.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -436,6 +441,7 @@
 				8B9EE2201D445E0D002F0BCD /* NSError+JLKit.m in Sources */,
 				8BFB37E21CD637E600DBBDDB /* UITabBarItem+JLKit.m in Sources */,
 				8BFB37DC1CD637E600DBBDDB /* UIDevice+JLKit.m in Sources */,
+				3DE0A1691DF3DC0D001286A0 /* UIAlertController+JLKit.m in Sources */,
 				8BFB37CB1CD637E600DBBDDB /* NSLocale+JLKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
