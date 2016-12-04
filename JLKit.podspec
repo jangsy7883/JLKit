@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name            = "JLKit"
-    s.version         = "0.2.91"
+    s.version         = "0.2.92"
     s.license         = { :type => 'MIT', :file => 'LICENSE' }
     s.summary         = "JLKit"
     s.homepage        = "https://github.com/jangsy7883/JLKit"

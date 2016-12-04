@@ -47,3 +47,4 @@
 #import "UIView+JLKit.h"
 #import "UIViewController+JLKit.h"
 #import "UIActivityViewController+JLKit.h"
+#import "UIAlertController+JLKit.h"
