@@ -12,4 +12,6 @@
 
 + (BOOL)isActive;
 
++ (void)openURL:(NSURL*)url completion:(void (^)(BOOL success))completion;
+
 @end
