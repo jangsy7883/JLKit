@@ -44,6 +44,32 @@
     return object;
 }
 
+- (NSArray*)replacementArrayUsingBlock:(id (^)(id object))block
+{
+    if (block)
+    {
+        NSMutableArray *replacementArray = [NSMutableArray array];
+        
+        for (NSString *object in self)
+        {
+            id replacementObject = block(object);
+            
+            if (replacementObject != nil)
+            {
+                [replacementArray addSafeObject:replacementObject];
+            }
+            else
+            {
+                [replacementArray addSafeObject:object];
+            }
+        }
+        
+        return replacementArray;
+    }
+
+    return self;
+}
+
 @end
 
 @implementation NSMutableArray (Additions)

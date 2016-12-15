@@ -26,15 +26,16 @@
     
 
     NSArray *arrau = [com componentsSeparatedByString:@"," componentBlock:^id(id component) {
-        if ([component isKindOfClass:[NSString class]])
-        {
-            return [component deleteEmptySpace];
-        }
-        return component;
+        return ([component isKindOfClass:[NSString class]]) ? [component deleteEmptySpace] : component;
     }];
     
     NSLog(@"%@",arrau);
     
+    
+    NSArray *adadwe = [arrau replacementArrayUsingBlock:^id(id object) {
+        return [NSString stringWithFormat:@"eventCategory_%@",object];
+    }];
+    NSLog(@"%@",adadwe);
 }
 
 @end
