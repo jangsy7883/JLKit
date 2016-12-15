@@ -19,29 +19,21 @@
     [super viewDidLoad];
 
     
-    NSLog(@"%@",[[NSDate date] dateByAddingCount:1 forComponent:NSCalendarUnitDay]);
     
-    NSLog(@"WiFi : %@",[[UIDevice currentDevice] ipAddressForWiFi]);
-    NSLog(@"Cellular : %@",[[UIDevice currentDevice] ipAddressForCellular]);
     
+    
+    NSString *com = @"31, 32, 41, 38,35";
     
 
+    NSArray *arrau = [com componentsSeparatedByString:@"," componentBlock:^id(id component) {
+        if ([component isKindOfClass:[NSString class]])
+        {
+            return [component deleteEmptySpace];
+        }
+        return component;
+    }];
     
-    NSLog(@"%@",[NSMutableAttributedString attributedString:@"aaa" attributes:@{
-                                                                                NSFontAttributeName:Font_Light(12)
-                                                                                }]);
-    
-    NSLog(@"%@",[NSAttributedString attributedString:@"aaa" attributes:@{
-                                                                         NSFontAttributeName:Font_Light(12)
-                                                                         }]);
-    
-    
-    NSLog(@"%@",[[NSBundle mainBundle] isNewerThenAppVersion:@"0.8"] ? @"YES":@"NO");
-    NSLog(@"%@",[[NSBundle mainBundle] isNewerThenAppVersion:@"0.2"] ? @"YES":@"NO");
-    NSLog(@"%@",[[NSBundle mainBundle] isNewerThenAppVersion:@"0.1"] ? @"YES":@"NO");
-    NSLog(@"%@",[[NSBundle mainBundle] isNewerThenAppVersion:@"1.8"] ? @"YES":@"NO");
-    NSLog(@"%@",[[NSBundle mainBundle] isNewerThenAppVersion:@"2.8"] ? @"YES":@"NO");
-    NSLog(@"%@",[[NSBundle mainBundle] isNewerThenAppVersion:@"3.8.1"] ? @"YES":@"NO");
+    NSLog(@"%@",arrau);
     
 }
 

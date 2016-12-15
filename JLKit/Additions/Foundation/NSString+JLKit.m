@@ -7,6 +7,7 @@
 //
 
 #import "NSString+JLKit.h"
+#import "NSArray+JLKit.h"
 
 #include <CommonCrypto/CommonDigest.h>
 
@@ -105,6 +106,31 @@
     }
     
     return NO;
+}
+
+- (NSArray<NSString *> *)componentsSeparatedByString:(NSString *)separator componentBlock:(id (^)(id component))block
+{
+    NSArray *components = [self componentsSeparatedByString:separator];
+    
+    if (block)
+    {
+        NSMutableArray *array = [NSMutableArray array];
+        for (NSString* component in components)
+        {
+            id value = block(component);
+            if (value != nil)
+            {
+                [array addSafeObject:value];
+            }
+            else
+            {
+                [array addSafeObject:component];
+            }
+        }
+        return array;
+    }
+    
+    return components;
 }
 
 #pragma mark - Regex Pattern

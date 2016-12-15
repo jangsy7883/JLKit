@@ -30,6 +30,8 @@
 
 + (BOOL)emptyString:(NSString *)parm_string;
 
+- (NSArray<NSString *> *)componentsSeparatedByString:(NSString *)separator componentBlock:(id (^)(id component))block;
+
 - (NSRange)rangeOfFirstMatchInRegexPattern:(NSString*)pattern;
 - (NSArray<NSTextCheckingResult *> *)matchesInRegexPattern:(NSString*)pattern;
 - (BOOL)isValidInRegexPattern:(NSString*)pattern;
