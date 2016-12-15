@@ -16,6 +16,8 @@
 
 - (id)objectAtSafeIndex:(NSInteger)index;
 
+- (NSArray*)replacementArrayUsingBlock:(id (^)(id object))block;
+
 @end
 
 @interface NSMutableArray (Additions)
