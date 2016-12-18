@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define UIAlertCancelAction(title) [UIAlertAction actionWithCancelTitle:title handler:nil]
+
 @interface UIAlertController (JLKit)
 
 + (void)showAlertWithStyle:(UIAlertControllerStyle)style
@@ -36,5 +38,13 @@
 
 + (void)showAlertWithMessage:(NSString *)message
           confirmActionTitle:(NSString *)confirmActionTitle;
+
+@end
+
+@interface UIAlertAction (JLKit)
+
++ (UIAlertAction *)actionWithTitle:(NSString*)title handler:(void (^)(UIAlertAction *action))handler;
++ (UIAlertAction *)actionWithCancelTitle:(NSString*)title handler:(void (^)(UIAlertAction *action))handler;
++ (UIAlertAction *)actionWithDestructivelTitle:(NSString*)title handler:(void (^)(UIAlertAction *action))handler;
 
 @end
