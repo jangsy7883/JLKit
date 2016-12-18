@@ -17,7 +17,7 @@
                    message:(NSString*)message
                    actions:(NSArray<UIAlertAction *> *)actions
 {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:(title == nil) ? @"" : title
                                                                              message:message
                                                                       preferredStyle:style];
     
@@ -40,27 +40,19 @@
     
     if (cancelActionTitle.length > 0)
     {
-        [actions addObject:[UIAlertAction actionWithTitle:cancelActionTitle
-                                                    style:UIAlertActionStyleCancel
-                                                  handler:^(UIAlertAction * _Nonnull action)
+        [actions addObject:[UIAlertAction actionWithCancelTitle:cancelActionTitle
+                                                        handler:^(UIAlertAction * _Nonnull action)
                             {
-                                if (handler)
-                                {
-                                    handler(YES);
-                                }
+                                if (handler) handler(YES);
                             }]];
     }
     
     if (confirmActionTitle.length > 0)
     {
         [actions addObject:[UIAlertAction actionWithTitle:confirmActionTitle
-                                                    style:UIAlertActionStyleDefault
                                                   handler:^(UIAlertAction * _Nonnull action)
                             {
-                                if (handler)
-                                {
-                                    handler(NO);
-                                }
+                                if (handler) handler(NO);
                             }]];
     }
     
@@ -81,30 +73,21 @@
     
     if (cancelActionTitle.length > 0)
     {
-        [actions addObject:[UIAlertAction actionWithTitle:cancelActionTitle
-                                                    style:UIAlertActionStyleCancel
-                                                  handler:^(UIAlertAction * _Nonnull action)
+        [actions addObject:[UIAlertAction actionWithCancelTitle:cancelActionTitle
+                                                        handler:^(UIAlertAction * _Nonnull action)
                             {
-                                if (handler)
-                                {
-                                    handler(YES);
-                                }
+                                if (handler) handler(YES);
                             }]];
     }
     
     if (destructiveActionTitle.length > 0)
     {
-        [actions addObject:[UIAlertAction actionWithTitle:destructiveActionTitle
-                                                    style:UIAlertActionStyleDestructive
-                                                  handler:^(UIAlertAction * _Nonnull action)
+        [actions addObject:[UIAlertAction actionWithDestructivelTitle:destructiveActionTitle
+                                                              handler:^(UIAlertAction * _Nonnull action)
                             {
-                                if (handler)
-                                {
-                                    handler(NO);
-                                }
+                                if (handler) handler(NO);
                             }]];
     }
-    
     
     [self showAlertWithStyle:style
                        title:title
@@ -136,6 +119,29 @@
                      handler:nil];
 }
 
+@end
 
+@implementation UIAlertAction (JLKit)
+
++ (UIAlertAction*)actionWithTitle:(NSString*)title handler:(void (^)(UIAlertAction *action))handler
+{
+    return [UIAlertAction actionWithTitle:title
+                                    style:UIAlertActionStyleDefault
+                                  handler:handler];
+}
+
++ (UIAlertAction*)actionWithCancelTitle:(NSString*)title handler:(void (^)(UIAlertAction *action))handler
+{
+    return [UIAlertAction actionWithTitle:title
+                                    style:UIAlertActionStyleCancel
+                                  handler:handler];
+}
+
++ (UIAlertAction*)actionWithDestructivelTitle:(NSString*)title handler:(void (^)(UIAlertAction *action))handler
+{
+    return [UIAlertAction actionWithTitle:title
+                                    style:UIAlertActionStyleDestructive
+                                  handler:handler];
+}
 
 @end
