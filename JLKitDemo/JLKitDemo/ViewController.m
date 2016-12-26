@@ -15,27 +15,9 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-
-    
-    
-    
-    
-    NSString *com = @"31, 32, 41, 38,35";
-    
-
-    NSArray *arrau = [com componentsSeparatedByString:@"," componentBlock:^id(id component) {
-        return ([component isKindOfClass:[NSString class]]) ? [component deleteEmptySpace] : component;
-    }];
-    
-    NSLog(@"%@",arrau);
-    
-    
-    NSArray *adadwe = [arrau replacementArrayUsingBlock:^id(id object) {
-        return [NSString stringWithFormat:@"eventCategory_%@",object];
-    }];
-    NSLog(@"%@",adadwe);
 }
 
 @end
