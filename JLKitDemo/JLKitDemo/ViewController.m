@@ -18,6 +18,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [[UIAlertController alertControllerWithTitle:@"하나" message:@"둘" preferredStyle:UIAlertControllerStyleAlert actions:nil] showAlert];
 }
 
 @end
