@@ -12,24 +12,27 @@
 
 @interface UIAlertController (JLKit)
 
-+ (void)showAlertWithStyle:(UIAlertControllerStyle)style
-                     title:(NSString*)title
-                   message:(NSString*)message
-                   actions:(NSArray<UIAlertAction *> *)actions;
+- (void)showAlert;
+- (void)showAlertWithCompletion:(void (^)(void))completion;
 
-+ (void)showAlertWithStyle:(UIAlertControllerStyle)style
-                     title:(NSString *)title
-                   message:(NSString *)message
-        confirmActionTitle:(NSString *)confirmActionTitle
-         cancelActionTitle:(NSString *)cancelActionTitle
-                   handler:(void (^)(BOOL isCancelAction))handler;
++ (instancetype)alertControllerWithTitle:(NSString *)title
+                                 message:(NSString *)message
+                          preferredStyle:(UIAlertControllerStyle)preferredStyle
+                                 actions:(NSArray<UIAlertAction *> *)actions;
 
-+ (void)showAlertWithStyle:(UIAlertControllerStyle)style
-                     title:(NSString *)title
-                   message:(NSString *)message
-    destructiveActionTitle:(NSString *)destructiveActionTitle
-         cancelActionTitle:(NSString *)cancelActionTitle
-                   handler:(void (^)(BOOL isCancelAction))handler;
++ (instancetype)alertControllerWithTitle:(NSString *)title
+                                 message:(NSString *)message
+                          preferredStyle:(UIAlertControllerStyle)preferredStyle
+                      confirmActionTitle:(NSString *)confirmActionTitle
+                       cancelActionTitle:(NSString *)cancelActionTitle
+                                 handler:(void (^)(BOOL isCancelAction))handler;
+
++ (instancetype)alertControllerWithTitle:(NSString *)title
+                                 message:(NSString *)message
+                          preferredStyle:(UIAlertControllerStyle)preferredStyle
+                  destructiveActionTitle:(NSString *)destructiveActionTitle
+                       cancelActionTitle:(NSString *)cancelActionTitle
+                                 handler:(void (^)(BOOL isCancelAction))handler;
 
 + (void)showAlertWithTitle:(NSString *)title
                    message:(NSString *)message

@@ -12,29 +12,43 @@
 
 @implementation UIAlertController (JLKit)
 
-+ (void)showAlertWithStyle:(UIAlertControllerStyle)style
-                     title:(NSString*)title
-                   message:(NSString*)message
-                   actions:(NSArray<UIAlertAction *> *)actions
+#pragma mark - show
+
+- (void)showAlert
+{
+    [self showAlertWithCompletion:nil];
+}
+
+- (void)showAlertWithCompletion:(void (^)(void))completion
+{
+    [[UIViewController visibleViewController] presentViewController:self animated:YES completion:completion];
+}
+
+#pragma mark - alertController
+
++ (instancetype)alertControllerWithTitle:(NSString *)title
+                                 message:(NSString *)message
+                          preferredStyle:(UIAlertControllerStyle)preferredStyle
+                                 actions:(NSArray<UIAlertAction *> *)actions
 {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:(title == nil) ? @"" : title
                                                                              message:message
-                                                                      preferredStyle:style];
+                                                                      preferredStyle:preferredStyle];
     
     for (UIAlertAction *action in actions)
     {
         [alertController addAction:action];
     }
     
-    [[UIViewController visibleViewController] presentViewController:alertController animated:YES completion:nil];
+    return alertController;
 }
 
-+ (void)showAlertWithStyle:(UIAlertControllerStyle)style
-                     title:(NSString *)title
-                   message:(NSString *)message
-        confirmActionTitle:(NSString *)confirmActionTitle
-         cancelActionTitle:(NSString *)cancelActionTitle
-                   handler:(void (^)(BOOL isCancelAction))handler
++ (instancetype)alertControllerWithTitle:(NSString *)title
+                                 message:(NSString *)message
+                          preferredStyle:(UIAlertControllerStyle)preferredStyle
+                      confirmActionTitle:(NSString *)confirmActionTitle
+                       cancelActionTitle:(NSString *)cancelActionTitle
+                                 handler:(void (^)(BOOL isCancelAction))handler
 {
     NSMutableArray *actions = [NSMutableArray array];
     
@@ -56,18 +70,18 @@
                             }]];
     }
     
-    [self showAlertWithStyle:style
-                       title:title
-                     message:message
-                     actions:actions];
+    return [UIAlertController alertControllerWithTitle:title
+                                               message:message
+                                        preferredStyle:preferredStyle
+                                               actions:actions];
 }
 
-+ (void)showAlertWithStyle:(UIAlertControllerStyle)style
-                     title:(NSString *)title
-                   message:(NSString *)message
-    destructiveActionTitle:(NSString *)destructiveActionTitle
-         cancelActionTitle:(NSString *)cancelActionTitle
-                   handler:(void (^)(BOOL isCancelAction))handler
++ (instancetype)alertControllerWithTitle:(NSString *)title
+                                 message:(NSString *)message
+                          preferredStyle:(UIAlertControllerStyle)preferredStyle
+                  destructiveActionTitle:(NSString *)destructiveActionTitle
+                       cancelActionTitle:(NSString *)cancelActionTitle
+                                 handler:(void (^)(BOOL isCancelAction))handler
 {
     NSMutableArray *actions = [NSMutableArray array];
     
@@ -89,34 +103,36 @@
                             }]];
     }
     
-    [self showAlertWithStyle:style
-                       title:title
-                     message:message
-                     actions:actions];
+    return [UIAlertController alertControllerWithTitle:title
+                                               message:message
+                                        preferredStyle:preferredStyle
+                                               actions:actions];
 }
+
+#pragma mark - show alert
 
 + (void)showAlertWithTitle:(NSString *)title
                    message:(NSString *)message
         confirmActionTitle:(NSString *)confirmActionTitle
                    handler:(void (^)(BOOL isCancelAction))handler
 {
-    [self showAlertWithStyle:UIAlertControllerStyleAlert
-                       title:title
-                     message:message
-          confirmActionTitle:confirmActionTitle
-           cancelActionTitle:nil
-                     handler:handler];
+    [[self alertControllerWithTitle:title
+                            message:message
+                     preferredStyle:UIAlertControllerStyleAlert
+                 confirmActionTitle:confirmActionTitle
+                  cancelActionTitle:nil
+                            handler:handler] show];
 }
 
 + (void)showAlertWithMessage:(NSString *)message
           confirmActionTitle:(NSString *)confirmActionTitle
 {
-    [self showAlertWithStyle:UIAlertControllerStyleAlert
-                       title:nil
-                     message:message
-          confirmActionTitle:confirmActionTitle
-           cancelActionTitle:nil
-                     handler:nil];
+    [[self alertControllerWithTitle:@""
+                            message:message
+                     preferredStyle:UIAlertControllerStyleAlert
+                 confirmActionTitle:confirmActionTitle
+                  cancelActionTitle:nil
+                            handler:nil] show];
 }
 
 @end
