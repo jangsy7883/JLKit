@@ -15,27 +15,18 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
+    
+    
+}
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     
-    
-    
-    
-    NSString *com = @"31, 32, 41, 38,35";
-    
-
-    NSArray *arrau = [com componentsSeparatedByString:@"," componentBlock:^id(id component) {
-        return ([component isKindOfClass:[NSString class]]) ? [component deleteEmptySpace] : component;
-    }];
-    
-    NSLog(@"%@",arrau);
-    
-    
-    NSArray *adadwe = [arrau replacementArrayUsingBlock:^id(id object) {
-        return [NSString stringWithFormat:@"eventCategory_%@",object];
-    }];
-    NSLog(@"%@",adadwe);
+    [[UIAlertController alertControllerWithTitle:@"하나" message:@"둘" preferredStyle:UIAlertControllerStyleAlert actions:nil] showAlert];
 }
 
 @end
