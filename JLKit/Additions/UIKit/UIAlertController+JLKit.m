@@ -31,7 +31,7 @@
                           preferredStyle:(UIAlertControllerStyle)preferredStyle
                                  actions:(NSArray<UIAlertAction *> *)actions
 {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:(title == nil) ? @"" : title
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
                                                                              message:message
                                                                       preferredStyle:preferredStyle];
     
@@ -141,7 +141,6 @@
     self.popoverPresentationController.sourceRect = sourceView.bounds;
     self.popoverPresentationController.permittedArrowDirections = permittedArrowDirections;
 }
-
 
 @end
 
