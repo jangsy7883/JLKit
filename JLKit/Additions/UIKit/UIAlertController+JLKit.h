@@ -42,6 +42,8 @@
 + (void)showAlertWithMessage:(NSString *)message
           confirmActionTitle:(NSString *)confirmActionTitle;
 
+- (void)setSourceView:(UIView*)sourceView permittedArrowDirections:(UIPopoverArrowDirection)permittedArrowDirections;
+
 @end
 
 @interface UIAlertAction (JLKit)

@@ -135,6 +135,14 @@
                             handler:nil] show];
 }
 
+- (void)setSourceView:(UIView*)sourceView permittedArrowDirections:(UIPopoverArrowDirection)permittedArrowDirections
+{
+    self.popoverPresentationController.sourceView = sourceView;
+    self.popoverPresentationController.sourceRect = sourceView.bounds;
+    self.popoverPresentationController.permittedArrowDirections = permittedArrowDirections;
+}
+
+
 @end
 
 @implementation UIAlertAction (JLKit)
