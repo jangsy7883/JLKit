@@ -121,7 +121,7 @@
                      preferredStyle:UIAlertControllerStyleAlert
                  confirmActionTitle:confirmActionTitle
                   cancelActionTitle:nil
-                            handler:handler] show];
+                            handler:handler] showAlert];
 }
 
 + (void)showAlertWithMessage:(NSString *)message
@@ -132,7 +132,7 @@
                      preferredStyle:UIAlertControllerStyleAlert
                  confirmActionTitle:confirmActionTitle
                   cancelActionTitle:nil
-                            handler:nil] show];
+                            handler:nil] showAlert];
 }
 
 - (void)setSourceView:(UIView*)sourceView permittedArrowDirections:(UIPopoverArrowDirection)permittedArrowDirections
