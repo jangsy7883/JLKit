@@ -22,11 +22,35 @@
     
 }
 
+-(IBAction)pressedButton:(id)sender
+{
+    
+}
+
+-(IBAction)pressedButton1:(id)sender
+{
+    
+}
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     
-    [[UIAlertController alertControllerWithTitle:@"하나" message:@"둘" preferredStyle:UIAlertControllerStyleAlert actions:nil] showAlert];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    [button addTarget:self action:@selector(pressedButton:) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    NSLog(@"1 %@",[button actionsForTarget:self forControlEvent:UIControlEventTouchUpInside]);
+    
+    [button addTarget:self action:@selector(pressedButton:) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(pressedButton1:) forControlEvents:UIControlEventTouchUpInside];
+    
+    NSLog(@"2 %@",[button actionsForTarget:self forControlEvent:UIControlEventTouchUpInside]);
+    
+    [button removeTarget:self action:nil forControlEvents:UIControlEventTouchUpOutside];
+    
+    NSLog(@"2 %@",[button actionsForTarget:self forControlEvent:UIControlEventTouchUpInside]);
+    
 }
 
 @end

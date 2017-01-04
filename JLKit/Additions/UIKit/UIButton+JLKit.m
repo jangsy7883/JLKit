@@ -11,14 +11,12 @@
 
 @implementation UIButton (Additions)
 
-- (void)setBackgroundColor:(UIColor *)backgroundColor forState:(UIControlState)state
-{
+- (void)setBackgroundColor:(UIColor *)backgroundColor forState:(UIControlState)state {
     [self setBackgroundImage:[UIImage patternImageWithColor:backgroundColor]
                     forState:state];
 }
 
-- (void)centerVerticallyWithPadding:(float)padding
-{
+- (void)centerVerticallyWithPadding:(float)padding {
     CGSize imageSize = self.imageView.frame.size;
     CGSize titleSize = self.titleLabel.frame.size;
     
@@ -33,6 +31,11 @@
                                             - imageSize.width,
                                             - (totalHeight - titleSize.height),
                                             0.0f);
+}
+
+- (void)setTarget:(id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents {
+    [self removeTarget:target action:nil forControlEvents:controlEvents];
+    [self addTarget:target action:action forControlEvents:controlEvents];
 }
 
 @end
