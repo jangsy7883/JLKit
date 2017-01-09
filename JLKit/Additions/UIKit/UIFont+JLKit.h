@@ -18,16 +18,16 @@ typedef NS_ENUM(unsigned int, UIFontStyle)
     UIFontStyleHeavy,
 };
 
-#define Font(fontSize,fontStyle) [UIFont systemFontOfSize:fontSize style:fontStyle]
+#define Font(fontSize,weight)       [UIFont systemFontOfSize:fontSize weight:weight]
 
-#define Font_Regular(fontSize) [UIFont systemFontOfSize:fontSize style:UIFontStyleRegular]
-#define Font_Light(fontSize) [UIFont systemFontOfSize:fontSize style:UIFontStyleLight]
-#define Font_Medium(fontSize) [UIFont systemFontOfSize:fontSize style:UIFontStyleMedium]
-#define Font_SemiBold(fontSize) [UIFont systemFontOfSize:fontSize style:UIFontStyleSemiBold]
-#define Font_Bold(fontSize) [UIFont systemFontOfSize:fontSize style:UIFontStyleBold]
+#define Font_Regular(fontSize)      Font(fontSize,UIFontWeightRegular)
+#define Font_Light(fontSize)        Font(fontSize,UIFontWeightLight)
+#define Font_Medium(fontSize)       Font(fontSize,UIFontWeightMedium)
+#define Font_SemiBold(fontSize)     Font(fontSize,UIFontWeightSemibold)
+#define Font_Bold(fontSize)         Font(fontSize,UIFontWeightBold)
 
 @interface UIFont (JLKit)
 
-+ (UIFont*)systemFontOfSize:(CGFloat)fontSize style:(UIFontStyle)style;
++ (UIFont*)systemFontOfSize:(CGFloat)fontSize style:(UIFontStyle)style NS_DEPRECATED_IOS(7_0, 8_0);
 
 @end
