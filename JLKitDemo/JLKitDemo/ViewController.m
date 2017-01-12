@@ -18,10 +18,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [NSNull null].boolValue;
-    [[NSNull null] boolValue];
-    
 }
 
 @end
