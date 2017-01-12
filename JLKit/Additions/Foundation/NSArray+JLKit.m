@@ -7,6 +7,7 @@
 //
 
 #import "NSArray+JLKit.h"
+#import "NSDictionary+JLKit.h"
 
 @implementation NSArray (Additions)
 
@@ -15,7 +16,7 @@
     NSError *error = nil;
     NSData* kData = [NSJSONSerialization dataWithJSONObject:self
                                                     options:NSJSONWritingPrettyPrinted
-                                                      error:&error];    
+                                                      error:&error];
     if (error == nil)
     {
         return [[NSString alloc] initWithData:kData encoding:NSUTF8StringEncoding];
@@ -44,30 +45,43 @@
     return object;
 }
 
-- (NSArray*)replacementArrayUsingBlock:(id (^)(id object))block
-{
-    if (block)
-    {
+- (NSArray *)arrayByReplacingUsingBlock:(id (^)(id object))block {
+    if (block) {
         NSMutableArray *replacementArray = [NSMutableArray array];
         
-        for (NSString *object in self)
-        {
+        for (NSString *object in self) {
             id replacementObject = block(object);
             
-            if (replacementObject != nil)
-            {
+            if (replacementObject != nil) {
                 [replacementArray addSafeObject:replacementObject];
             }
-            else
-            {
+            else {
                 [replacementArray addSafeObject:object];
             }
         }
-        
         return replacementArray;
     }
-
+    
     return self;
+}
+
+- (NSArray *)arrayByReplacingNullsWithBlanks  {
+    NSMutableArray *replaced = [self mutableCopy];
+    const id nul = [NSNull null];
+    const NSString *blank = @"";
+    for (int idx = 0; idx < [replaced count]; idx++) {
+        id object = [replaced objectAtIndex:idx];
+        if (object == nul) {
+            [replaced replaceObjectAtIndex:idx withObject:blank];
+        }
+        else if ([object isKindOfClass:[NSDictionary class]]) {
+            [replaced replaceObjectAtIndex:idx withObject:[object dictionaryByReplacingNullsWithBlanks]];
+        }
+        else if ([object isKindOfClass:[NSArray class]]) {
+            [replaced replaceObjectAtIndex:idx withObject:[object arrayByReplacingNullsWithBlanks]];
+        }
+    }
+    return [replaced copy];
 }
 
 @end

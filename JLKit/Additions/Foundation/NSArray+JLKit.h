@@ -16,7 +16,8 @@
 
 - (id)objectAtSafeIndex:(NSInteger)index;
 
-- (NSArray*)replacementArrayUsingBlock:(id (^)(id object))block;
+- (NSArray *)arrayByReplacingUsingBlock:(id (^)(id object))block;
+- (NSArray *)arrayByReplacingNullsWithBlanks;
 
 @end
 
