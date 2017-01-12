@@ -10,6 +10,12 @@
 
 @interface NSNull (JLKit)
 
-- (BOOL)boolValue;
+#pragma mark *** Extracting numeric values ***
+
+@property (readonly) double doubleValue;
+@property (readonly) float floatValue;
+@property (readonly) int intValue;
+@property (readonly) NSInteger integerValue;
+@property (readonly) BOOL boolValue;
 
 @end
