@@ -12,8 +12,13 @@
 
 @property (nonatomic, readonly, copy) NSString *JSONValue;
 
-- (id)objectOfFirstMatchInKeys:(NSArray*)keys;
+- (id)objectOfKey:(id)key excludedNullValue:(BOOL)excludedNullValue;
 
+- (id)objectOfFirstMatchInKeys:(NSArray*)keys;
+- (id)objectOfFirstMatchInKeys:(NSArray*)keys excludedNullValue:(BOOL)excludedNullValue;
+
+- (NSDictionary *)dictionaryByReplacingNullsWithBlanks;
+    
 @end
 
 @interface NSMutableDictionary (Additions)
