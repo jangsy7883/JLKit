@@ -1,6 +1,6 @@
 //
 //  UIAlertController+JLKit.m
-//  JLKitDemo
+//  JLKit
 //
 //  Created by  Studio on 2016. 12. 4..
 //  Copyright © 2016년 Dalkomm. All rights reserved.
