@@ -18,7 +18,7 @@ typedef NS_ENUM(unsigned int, UIFontStyle)
     UIFontStyleHeavy,
 };
 
-#define Font(fontSize,weight)       [UIFont systemFontOfSize:fontSize weight:weight]
+#define Font(fontSize,fontWeight)       [UIFont systemFontOfSize:fontSize weight:fontWeight]
 
 #define Font_Regular(fontSize)      Font(fontSize,UIFontWeightRegular)
 #define Font_Light(fontSize)        Font(fontSize,UIFontWeightLight)
