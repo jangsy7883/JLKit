@@ -10,19 +10,19 @@
 
 @interface NSDictionary (Additions)
 
-@property (nonatomic, readonly, copy) NSString *JSONValue;
+@property (nonatomic, readonly, copy) NSString *__nullable JSONValue;
 
-- (id)objectOfKey:(id)key excludedNullValue:(BOOL)excludedNullValue;
+- (nullable id)objectForKey:(nonnull id)aKey excludedNullValue:(BOOL)excludedNullValue;
 
-- (id)objectOfFirstMatchInKeys:(NSArray*)keys;
-- (id)objectOfFirstMatchInKeys:(NSArray*)keys excludedNullValue:(BOOL)excludedNullValue;
+- (nullable id)objectForFirstMatchInKeys:(nonnull NSArray*)keys;
+- (nullable id)objectForFirstMatchInKeys:(nonnull NSArray*)keys excludedNullValue:(BOOL)excludedNullValue;
 
-- (NSDictionary *)dictionaryByReplacingNullsWithBlanks;
+- (nonnull NSDictionary *)dictionaryByReplacingNullsWithBlanks;
     
 @end
 
 @interface NSMutableDictionary (Additions)
 
-- (void)setSafeObject:(id)anObject forKey:(id <NSCopying>)key;
+- (void)setSafeObject:(nullable id)anObject forKey:(nonnull id <NSCopying>)key;
 
 @end

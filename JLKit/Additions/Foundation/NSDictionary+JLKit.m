@@ -11,7 +11,7 @@
 
 @implementation NSDictionary (Additions)
 
-- (NSString*)JSONValue {
+- (nullable NSString*)JSONValue {
     NSError *error = nil;
     NSData* kData = [NSJSONSerialization dataWithJSONObject:self
                                                     options:NSJSONWritingPrettyPrinted
@@ -22,32 +22,38 @@
     return nil;
 }
 
-- (id)objectOfKey:(id)key excludedNullValue:(BOOL)excludedNullValue {
-    id value = self[key];
+- (nullable id)objectForKey:(nonnull id)aKey excludedNullValue:(BOOL)excludedNullValue {
+    id value = self[aKey];
     if (excludedNullValue == YES && [value isKindOfClass:[NSNull class]]) {
         return nil;
     }
     return value;
 }
 
-- (id)objectOfFirstMatchInKeys:(NSArray*)keys {
-    return [self objectOfFirstMatchInKeys:keys excludedNullValue:NO];
+- (nullable id)objectForFirstMatchInKeys:(nonnull NSArray*)keys {
+    return [self objectForFirstMatchInKeys:keys excludedNullValue:NO];
 }
 
-- (id)objectOfFirstMatchInKeys:(NSArray*)keys excludedNullValue:(BOOL)excludedNullValue {
-    for (id key in keys) {
-        if (self[key] != nil) {
-            id value = self[key];
-            
-            if (!(excludedNullValue == YES && [value isKindOfClass:[NSNull class]])) {
-                return value;;
-            }
+- (nullable id)objectForFirstMatchInKeys:(nonnull NSArray*)keys excludedNullValue:(BOOL)excludedNullValue {
+    for (id akey in keys) {
+        id value = [self objectForKey:akey excludedNullValue:excludedNullValue];
+        if (value) {
+            return value;
         }
+//        if (self[akey] != nil) {
+//            id value = self[akey];
+//            
+//            
+//            
+//            if (!(excludedNullValue == YES && [value isKindOfClass:[NSNull class]])) {
+//                return value;;
+//            }
+//        }
     }
     return nil;
 }
 
-- (NSDictionary *)dictionaryByReplacingNullsWithBlanks {
+- (nonnull NSDictionary *)dictionaryByReplacingNullsWithBlanks {
     const NSMutableDictionary *replaced = [self mutableCopy];
     const id nul = [NSNull null];
     const NSString *blank = @"";
@@ -72,7 +78,7 @@
 
 @implementation NSMutableDictionary (Additions)
 
-- (void)setSafeObject:(id)anObject forKey:(id <NSCopying>)key {
+- (void)setSafeObject:(nullable id)anObject forKey:(nonnull id <NSCopying>)key {
     
     if(anObject == nil || anObject == [NSNull null]) {
         return;
