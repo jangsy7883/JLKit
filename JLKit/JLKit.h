@@ -48,3 +48,4 @@
 #import "UIViewController+JLKit.h"
 #import "UIActivityViewController+JLKit.h"
 #import "UIAlertController+JLKit.h"
+#import "UISearchBar+JLKit.h"

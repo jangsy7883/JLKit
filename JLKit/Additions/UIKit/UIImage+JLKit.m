@@ -10,58 +10,13 @@
 
 @implementation UIImage (Additions)
 
-- (UIImage*)centerResizableImage
+- (UIImage *)centerResizableImage
 {
     return [self resizableImageWithCapInsets:UIEdgeInsetsMake(self.size.height/2-1,
                                                               self.size.width/2-1,
                                                               self.size.height/2+1,
                                                               self.size.width/2+1)
                                 resizingMode:UIImageResizingModeStretch];
-}
-
-
-- (UIImage*)squareCropImage
-{
-    CGRect cropRect = CGRectZero;
-    
-    CGSize imageSize = self.size;
-    CGFloat squareSize = MIN(imageSize.width, imageSize.width);
-    
-    cropRect.origin.x = (imageSize.width - squareSize) / 2;
-    cropRect.origin.y = (imageSize.height - squareSize) / 2;
-    cropRect.size.width = squareSize;
-    cropRect.size.height = squareSize;
-    
-    CGFloat x = CGRectGetMinX(cropRect);
-    CGFloat y = CGRectGetMinY(cropRect);
-    CGFloat width = CGRectGetWidth(cropRect);
-    CGFloat height = CGRectGetHeight(cropRect);
-    
-    UIImageOrientation imageOrientation = self.imageOrientation;
-    if (imageOrientation == UIImageOrientationRight || imageOrientation == UIImageOrientationRightMirrored)
-    {
-        cropRect.origin.x = y;
-        cropRect.origin.y = imageSize.width - CGRectGetWidth(cropRect) - x;
-        cropRect.size.width = height;
-        cropRect.size.height = width;
-    }
-    else if (imageOrientation == UIImageOrientationLeft || imageOrientation == UIImageOrientationLeftMirrored)
-    {
-        cropRect.origin.x = imageSize.height - CGRectGetHeight(cropRect) - y;
-        cropRect.origin.y = x;
-        cropRect.size.width = height;
-        cropRect.size.height = width;
-    }
-    else if (imageOrientation == UIImageOrientationDown || imageOrientation == UIImageOrientationDownMirrored)
-    {
-        cropRect.origin.x = imageSize.width - CGRectGetWidth(cropRect) - x;;
-        cropRect.origin.y = imageSize.height - CGRectGetHeight(cropRect) - y;
-    }
-    
-    CGImageRef croppedCGImage = CGImageCreateWithImageInRect(self.CGImage, cropRect);
-    UIImage *croppedImage = [UIImage imageWithCGImage:croppedCGImage scale:1.0f orientation:self.imageOrientation];
-    CGImageRelease(croppedCGImage);
-    return croppedImage;
 }
 
 + (UIImage *)patternImageWithColor:(UIColor *)color
@@ -106,6 +61,65 @@
     return self;
 }
 
+- (UIImage *)autoScaleWithOriginalScale:(CGFloat)scale
+{
+    CGRect newRect = CGRectMake(0.0, 0.0, self.size.width/scale, self.size.height/scale);
+    
+    UIGraphicsBeginImageContextWithOptions(newRect.size, NO, [UIScreen mainScreen].scale);
+    [self drawInRect:newRect];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
+- (UIImage *)originalRenderingImage
+{
+    return [self imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+}
+
+#pragma mark - equal
+
++ (void)isEqual:(UIImage *)iamge toImage:(UIImage *)toImage completion:(void (^)(BOOL isEqual))completion
+{
+    if (completion == nil) return;
+    
+    if ((iamge == nil && toImage == nil) || [iamge isEqual:toImage])
+    {
+        completion(YES);
+    }
+    else if (iamge == nil || toImage == nil)
+    {
+        completion(NO);
+    }
+    else
+    {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
+                       ^{
+                           BOOL isEqual = [iamge isEqualToImage:toImage];
+                           
+                           dispatch_async(dispatch_get_main_queue(), ^{
+                               completion(isEqual);
+                           });
+                       });
+    }
+}
+
+- (BOOL)isEqualToImage:(UIImage *)toImage
+{
+    if (toImage == nil)
+    {
+        return NO;
+    }
+    
+    NSData *data1 = UIImagePNGRepresentation(self);
+    NSData *data2 = UIImagePNGRepresentation(toImage);
+    
+    return [data1 isEqualToData:data2];
+}
+
+#pragma mark - size
+
 - (CGSize)sizeToFitWidth:(CGFloat)width scaleAspectFit:(BOOL)scaleAspectFit
 {
     CGSize fitSize = CGSizeZero;
@@ -143,66 +157,50 @@
     return fitSize;
 }
 
-- (UIImage *)autoScaleWithOriginalScale:(CGFloat)scale
-{
-    CGRect newRect = CGRectMake(0.0, 0.0, self.size.width/scale, self.size.height/scale);
-    
-    UIGraphicsBeginImageContextWithOptions(newRect.size, NO, [UIScreen mainScreen].scale);
-    [self drawInRect:newRect];
-    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return newImage;
-}
+#pragma mark - crop
 
-+ (void)isEqual:(UIImage*)iamge toImage:(UIImage*)toImage completion:(void (^)(BOOL isEqual))completion
+- (UIImage *)squareCropImage
 {
-    if (completion == nil) return;
+    CGRect cropRect = CGRectZero;
     
-    if ((iamge == nil && toImage == nil) || [iamge isEqual:toImage])
+    CGSize imageSize = self.size;
+    CGFloat squareSize = MIN(imageSize.width, imageSize.width);
+    
+    cropRect.origin.x = (imageSize.width - squareSize) / 2;
+    cropRect.origin.y = (imageSize.height - squareSize) / 2;
+    cropRect.size.width = squareSize;
+    cropRect.size.height = squareSize;
+    
+    CGFloat x = CGRectGetMinX(cropRect);
+    CGFloat y = CGRectGetMinY(cropRect);
+    CGFloat width = CGRectGetWidth(cropRect);
+    CGFloat height = CGRectGetHeight(cropRect);
+    
+    UIImageOrientation imageOrientation = self.imageOrientation;
+    if (imageOrientation == UIImageOrientationRight || imageOrientation == UIImageOrientationRightMirrored)
     {
-        completion(YES);
+        cropRect.origin.x = y;
+        cropRect.origin.y = imageSize.width - CGRectGetWidth(cropRect) - x;
+        cropRect.size.width = height;
+        cropRect.size.height = width;
     }
-    else if (iamge == nil || toImage == nil)
+    else if (imageOrientation == UIImageOrientationLeft || imageOrientation == UIImageOrientationLeftMirrored)
     {
-        completion(NO);
+        cropRect.origin.x = imageSize.height - CGRectGetHeight(cropRect) - y;
+        cropRect.origin.y = x;
+        cropRect.size.width = height;
+        cropRect.size.height = width;
     }
-    else
+    else if (imageOrientation == UIImageOrientationDown || imageOrientation == UIImageOrientationDownMirrored)
     {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
-                       ^{
-                           BOOL isEqual = [iamge isEqualToImage:toImage];
-                           
-                           dispatch_async(dispatch_get_main_queue(), ^{
-                               completion(isEqual);
-                           });
-                       });
-    }
-}
-
-- (BOOL)isEqualToImage:(UIImage*)toImage
-{
-    if (toImage == nil)
-    {
-        return NO;
+        cropRect.origin.x = imageSize.width - CGRectGetWidth(cropRect) - x;;
+        cropRect.origin.y = imageSize.height - CGRectGetHeight(cropRect) - y;
     }
     
-    NSData *data1 = UIImagePNGRepresentation(self);
-    NSData *data2 = UIImagePNGRepresentation(toImage);
-    
-    return [data1 isEqualToData:data2];
-}
-
-- (UIImage*)originalRenderingImage
-{
-    return [self imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-}
-
-- (BOOL)hasAlpha
-{
-    CGImageAlphaInfo alphaInfo = CGImageGetAlphaInfo(self.CGImage);
-    return (alphaInfo == kCGImageAlphaFirst || alphaInfo == kCGImageAlphaLast ||
-            alphaInfo == kCGImageAlphaPremultipliedFirst || alphaInfo == kCGImageAlphaPremultipliedLast);
+    CGImageRef croppedCGImage = CGImageCreateWithImageInRect(self.CGImage, cropRect);
+    UIImage *croppedImage = [UIImage imageWithCGImage:croppedCGImage scale:1.0f orientation:self.imageOrientation];
+    CGImageRelease(croppedCGImage);
+    return croppedImage;
 }
 
 - (UIImage *)imageWithCropFrame:(CGRect)frame angle:(NSInteger)angle circularClip:(BOOL)circular
@@ -249,4 +247,14 @@
                               angle:angle
                        circularClip:NO];
 }
+
+#pragma mark - GETTERS
+
+- (BOOL)hasAlpha
+{
+    CGImageAlphaInfo alphaInfo = CGImageGetAlphaInfo(self.CGImage);
+    return (alphaInfo == kCGImageAlphaFirst || alphaInfo == kCGImageAlphaLast ||
+            alphaInfo == kCGImageAlphaPremultipliedFirst || alphaInfo == kCGImageAlphaPremultipliedLast);
+}
+
 @end
