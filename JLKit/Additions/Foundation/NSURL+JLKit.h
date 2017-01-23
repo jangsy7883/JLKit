@@ -10,8 +10,10 @@
 
 @interface NSURL (JLKit)
 
-@property (nonatomic, readonly, copy) NSDictionary * parameters;
+@property (nonatomic, readonly, copy)  NSDictionary * _Nullable parameters;
 
-+ (instancetype)URLWithString:(NSString*)baseURL parameters:(NSDictionary*)parameters;
++ (nullable instancetype)URLWithString:(nullable NSString*)baseURL parameters:(nullable NSDictionary*)parameters;
 
+- (BOOL)isEqualToURL:(nullable NSURL *)url;
+    
 @end

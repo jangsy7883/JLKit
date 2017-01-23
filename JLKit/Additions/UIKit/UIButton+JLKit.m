@@ -17,6 +17,8 @@
 }
 
 - (void)centerVerticallyWithPadding:(float)padding {
+    [self.titleLabel sizeToFit];
+    
     CGSize imageSize = self.imageView.frame.size;
     CGSize titleSize = self.titleLabel.frame.size;
     
