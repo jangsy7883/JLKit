@@ -10,22 +10,18 @@
 
 @implementation UIColor (Additions)
 
-+ (UIColor*)colorWithHex:(NSString*)hex
-{
++ (UIColor*)colorWithHex:(NSString*)hex {
     return [UIColor colorWithHex:hex alpha:1.0];
 }
 
-+ (UIColor*)colorWithHex:(NSString*)hex alpha:(CGFloat)alpha
-{
-    if (hex == nil || [hex isKindOfClass:[NSString class]] == NO || hex.length == 0)
-    {
++ (UIColor*)colorWithHex:(NSString*)hex alpha:(CGFloat)alpha {
+    if (hex == nil || [hex isKindOfClass:[NSString class]] == NO || hex.length == 0) {
         return nil;
     }
     
     NSString *colorString = [[hex stringByReplacingOccurrencesOfString:@"#" withString:@""] uppercaseString];
 
-    unsigned (^colorComponentFrom)(NSInteger, NSInteger) = ^(NSInteger start, NSInteger length)
-    {
+    unsigned (^colorComponentFrom)(NSInteger, NSInteger) = ^(NSInteger start, NSInteger length) {
         NSString *substring = [colorString substringWithRange: NSMakeRange(start, length)];
         NSString *fullHex = length == 2 ? substring : [NSString stringWithFormat:@"%@%@", substring, substring];
         unsigned hexComponent;
@@ -48,7 +44,7 @@
             return RGBA(colorComponentFrom(2,2), colorComponentFrom(4,2), colorComponentFrom(6,2), colorComponentFrom(0,2));
             break;
         default:
-            return [UIColor blackColor];
+            return [UIColor whiteColor];
             break;
     }
  
@@ -72,17 +68,30 @@
     */
 }
 
-- (BOOL)isEqualToColor:(UIColor *)color
-{
-    if (self == color)
-        return YES;
++ (BOOL)isValidHex:(NSString*)hex {
+    
+    if (hex == nil || [hex isKindOfClass:[NSString class]] == NO || hex.length == 0) {
+        return NO;
+    }
+    
+    NSString *colorString = [[hex stringByReplacingOccurrencesOfString:@"#" withString:@""] uppercaseString];
+    
+    if (colorString) {
+        if (colorString.length == 3 || colorString.length == 4 || colorString.length == 6 || colorString.length == 8) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
+- (BOOL)isEqualToColor:(UIColor *)color {
+    if (self == color) return YES;
     
     CGColorSpaceRef colorSpaceRGB = CGColorSpaceCreateDeviceRGB();
     
     UIColor *(^convertColorToRGBSpace)(UIColor*) = ^(UIColor *color)
     {
-        if (CGColorSpaceGetModel(CGColorGetColorSpace(color.CGColor)) == kCGColorSpaceModelMonochrome)
-        {
+        if (CGColorSpaceGetModel(CGColorGetColorSpace(color.CGColor)) == kCGColorSpaceModelMonochrome) {
             const CGFloat *oldComponents = CGColorGetComponents(color.CGColor);
             CGFloat components[4] = {oldComponents[0], oldComponents[0], oldComponents[0], oldComponents[1]};
             CGColorRef colorRef = CGColorCreate(colorSpaceRGB, components);
@@ -90,8 +99,9 @@
             CGColorRelease(colorRef);
             return color;
         }
-        else
+        else {
             return color;
+        }
     };
     
     UIColor *selfColor = convertColorToRGBSpace(self);
@@ -101,8 +111,7 @@
     return [selfColor isEqual:color];
 }
 
-- (UIColor *)lighterColor
-{
+- (UIColor *)lighterColor {
     CGFloat h, s, b, a;
     if ([self getHue:&h saturation:&s brightness:&b alpha:&a])
         return [UIColor colorWithHue:h
@@ -112,8 +121,7 @@
     return nil;
 }
 
-- (UIColor*) darkerColor
-{
+- (UIColor*) darkerColor {
     CGFloat h, s, b, a;
     if ([self getHue:&h saturation:&s brightness:&b alpha:&a])
         return [UIColor colorWithHue:h
@@ -123,8 +131,7 @@
     return nil;
 }
 
-+ (UIColor*)randomColor
-{
++ (UIColor*)randomColor {
     CGFloat hue = ( arc4random() % 256 / 256.0 );  //  0.0 to 1.0
     CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from white
     CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from black
