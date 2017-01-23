@@ -34,6 +34,8 @@
  */
 + (UIColor*)colorWithHex:(NSString*)hex alpha:(CGFloat)alpha;
 
++ (BOOL)isValidHex:(NSString*)hex;
+
 - (BOOL)isEqualToColor:(UIColor *)color;
 
 @property (nonatomic, readonly, copy) UIColor *lighterColor;
