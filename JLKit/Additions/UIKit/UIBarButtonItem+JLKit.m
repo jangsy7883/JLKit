@@ -48,7 +48,7 @@
 
 + (UIBarButtonItem*)barButtonItemWithCustomImage:(UIImage *)image highlightedImage:(UIImage*)highlightedImage contentEdgeInsets:(UIEdgeInsets)contentEdgeInsets target:(id)target action:(SEL)action
 {
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
     [button setImage:image forState:UIControlStateNormal];
     [button setImage:highlightedImage forState:UIControlStateHighlighted];
     [button setContentEdgeInsets:contentEdgeInsets];
