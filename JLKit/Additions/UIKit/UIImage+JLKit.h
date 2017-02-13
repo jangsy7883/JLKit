@@ -16,6 +16,8 @@
 
 @property (nonatomic, readonly, strong) UIImage *originalRenderingImage;
 
++ (UIImage *)imageNamed:(NSString *)name orientation:(UIImageOrientation)orientation;
+
 + (UIImage *)patternImageWithColor:(UIColor *)color;
 + (UIImage *)patternImageWithColor:(UIColor *)color size:(CGSize)size;
 

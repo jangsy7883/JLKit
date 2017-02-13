@@ -10,8 +10,7 @@
 
 @implementation SKProduct (JLKit)
 
-- (NSString*)currencyPrice
-{
+- (NSString*)currencyPrice {
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     formatter.formatterBehavior = NSNumberFormatterBehavior10_4;
     formatter.numberStyle = NSNumberFormatterCurrencyStyle;

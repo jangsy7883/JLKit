@@ -16,17 +16,14 @@
 - (CGSize)sizeWithFont:(UIFont*)font
      constrainedToSize:(CGSize)size
              alignment:(NSTextAlignment)alignment
-         lineBreakMode:(NSLineBreakMode)lineBreakMode
-{
-    if (self.length == 0 || font == nil)
-    {
+         lineBreakMode:(NSLineBreakMode)lineBreakMode {
+    if (self.length == 0 || font == nil) {
         return CGSizeZero;
     }
     
     CGSize fitSize = CGSizeZero;
     
-    @try
-    {
+    @try {
         NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
         paragraphStyle.alignment = alignment;
         paragraphStyle.lineBreakMode = lineBreakMode;
@@ -40,64 +37,52 @@
                                      context:nil].size;
         
     }
-    @catch (NSException *exception)
-    {
+    @catch (NSException *exception) {
         
     }
 
     return CGSizeMake(ceilf(fitSize.width), ceilf(fitSize.height));
 }
 
-- (NSString*)deleteEmptySpace
-{
+- (NSString*)deleteEmptySpace {
     return [[self stringByReplacingOccurrencesOfString:@"\r\n" withString:@"\n"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
-- (NSString*)deleteLineSpace
-{
+- (NSString*)deleteLineSpace {
     return [[self componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]] componentsJoinedByString:@" "];
 }
 
-- (NSString*)deleteEmptyAndLineSpace
-{
+- (NSString*)deleteEmptyAndLineSpace {
     return self.deleteEmptySpace.deleteLineSpace;
 }
 
-- (BOOL)startsWith:(NSString *)prefix
-{
+- (BOOL)startsWith:(NSString *)prefix {
     if (self.length == 0) return FALSE;
     if (self.length < prefix.length) return FALSE;
     return [[self substringToIndex:prefix.length] isEqualToString:prefix];
 }
 
-- (BOOL)endWith:(NSString *)prefix
-{
+- (BOOL)endWith:(NSString *)prefix {
     if (self.length == 0) return FALSE;
     if (self.length < prefix.length) return FALSE;
     return [[self substringFromIndex:self.length-prefix.length] isEqualToString:prefix];
 }
 
-+ (BOOL)emptyString:(NSString *)parm_string
-{
-    if ([parm_string isKindOfClass:[NSString class]] == NO)
-    {
++ (BOOL)emptyString:(NSString *)parm_string {
+    if ([parm_string isKindOfClass:[NSString class]] == NO) {
         return YES;
     }
-    if ((NSNull *) parm_string == [NSNull null])
-    {
+    if ((NSNull *) parm_string == [NSNull null]) {
         return YES;
     }
     
-    if (parm_string == nil)
-    {
+    if (parm_string == nil) {
         return YES;
     }
-    else if (parm_string.length == 0 || parm_string.length == NSNotFound)
-    {
+    else if (parm_string.length == 0 || parm_string.length == NSNotFound) {
         return YES;
     }
-    else
-    {
+    else {
         parm_string = [parm_string stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
         if (parm_string.length == 0 || parm_string.length == NSNotFound)
         {
@@ -108,12 +93,10 @@
     return NO;
 }
 
-- (NSArray<NSString *> *)componentsSeparatedByString:(NSString *)separator componentBlock:(id (^)(id component))block
-{
+- (NSArray<NSString *> *)componentsSeparatedByString:(NSString *)separator componentBlock:(id (^)(id component))block {
     NSArray *components = [self componentsSeparatedByString:separator];
     
-    if (block)
-    {
+    if (block) {
         NSMutableArray *array = [NSMutableArray array];
         for (NSString* component in components)
         {
@@ -135,47 +118,39 @@
 
 #pragma mark - Regex Pattern
 
-- (NSRegularExpression*)regexWithPattern:(NSString*)pattern
-{
+- (NSRegularExpression*)regexWithPattern:(NSString*)pattern {
     NSError *error = nil;
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:&error];
-    if (error)
-    {
+    if (error) {
         return nil;
     }
     return regex;
 }
 
-- (NSRange)rangeOfFirstMatchInRegexPattern:(NSString*)pattern
-{
+- (NSRange)rangeOfFirstMatchInRegexPattern:(NSString*)pattern {
     NSRegularExpression *regex = [self regexWithPattern:pattern];
-    if (regex)
-    {
+    if (regex) {
         return [regex rangeOfFirstMatchInString:self options:0 range:NSMakeRange(0, self.length)];
     }
     return NSMakeRange(0, 0);
 }
 
-- (NSArray<NSTextCheckingResult *> *)matchesInRegexPattern:(NSString*)pattern
-{
+- (NSArray<NSTextCheckingResult *> *)matchesInRegexPattern:(NSString*)pattern {
     NSRegularExpression *regex = [self regexWithPattern:pattern];
-    if (regex)
-    {
+    if (regex) {
         return [regex matchesInString:self options:0 range:NSMakeRange(0, self.length)];
     }
     return nil;
 }
 
-- (BOOL)isValidInRegexPattern:(NSString*)pattern
-{
+- (BOOL)isValidInRegexPattern:(NSString*)pattern {
     NSRange range = [self rangeOfFirstMatchInRegexPattern:pattern];
     return (range.length != NSNotFound && range.length > 0);
 }
 
 #pragma mark -
 
-- (NSString*)MD5
-{
+- (NSString*)MD5 {
     if(self == nil || self.length == 0) return nil;
     
     const char *value = self.UTF8String;
@@ -190,13 +165,11 @@
     return outputString;   
 }
 
-- (NSString*)UTF8Encoding
-{
+- (NSString*)UTF8Encoding {
     return [self stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet alphanumericCharacterSet]];
 }
 
-+ (NSString*)UUID
-{
++ (NSString*)UUID {
     CFUUIDRef uuidRef = CFUUIDCreate(NULL);
     CFStringRef uuidStringRef = CFUUIDCreateString(NULL, uuidRef);
     CFRelease(uuidRef);

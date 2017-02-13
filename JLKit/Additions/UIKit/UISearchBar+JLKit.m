@@ -10,20 +10,16 @@
 
 @implementation UISearchBar (JLKit)
 
-- (UITextField*)textField
-{
+- (UITextField*)textField {
     return [self searchSubviewsForTextFieldIn:self];
 }
 
-- (UITextField*)searchSubviewsForTextFieldIn:(UIView*)view
-{
-    if ([view isKindOfClass:[UITextField class]])
-    {
+- (UITextField*)searchSubviewsForTextFieldIn:(UIView*)view {
+    if ([view isKindOfClass:[UITextField class]]) {
         return (UITextField*)view;
     }
     UITextField *searchedTextField;
-    for (UIView *subview in view.subviews)
-    {
+    for (UIView *subview in view.subviews) {
         searchedTextField = [self searchSubviewsForTextFieldIn:subview];
         if (searchedTextField)
         {

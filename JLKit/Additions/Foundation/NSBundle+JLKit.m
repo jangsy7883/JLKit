@@ -10,18 +10,15 @@
 
 @implementation NSBundle (Additions)
 
-- (NSString*)appVersion
-{
+- (NSString*)appVersion {
     return self.infoDictionary[@"CFBundleShortVersionString"];
 }
 
-- (NSString*)buildVersion
-{
+- (NSString*)buildVersion {
     return self.infoDictionary[(NSString*)kCFBundleVersionKey];
 }
 
-- (BOOL)isNewerThenAppVersion:(NSString*)version
-{
+- (BOOL)isNewerThenAppVersion:(NSString*)version {
     return [self.appVersion compare:version options:NSNumericSearch] == NSOrderedAscending;
 }
 

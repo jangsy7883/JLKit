@@ -10,14 +10,12 @@
 
 @implementation NSNumber (JLKit)
 
-- (NSString*)localizedStringForNumberStyle:(NSNumberFormatterStyle)nStyle
-{
+- (NSString*)localizedStringForNumberStyle:(NSNumberFormatterStyle)nStyle {
     return [NSNumberFormatter localizedStringFromNumber:self
                                             numberStyle:nStyle];
 }
 
-- (NSString *)stringByRounding:(NSNumberFormatterRoundingMode)roundingMode maximumFractionDigits:(NSUInteger)maximumFractionDigits
-{
+- (NSString *)stringByRounding:(NSNumberFormatterRoundingMode)roundingMode maximumFractionDigits:(NSUInteger)maximumFractionDigits {
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setMaximumFractionDigits:maximumFractionDigits];
     [formatter setRoundingMode:roundingMode];

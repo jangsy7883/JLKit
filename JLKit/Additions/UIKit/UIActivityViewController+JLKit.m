@@ -11,20 +11,17 @@
 
 @implementation UIActivityViewController (JLKit)
 
-+ (void)showWithActivityItems:(NSArray *)activityItems
-{
++ (void)showWithActivityItems:(NSArray *)activityItems {
     [self showWithActivityItems:activityItems activities:nil option:nil];
 }
 
 + (void)showWithActivityItems:(NSArray *)activityItems
                    activities:(NSArray<UIActivity *> *)activities
-                       option:(void (^)(UIActivityViewController *activityViewController))option
-{
+                       option:(void (^)(UIActivityViewController *activityViewController))option {
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc]initWithActivityItems:activityItems
                                                                                         applicationActivities:activities];
     
-    if (option)
-    {
+    if (option) {
         option(activityViewController);
     }
     

@@ -10,10 +10,8 @@
 
 @implementation NSIndexSet (JLKit)
 
-- (NSArray<NSNumber*>*)arrayValue
-{
-    if (self.count > 0)
-    {
+- (NSArray<NSNumber*>*)arrayValue {
+    if (self.count > 0) {
         NSMutableArray *indexs = [NSMutableArray array];
         
         [self enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {

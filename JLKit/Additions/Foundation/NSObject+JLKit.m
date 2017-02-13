@@ -10,11 +10,9 @@
 
 @implementation NSObject (JLKit)
 
-- (id)performSelector:(SEL)aSelector withObjects:(id)object, ...
-{
+- (id)performSelector:(SEL)aSelector withObjects:(id)object, ... {
     NSMethodSignature *signature = [self methodSignatureForSelector:aSelector];
-    if (signature)
-    {
+    if (signature) {
         NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
         invocation.target = self;
         invocation.selector = aSelector;
@@ -45,8 +43,7 @@
             return nil;
         }
     }
-    else
-    {
+    else {
         return nil;
     }
 }

@@ -22,14 +22,14 @@
     
     CGFloat totalHeight = (imageSize.height + titleSize.height + padding);
     
-    self.imageEdgeInsets = UIEdgeInsetsMake(- (totalHeight - imageSize.height),
+    self.imageEdgeInsets = UIEdgeInsetsMake(- floorf(totalHeight - imageSize.height),
                                             0.0f,
                                             0.0f,
-                                            - titleSize.width);
+                                            - floorf(titleSize.width));
     
     self.titleEdgeInsets = UIEdgeInsetsMake(0.0f,
-                                            - imageSize.width,
-                                            - (totalHeight - titleSize.height),
+                                            - floorf(imageSize.width),
+                                            - floorf(totalHeight - titleSize.height),
                                             0.0f);
 }
 

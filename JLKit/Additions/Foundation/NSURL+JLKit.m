@@ -10,13 +10,11 @@
 
 @implementation NSURL (JLKit)
 
-- (nullable NSDictionary*)parameters
-{
+- (nullable NSDictionary*)parameters {
     NSMutableDictionary* parameters = [NSMutableDictionary dictionary];
     
 /*
-    for (NSString *param in [self.query componentsSeparatedByString:@"&"])
-    {
+    for (NSString *param in [self.query componentsSeparatedByString:@"&"]) {
         NSArray *parts = [param componentsSeparatedByString:@"="];
         if(parts.count < 2) continue;
         parameters[parts[0]] = parts[1];
@@ -26,8 +24,7 @@
     
     NSURLComponents* urlComponents = [NSURLComponents componentsWithURL:self resolvingAgainstBaseURL:NO];
     
-    for (NSURLQueryItem* queryItem in [urlComponents queryItems])
-    {
+    for (NSURLQueryItem* queryItem in [urlComponents queryItems]) {
         if (queryItem.value != nil)
             [parameters setObject:queryItem.value forKey:queryItem.name];
     }
@@ -35,8 +32,7 @@
     return parameters;
 }
 
-+ (nullable instancetype)URLWithString:(nullable NSString*)baseURL parameters:(nullable NSDictionary*)parameters
-{
++ (nullable instancetype)URLWithString:(nullable NSString*)baseURL parameters:(nullable NSDictionary*)parameters {
     if (baseURL != nil) {
         NSMutableArray *queryItems = [NSMutableArray array];
         for (NSString* key in parameters) {

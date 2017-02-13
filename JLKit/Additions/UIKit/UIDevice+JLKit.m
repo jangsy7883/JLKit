@@ -19,8 +19,7 @@
 
 #pragma mark - getters
 
-- (unsigned long long)systemTotalSize
-{
+- (unsigned long long)systemTotalSize {
     NSError *error = nil;
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSDictionary *dictionary = [[NSFileManager defaultManager] attributesOfFileSystemForPath:paths.lastObject error: &error];
@@ -36,8 +35,7 @@
 	return 0;
 }
 
-- (unsigned long long)systemFreeSize
-{
+- (unsigned long long)systemFreeSize {
     NSError *error = nil;
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSDictionary *dictionary = [[NSFileManager defaultManager] attributesOfFileSystemForPath:paths.lastObject error: &error];
@@ -55,8 +53,7 @@
 
 #pragma mark - ip Address
 
-- (NSString *)ipAddressForInterface:(NSString *)interface ipVersion:(NSInteger)ipVersion
-{
+- (NSString *)ipAddressForInterface:(NSString *)interface ipVersion:(NSInteger)ipVersion {
     NSString *address = nil;
     struct ifaddrs *interfaces = NULL;
     struct ifaddrs *temp_addr = NULL;
@@ -117,21 +114,17 @@
     return address;
 }
 
-- (NSString *)ipAddressForWiFi
-{
+- (NSString *)ipAddressForWiFi {
     NSString *address = [self ipAddressForInterface:@"en0" ipVersion:6];
-    if (address == nil)
-    {
+    if (address == nil) {
         address = [self ipAddressForInterface:@"en0" ipVersion:4];
     }
     return address;
 }
 
-- (NSString *)ipAddressForCellular
-{
+- (NSString *)ipAddressForCellular {
     NSString *address = [self ipAddressForInterface:@"pdp_ip0" ipVersion:6];
-    if (address == nil)
-    {
+    if (address == nil) {
         address = [self ipAddressForInterface:@"pdp_ip0" ipVersion:4];
     }
     return address;

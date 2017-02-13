@@ -10,8 +10,7 @@
 
 @implementation UILabel (Additions)
 
-+ (UILabel*)labelWithText:(NSString*)text font:(UIFont*)font textColor:(UIColor*)textColor
-{
++ (UILabel*)labelWithText:(NSString*)text font:(UIFont*)font textColor:(UIColor*)textColor {
     UILabel* label = [UILabel new];
     label.textAlignment = NSTextAlignmentCenter;
     label.text = text;
@@ -21,18 +20,15 @@
     return label;
 }
 
-- (CGSize)fitWithSize:(CGSize)parm_size
-{
+- (CGSize)fitWithSize:(CGSize)parm_size {
     CGSize size = CGSizeZero;
     
-    if ((self.attributedText).length > 0)
-    {
+    if ((self.attributedText).length > 0) {
         size = [self.attributedText boundingRectWithSize:parm_size
                                                  options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading)
                                                  context:nil].size;
     }
-    else if ((self.text).length > 0)
-    {
+    else if ((self.text).length > 0) {
         NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
         paragraphStyle.alignment = self.textAlignment;
         paragraphStyle.lineBreakMode = self.lineBreakMode;
@@ -48,8 +44,7 @@
     return CGSizeMake(ceil(size.width), ceil(size.height));
 }
 
-- (CGSize)fitSize
-{
+- (CGSize)fitSize {
     return [self fitWithSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)];
 }
 

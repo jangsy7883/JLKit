@@ -10,8 +10,7 @@
 
 @implementation UIScreen (Additions)
 
-- (BOOL)isRetinaDisplay
-{
+- (BOOL)isRetinaDisplay {
     if ([[UIScreen mainScreen] respondsToSelector:@selector(displayLinkWithTarget:selector:)] && ([UIScreen mainScreen].scale == 2.0 || [UIScreen mainScreen].scale == 3.0)) {
         return YES;
     } else {
@@ -19,8 +18,7 @@
     }
 }
 
-- (BOOL)isRetinaHDDisplay
-{
+- (BOOL)isRetinaHDDisplay {
     if ([[UIScreen mainScreen] respondsToSelector:@selector(displayLinkWithTarget:selector:)] && [UIScreen mainScreen].scale == 3.0) {
         return YES;
     } else {

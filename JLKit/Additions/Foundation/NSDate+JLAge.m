@@ -11,8 +11,7 @@
 
 @implementation NSDate (JLAge)
 
-- (NSInteger)age
-{
+- (NSInteger)age {
     NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitYear
                                                  fromDate:self];
     NSDateComponents *toComponents = [[NSCalendar currentCalendar] components:NSCalendarUnitYear
@@ -22,18 +21,15 @@
     
     toComponents.year = components.year;
     
-    if([components.date compare:toComponents.date] == NSOrderedAscending)
-    {
+    if([components.date compare:toComponents.date] == NSOrderedAscending) {
         return MAX(1, year) - 1;
     }
-    else
-    {
+    else {
         return MAX(0, year);
     }
 }
 
-- (NSInteger)koreanAge
-{
+- (NSInteger)koreanAge {
     NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitYear
                                                                    fromDate:self];
     NSDateComponents *toComponents = [[NSCalendar currentCalendar] components:NSCalendarUnitYear
