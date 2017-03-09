@@ -13,4 +13,5 @@
 - (NSString*)localizedStringForNumberStyle:(NSNumberFormatterStyle)nStyle;
 - (NSString *)stringByRounding:(NSNumberFormatterRoundingMode)roundingMode maximumFractionDigits:(NSUInteger)maximumFractionDigits;
 
++ (NSInteger)randomIntegerWithMin:(NSInteger)min max:(NSInteger)max;
 @end

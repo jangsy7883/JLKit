@@ -153,6 +153,7 @@
 		EF6A9EEC1D9A4FAD00C31B2C /* CLLocation+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+JLKit.m"; sourceTree = "<group>"; };
 		EFBDE0891E27205200D2E901 /* NSNull+JLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNull+JLKit.h"; sourceTree = "<group>"; };
 		EFBDE08A1E27205200D2E901 /* NSNull+JLKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNull+JLKit.m"; sourceTree = "<group>"; };
+		EFF9CF9F1E70F7C600B565D4 /* CGGeometryExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGGeometryExtension.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +273,7 @@
 				EF6A9EEC1D9A4FAD00C31B2C /* CLLocation+JLKit.m */,
 				EFBDE0891E27205200D2E901 /* NSNull+JLKit.h */,
 				EFBDE08A1E27205200D2E901 /* NSNull+JLKit.m */,
+				EFF9CF9F1E70F7C600B565D4 /* CGGeometryExtension.h */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
