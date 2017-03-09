@@ -29,6 +29,9 @@
 #import "NSError+JLKit.h"
 #import "NSNull+JLKit.h"
 
+//
+#import "CGGeometryExtension.h"
+
 //UIKit
 #import "CALayer+JLKit.h"
 #import "UIApplication+JLKit.h"

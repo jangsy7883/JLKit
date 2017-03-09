@@ -7,6 +7,7 @@
 //
 
 #import "NSNumber+JLKit.h"
+#include <stdlib.h>
 
 @implementation NSNumber (JLKit)
 
@@ -21,6 +22,11 @@
     [formatter setRoundingMode:roundingMode];
     NSString *numberString = [formatter stringFromNumber:self];
     return numberString;
+}
+
++ (NSInteger)randomIntegerWithMin:(NSInteger)min max:(NSInteger)max {
+    NSInteger form = max - min + 1;
+    return (NSInteger)(min + arc4random_uniform((uint32_t)form));
 }
 
 @end
