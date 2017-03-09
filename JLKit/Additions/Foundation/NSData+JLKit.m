@@ -10,8 +10,7 @@
 
 @implementation NSData (JLKit)
 
-- (NSString *)UTF8String
-{
+- (NSString *)UTF8String {
     return [[NSString alloc] initWithData:self encoding:NSUTF8StringEncoding];
 }
 

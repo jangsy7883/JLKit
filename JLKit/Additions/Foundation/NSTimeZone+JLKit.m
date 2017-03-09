@@ -10,8 +10,7 @@
 
 @implementation NSTimeZone (JLKit)
 
-+ (NSTimeZone*)GMT
-{
++ (NSTimeZone*)GMT {
     return [NSTimeZone timeZoneWithName:@"GMT"];
 }
 

@@ -14,13 +14,11 @@
 
 #pragma mark - show
 
-- (void)showAlert
-{
+- (void)showAlert {
     [self showAlertWithCompletion:nil];
 }
 
-- (void)showAlertWithCompletion:(void (^)(void))completion
-{
+- (void)showAlertWithCompletion:(void (^)(void))completion {
     [[UIViewController visibleViewController] presentViewController:self animated:YES completion:completion];
 }
 
@@ -29,14 +27,12 @@
 + (instancetype)alertControllerWithTitle:(NSString *)title
                                  message:(NSString *)message
                           preferredStyle:(UIAlertControllerStyle)preferredStyle
-                                 actions:(NSArray<UIAlertAction *> *)actions
-{
+                                 actions:(NSArray<UIAlertAction *> *)actions {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
                                                                              message:message
                                                                       preferredStyle:preferredStyle];
     
-    for (UIAlertAction *action in actions)
-    {
+    for (UIAlertAction *action in actions) {
         [alertController addAction:action];
     }
     
@@ -48,12 +44,10 @@
                           preferredStyle:(UIAlertControllerStyle)preferredStyle
                       confirmActionTitle:(NSString *)confirmActionTitle
                        cancelActionTitle:(NSString *)cancelActionTitle
-                                 handler:(void (^)(BOOL isCancelAction))handler
-{
+                                 handler:(void (^)(BOOL isCancelAction))handler {
     NSMutableArray *actions = [NSMutableArray array];
     
-    if (cancelActionTitle.length > 0)
-    {
+    if (cancelActionTitle.length > 0) {
         [actions addObject:[UIAlertAction actionWithCancelTitle:cancelActionTitle
                                                         handler:^(UIAlertAction * _Nonnull action)
                             {
@@ -61,8 +55,7 @@
                             }]];
     }
     
-    if (confirmActionTitle.length > 0)
-    {
+    if (confirmActionTitle.length > 0) {
         [actions addObject:[UIAlertAction actionWithTitle:confirmActionTitle
                                                   handler:^(UIAlertAction * _Nonnull action)
                             {
@@ -81,12 +74,10 @@
                           preferredStyle:(UIAlertControllerStyle)preferredStyle
                   destructiveActionTitle:(NSString *)destructiveActionTitle
                        cancelActionTitle:(NSString *)cancelActionTitle
-                                 handler:(void (^)(BOOL isCancelAction))handler
-{
+                                 handler:(void (^)(BOOL isCancelAction))handler {
     NSMutableArray *actions = [NSMutableArray array];
     
-    if (cancelActionTitle.length > 0)
-    {
+    if (cancelActionTitle.length > 0) {
         [actions addObject:[UIAlertAction actionWithCancelTitle:cancelActionTitle
                                                         handler:^(UIAlertAction * _Nonnull action)
                             {
@@ -94,8 +85,7 @@
                             }]];
     }
     
-    if (destructiveActionTitle.length > 0)
-    {
+    if (destructiveActionTitle.length > 0) {
         [actions addObject:[UIAlertAction actionWithDestructivelTitle:destructiveActionTitle
                                                               handler:^(UIAlertAction * _Nonnull action)
                             {
@@ -114,8 +104,7 @@
 + (void)showAlertWithTitle:(NSString *)title
                    message:(NSString *)message
         confirmActionTitle:(NSString *)confirmActionTitle
-                   handler:(void (^)(BOOL isCancelAction))handler
-{
+                   handler:(void (^)(BOOL isCancelAction))handler {
     [[self alertControllerWithTitle:title
                             message:message
                      preferredStyle:UIAlertControllerStyleAlert
@@ -125,8 +114,7 @@
 }
 
 + (void)showAlertWithMessage:(NSString *)message
-          confirmActionTitle:(NSString *)confirmActionTitle
-{
+          confirmActionTitle:(NSString *)confirmActionTitle {
     [[self alertControllerWithTitle:@""
                             message:message
                      preferredStyle:UIAlertControllerStyleAlert
@@ -135,8 +123,7 @@
                             handler:nil] showAlert];
 }
 
-- (void)setSourceView:(UIView*)sourceView permittedArrowDirections:(UIPopoverArrowDirection)permittedArrowDirections
-{
+- (void)setSourceView:(UIView*)sourceView permittedArrowDirections:(UIPopoverArrowDirection)permittedArrowDirections {
     self.popoverPresentationController.sourceView = sourceView;
     self.popoverPresentationController.sourceRect = sourceView.bounds;
     self.popoverPresentationController.permittedArrowDirections = permittedArrowDirections;
@@ -146,22 +133,19 @@
 
 @implementation UIAlertAction (JLKit)
 
-+ (UIAlertAction*)actionWithTitle:(NSString*)title handler:(void (^)(UIAlertAction *action))handler
-{
++ (UIAlertAction*)actionWithTitle:(NSString*)title handler:(void (^)(UIAlertAction *action))handler {
     return [UIAlertAction actionWithTitle:title
                                     style:UIAlertActionStyleDefault
                                   handler:handler];
 }
 
-+ (UIAlertAction*)actionWithCancelTitle:(NSString*)title handler:(void (^)(UIAlertAction *action))handler
-{
++ (UIAlertAction*)actionWithCancelTitle:(NSString*)title handler:(void (^)(UIAlertAction *action))handler {
     return [UIAlertAction actionWithTitle:title
                                     style:UIAlertActionStyleCancel
                                   handler:handler];
 }
 
-+ (UIAlertAction*)actionWithDestructivelTitle:(NSString*)title handler:(void (^)(UIAlertAction *action))handler
-{
++ (UIAlertAction*)actionWithDestructivelTitle:(NSString*)title handler:(void (^)(UIAlertAction *action))handler {
     return [UIAlertAction actionWithTitle:title
                                     style:UIAlertActionStyleDestructive
                                   handler:handler];

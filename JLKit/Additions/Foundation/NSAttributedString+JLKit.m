@@ -10,26 +10,21 @@
 
 @implementation NSMutableAttributedString (JLKit)
 
-- (void)addAttributes:(NSDictionary*)attrs text:(NSString*)text
-{
-    @try
-    {
+- (void)addAttributes:(NSDictionary*)attrs text:(NSString*)text {
+    @try {
         NSRange range = [self.string rangeOfString:text];
         if (range.length > 0)
         {
             [self addAttributes:attrs range:range];
         }
     }
-    @catch (NSException *exception)
-    {
+    @catch (NSException *exception) {
         
     }
 }
 
-- (void)appendString:(NSString*)string attributes:(NSDictionary*)attributes
-{
-    if (string.length > 0 && attributes.allKeys.count > 0)
-    {
+- (void)appendString:(NSString*)string attributes:(NSDictionary*)attributes {
+    if (string.length > 0 && attributes.allKeys.count > 0) {
         NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString:string
                                                                                attributes:attributes];
         [self appendAttributedString:attributedString];
@@ -40,8 +35,7 @@
 
 @implementation NSAttributedString (JLKit)
 
-+ (instancetype)attributedString:(NSString*)string attributes:(NSDictionary<NSString *, id> *)attrs
-{
++ (instancetype)attributedString:(NSString*)string attributes:(NSDictionary<NSString *, id> *)attrs {
     return [[[self class] alloc] initWithString:string attributes:attrs];
 }
 

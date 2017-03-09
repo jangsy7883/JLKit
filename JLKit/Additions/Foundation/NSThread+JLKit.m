@@ -10,8 +10,7 @@
 
 @implementation NSThread (Block)
 
-+ (void)afterDelay:(NSTimeInterval)afterDelay task:(void (^)(void))task
-{
++ (void)afterDelay:(NSTimeInterval)afterDelay task:(void (^)(void))task {
     if (task == nil) return;
 
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(afterDelay * NSEC_PER_SEC));
@@ -20,16 +19,14 @@
     });
 }
 
-+ (void)backgroundTask:(void (^)(void))task
-{
++ (void)backgroundTask:(void (^)(void))task {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
                    ^{
                        task();
                    });
 }
 
-+ (void)mainTask:(void (^)(void))task
-{
++ (void)mainTask:(void (^)(void))task {
     dispatch_async(dispatch_get_main_queue(), ^{
         task();
     });

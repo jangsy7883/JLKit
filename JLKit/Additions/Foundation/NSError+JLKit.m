@@ -11,12 +11,10 @@
 
 @implementation NSError (JLKit)
 
-- (void)showAlertWithActionTitle:(NSString*)doneButtonTitle animated:(BOOL)animated
-{
+- (void)showAlertWithActionTitle:(NSString*)doneButtonTitle animated:(BOOL)animated {
     UIViewController *visibleViewController = [UIViewController visibleViewController];
     
-    if ([visibleViewController respondsToSelector:@selector(presentViewController:animated:completion:)])
-    {
+    if ([visibleViewController respondsToSelector:@selector(presentViewController:animated:completion:)]) {
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@""
                                                                                  message:self.localizedDescription
                                                                           preferredStyle:UIAlertControllerStyleAlert];

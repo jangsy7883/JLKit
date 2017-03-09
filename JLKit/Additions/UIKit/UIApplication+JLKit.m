@@ -10,15 +10,12 @@
 #import "NSThread+JLKit.h"
 @implementation UIApplication (JLKit)
 
-+ (BOOL)isActive
-{
++ (BOOL)isActive {
     return ([UIApplication sharedApplication].applicationState == UIApplicationStateActive);
 }
 
-+ (void)openURL:(NSURL*)url completion:(void (^)(BOOL success))completion
-{
-    if ([[UIApplication sharedApplication] canOpenURL:url])
-    {
++ (void)openURL:(NSURL*)url completion:(void (^)(BOOL success))completion {
+    if ([[UIApplication sharedApplication] canOpenURL:url]) {
         if ([[UIApplication sharedApplication] respondsToSelector:@selector(openURL:options:completionHandler:)])
         {
             [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:completion];
@@ -41,8 +38,7 @@
             }
         }
     }
-    else if (completion)
-    {
+    else if (completion) {
         completion(NO);
     }
 }

@@ -29,8 +29,7 @@
         return hexComponent;
     };
     
-    switch (colorString.length)
-    {
+    switch (colorString.length) {
         case 3: // #RGB
             return RGBA(colorComponentFrom(0,1), colorComponentFrom(1,1), colorComponentFrom(2,1), alpha);
             break;
@@ -49,15 +48,13 @@
     }
  
  /*
-    if(colorString.length == 3)
-    {
+    if(colorString.length == 3) {
         colorString = [NSString stringWithFormat:@"%@%@%@%@%@%@",
                        [colorString substringWithRange:NSMakeRange(0, 1)],[colorString substringWithRange:NSMakeRange(0, 1)],
                        [colorString substringWithRange:NSMakeRange(1, 1)],[colorString substringWithRange:NSMakeRange(1, 1)],
                        [colorString substringWithRange:NSMakeRange(2, 1)],[colorString substringWithRange:NSMakeRange(2, 1)]];
     }
-    if(colorString.length == 6)
-    {
+    if(colorString.length == 6) {
         colorString = [colorString stringByAppendingString:@"ff"];
     }
 
@@ -89,8 +86,7 @@
     
     CGColorSpaceRef colorSpaceRGB = CGColorSpaceCreateDeviceRGB();
     
-    UIColor *(^convertColorToRGBSpace)(UIColor*) = ^(UIColor *color)
-    {
+    UIColor *(^convertColorToRGBSpace)(UIColor*) = ^(UIColor *color) {
         if (CGColorSpaceGetModel(CGColorGetColorSpace(color.CGColor)) == kCGColorSpaceModelMonochrome) {
             const CGFloat *oldComponents = CGColorGetComponents(color.CGColor);
             CGFloat components[4] = {oldComponents[0], oldComponents[0], oldComponents[0], oldComponents[1]};

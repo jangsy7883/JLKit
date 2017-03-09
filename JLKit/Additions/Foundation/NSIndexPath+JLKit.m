@@ -11,8 +11,7 @@
 
 @implementation NSIndexPath (Additions)
 
-- (BOOL)isEqualToIndexPath:(NSIndexPath*)indexPath
-{
+- (BOOL)isEqualToIndexPath:(NSIndexPath*)indexPath {
 	if (self == nil || indexPath == nil) {
 		return NO;
 	}

@@ -11,36 +11,30 @@
 
 @implementation NSArray (Additions)
 
-- (NSString*)JSONValue
-{
+- (NSString*)JSONValue {
     NSError *error = nil;
     NSData* kData = [NSJSONSerialization dataWithJSONObject:self
                                                     options:NSJSONWritingPrettyPrinted
                                                       error:&error];
-    if (error == nil)
-    {
+    if (error == nil) {
         return [[NSString alloc] initWithData:kData encoding:NSUTF8StringEncoding];
     }
     return nil;
 }
 
-- (BOOL)emptyAtIndex:(NSInteger)index
-{
+- (BOOL)emptyAtIndex:(NSInteger)index {
     return ([self objectAtSafeIndex:index] == nil);
 }
 
-- (id)objectAtSafeIndex:(NSInteger)index
-{
+- (id)objectAtSafeIndex:(NSInteger)index {
     id object = nil;
-    @try
-    {
+    @try {
         if (index != NSNotFound && self.count > index && self.count > 0)
         {
             object = self[index];
         }
     }
-    @catch (NSException *exception)
-    {
+    @catch (NSException *exception) {
     }
     return object;
 }
@@ -88,22 +82,18 @@
 
 @implementation NSMutableArray (Additions)
 
-- (void)removeObjectAtSafeIndex:(NSUInteger)index
-{
-    @try
-    {
+- (void)removeObjectAtSafeIndex:(NSUInteger)index {
+    @try {
         if ([self emptyAtIndex:index] == NO)
         {
             [self removeObjectAtIndex:index];
         }
     }
-    @catch (NSException *exception)
-    {
+    @catch (NSException *exception) {
     }
 }
 
-- (void)addSafeObject:(id)anObject
-{
+- (void)addSafeObject:(id)anObject {
     @try {
         if (anObject != nil)
         {

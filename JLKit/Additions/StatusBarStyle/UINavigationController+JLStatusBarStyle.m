@@ -10,13 +10,11 @@
 
 @implementation UINavigationController (StatusBarStyle)
 
-- (UIViewController *)childViewControllerForStatusBarStyle
-{
+- (UIViewController *)childViewControllerForStatusBarStyle {
     return self.topViewController;
 }
 
-- (UIViewController *)childViewControllerForStatusBarHidden
-{
+- (UIViewController *)childViewControllerForStatusBarHidden {
     return self.topViewController;
 }
 

@@ -10,8 +10,7 @@
 
 @implementation UICollectionViewCell (JLKit)
 
-- (NSIndexPath*)indexPath
-{
+- (NSIndexPath*)indexPath {
     UICollectionView*collectionView = self.superCollectionView;
     if (collectionView) {
         return [collectionView indexPathForCell:self];
@@ -19,8 +18,7 @@
     return nil;
 }
 
-- (UICollectionView *)superCollectionView
-{
+- (UICollectionView *)superCollectionView {
     id view = self.superview;
     while (view != nil) {
         if ([view isKindOfClass:[UICollectionView class]]) {

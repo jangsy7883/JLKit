@@ -10,8 +10,7 @@
 
 @implementation CLLocation (JLKit)
 
-+ (CLLocation*)locationWithCoordinate:(CLLocationCoordinate2D)coordinate
-{
++ (CLLocation*)locationWithCoordinate:(CLLocationCoordinate2D)coordinate {
     return [[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
 }
 

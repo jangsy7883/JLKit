@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(unsigned int, UIFontStyle)
-{
+typedef NS_ENUM(unsigned int, UIFontStyle) {
     UIFontStyleRegular,
     UIFontStyleLight,
     UIFontStyleMedium,

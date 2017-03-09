@@ -11,8 +11,7 @@
 
 @implementation NSDate (Additions)
 
-+ (NSDateFormatter*)sharedDateFormatter
-{
++ (NSDateFormatter*)sharedDateFormatter {
     static dispatch_once_t once;
     static NSDateFormatter *dateFormatter;
     dispatch_once(&once, ^{
@@ -22,8 +21,7 @@
     return dateFormatter;
 }
 
-- (NSCalendarUnit)componentFlags
-{
+- (NSCalendarUnit)componentFlags {
     return (
             NSCalendarUnitYear
             | NSCalendarUnitMonth
@@ -42,8 +40,7 @@
 
 #pragma mark - formatter
 
-+ (NSDate*)dateFromString:(NSString*)dateString dateFormat:(NSString*)dateFormat timeZone:(NSTimeZone*)timeZone
-{
++ (NSDate*)dateFromString:(NSString*)dateString dateFormat:(NSString*)dateFormat timeZone:(NSTimeZone*)timeZone {
     NSDateFormatter *dateFormatter = [self sharedDateFormatter];
     dateFormatter.timeZone = timeZone;
     dateFormatter.dateFormat = dateFormat;
@@ -51,15 +48,13 @@
     return [dateFormatter dateFromString:dateString];
 }
 
-+ (NSDate*)dateFromString:(NSString*)dateString dateFormat:(NSString*)dateFormat
-{
++ (NSDate*)dateFromString:(NSString*)dateString dateFormat:(NSString*)dateFormat {
     return [self dateFromString:dateString
                      dateFormat:dateFormat
                        timeZone:[NSTimeZone GMT]];
 }
 
-- (NSString*)stringFromDateFormat:(NSString*)stringFormat timeZone:(NSTimeZone*)timeZone
-{
+- (NSString*)stringFromDateFormat:(NSString*)stringFormat timeZone:(NSTimeZone*)timeZone {
     NSDateFormatter *dateFormatter = [NSDate sharedDateFormatter];
     dateFormatter.timeZone = timeZone;
     dateFormatter.dateFormat = stringFormat;
@@ -67,24 +62,21 @@
     return [dateFormatter stringFromDate:self];
 }
 
-- (NSString*)stringFromDateFormat:(NSString*)stringFormat
-{
+- (NSString*)stringFromDateFormat:(NSString*)stringFormat {
     return [self stringFromDateFormat:stringFormat
                              timeZone:[NSTimeZone systemTimeZone]];
 }
 
 #pragma mark - Unit
 
-- (NSInteger)valueForComponent:(NSCalendarUnit)unit
-{
+- (NSInteger)valueForComponent:(NSCalendarUnit)unit {
     NSDateComponents *components = [[NSCalendar currentCalendar] components:unit fromDate:self];
     components.calendar = [NSCalendar currentCalendar];
     
     return [components valueForComponent:unit];
 }
 
-- (NSDate*)dateByAddingCount:(NSInteger)count forComponent:(NSCalendarUnit)unit
-{
+- (NSDate*)dateByAddingCount:(NSInteger)count forComponent:(NSCalendarUnit)unit {
     NSDateComponents *components = [[NSCalendar currentCalendar] components:[self componentFlags] fromDate:self];
     components.calendar = [NSCalendar currentCalendar];
     
@@ -97,8 +89,7 @@
 
 #pragma mark - Equal
 
-- (BOOL)isEqualDayToDate:(NSDate *)date
-{
+- (BOOL)isEqualDayToDate:(NSDate *)date {
     NSDateComponents *components1 = [[NSCalendar currentCalendar] components:[self componentFlags] fromDate:self];
     NSDateComponents *components2 = [[NSCalendar currentCalendar] components:[self componentFlags] fromDate:date];
     return ((components1.year == components2.year)
@@ -108,49 +99,40 @@
 
 #pragma mark - GETTERS
 
-- (BOOL)isToday
-{
+- (BOOL)isToday {
     return [self isEqualDayToDate:[NSDate date]];
 }
 
-- (BOOL)isYesterday
-{
+- (BOOL)isYesterday {
     NSDate *yesterday = [[NSDate date] dateByAddingCount:-1 forComponent:NSCalendarUnitDay];
     return [self isEqualDayToDate:yesterday];
 }
 
-- (NSInteger)year
-{
+- (NSInteger)year {
     return [self valueForComponent:NSCalendarUnitYear];
 }
 
-- (NSInteger)month
-{
+- (NSInteger)month {
     return [self valueForComponent:NSCalendarUnitMonth];
 }
 
-- (NSInteger)day
-{
+- (NSInteger)day {
     return [self valueForComponent:NSCalendarUnitDay];
 }
 
-- (NSInteger)hour
-{
+- (NSInteger)hour {
     return [self valueForComponent:NSCalendarUnitHour];
 }
 
-- (NSInteger)minute
-{
+- (NSInteger)minute {
     return [self valueForComponent:NSCalendarUnitMinute];
 }
 
-- (NSInteger)second
-{
+- (NSInteger)second {
     return [self valueForComponent:NSCalendarUnitSecond];
 }
 
-- (NSInteger)weekDay
-{
+- (NSInteger)weekDay {
     return [self valueForComponent:NSCalendarUnitWeekday];
 }
 

@@ -10,10 +10,8 @@
 
 @implementation UITableView (Additions)
 
-- (NSIndexPath *)indexPathForCellContainingView:(UIView *)view
-{
-    while (view != nil)
-    {
+- (NSIndexPath *)indexPathForCellContainingView:(UIView *)view {
+    while (view != nil) {
         if ([view isKindOfClass:[UITableViewCell class]])
         {
             return [self indexPathForCell:(UITableViewCell *)view];
@@ -26,16 +24,14 @@
     return nil;
 }
 
-- (void)registerNibNamed:(NSString*)nibNamed forHeaderFooterViewReuseIdentifier:(NSString *)identifier
-{
+- (void)registerNibNamed:(NSString*)nibNamed forHeaderFooterViewReuseIdentifier:(NSString *)identifier {
     UINib * nib = [UINib nibWithNibName:nibNamed bundle:nil];
     if (nib) {
         [self registerNib:nib forHeaderFooterViewReuseIdentifier:identifier];
     }
 }
 
-- (void)registerNibNamed:(NSString*)nibNamed forCellReuseIdentifier:(NSString *)identifier
-{
+- (void)registerNibNamed:(NSString*)nibNamed forCellReuseIdentifier:(NSString *)identifier {
     UINib * nib = [UINib nibWithNibName:nibNamed bundle:nil];
     if (nib) {
         [self registerNib:nib forCellReuseIdentifier:identifier];

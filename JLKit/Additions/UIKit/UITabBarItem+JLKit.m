@@ -11,15 +11,13 @@
 
 @implementation UITabBarItem (JLKit)
 
-+ (UITabBarItem*)tabBarItemWithTitle:(NSString *)title image:(UIImage *)image selectedImage:(UIImage *)selectedImage
-{
++ (UITabBarItem*)tabBarItemWithTitle:(NSString *)title image:(UIImage *)image selectedImage:(UIImage *)selectedImage {
     return [[self alloc] initWithTitle:title
                                  image:image
                          selectedImage:selectedImage];
 }
 
-+ (UITabBarItem*)tabBarItemWithTitle:(NSString *)title selectedImage:(UIImage *)selectedImage deselectTintColor:(UIColor*)deselectTintColor
-{
++ (UITabBarItem*)tabBarItemWithTitle:(NSString *)title selectedImage:(UIImage *)selectedImage deselectTintColor:(UIColor*)deselectTintColor {
     return [[self alloc] initWithTitle:title
                                  image:[selectedImage imageWithTintColor:deselectTintColor]
                          selectedImage:selectedImage];

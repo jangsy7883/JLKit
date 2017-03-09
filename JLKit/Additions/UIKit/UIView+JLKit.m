@@ -10,13 +10,11 @@
 
 @implementation UIView (Additions)
 
-+ (instancetype)viewWithClass:(Class)viewClass
-{
++ (instancetype)viewWithClass:(Class)viewClass {
     return [self viewWithNibNamed:NSStringFromClass(viewClass)];
 }
 
-+ (instancetype)viewWithNibNamed:(NSString*)nibNameOrNil
-{
++ (instancetype)viewWithNibNamed:(NSString*)nibNameOrNil {
     @try {
         NSArray* xibs = [[NSBundle mainBundle] loadNibNamed:nibNameOrNil owner:self options:nil];
         for (UIView *xib in xibs)
@@ -32,20 +30,16 @@
     return nil;
 }
 
-- (void)removeAllSubviews
-{
-    for (UIView *subview in self.subviews)
-    {
+- (void)removeAllSubviews {
+    for (UIView *subview in self.subviews) {
         [subview removeFromSuperview];
     }
 }
 
 #pragma mark - GETTERS
 
-- (UIViewController*)superViewController
-{
-    for (UIView* next = self; next; next = next.superview)
-    {
+- (UIViewController*)superViewController {
+    for (UIView* next = self; next; next = next.superview) {
         UIResponder* nextResponder = [next nextResponder];
         
         if ([nextResponder isKindOfClass:[UIViewController class]])
@@ -56,13 +50,11 @@
     return nil;
 }
 
-- (CGFloat)cornerRadius
-{
+- (CGFloat)cornerRadius {
     return self.layer.cornerRadius;
 }
 
-- (UIImage*)screenShot
-{
+- (UIImage*)screenShot {
     UIGraphicsBeginImageContextWithOptions(self.frame.size,NO, [UIScreen mainScreen].scale);
     CGContextRef context = UIGraphicsGetCurrentContext();
     [self.layer renderInContext:context];
@@ -74,17 +66,14 @@
 
 #pragma mark - SETTERS
 
-- (void)setTransformScale:(CGFloat)scale
-{
+- (void)setTransformScale:(CGFloat)scale {
     self.transform = CGAffineTransformScale(self.transform, scale, scale);
 }
 
-- (void)setCornerRadius:(CGFloat)parm_cornerRadius
-{
+- (void)setCornerRadius:(CGFloat)parm_cornerRadius {
     self.layer.cornerRadius = parm_cornerRadius;
     
-    if (parm_cornerRadius > 0)
-    {
+    if (parm_cornerRadius > 0) {
         self.clipsToBounds = YES;
     }
 }

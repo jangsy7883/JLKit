@@ -10,8 +10,7 @@
 
 @implementation UITableViewCell (Additions)
 
-- (NSIndexPath*)indexPath
-{
+- (NSIndexPath*)indexPath {
     UITableView *tableView = self.superTableView;
     if (tableView) {
         return [tableView indexPathForCell:self];
@@ -19,8 +18,7 @@
     return nil;
 }
 
-- (UITableView *)superTableView
-{
+- (UITableView *)superTableView {
     id view = self.superview;
     while (view != nil) {
         if ([view isKindOfClass:[UITableView class]])

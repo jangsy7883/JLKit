@@ -11,8 +11,7 @@
 
 @implementation CALayer (JLKit)
 
-- (void)setShadowColor:(CGColorRef)shadowColor offset:(CGSize)offset radius:(CGFloat)radius
-{
+- (void)setShadowColor:(CGColorRef)shadowColor offset:(CGSize)offset radius:(CGFloat)radius {
     self.shadowColor = shadowColor;
     self.shadowOffset = offset;
     self.shadowRadius = radius;

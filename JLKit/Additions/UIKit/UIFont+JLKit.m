@@ -10,46 +10,21 @@
 
 @implementation UIFont (JLKit)
 
-+ (UIFont *)lightSystemFontOfSize:(CGFloat)fontSize {
-    return [UIFont systemFontOfSize:fontSize weight:UIFontWeightLight];
-}
-
-+ (UIFont *)mediumSystemFontOfSize:(CGFloat)fontSize {
-    return [UIFont systemFontOfSize:fontSize weight:UIFontWeightMedium];
-}
-
-+ (UIFont *)semiboldSystemFontOfSize:(CGFloat)fontSize {
-    return [UIFont systemFontOfSize:fontSize weight:UIFontWeightSemibold];
-}
-
-+ (UIFont *)heavySystemFontOfSize:(CGFloat)fontSize {
-    
-    return [UIFont systemFontOfSize:fontSize weight:UIFontWeightHeavy];
-}
-
-
-
-
-
-+ (UIFont*)systemFontOfSize:(CGFloat)fontSize style:(UIFontStyle)style
-{
++ (UIFont*)systemFontOfSize:(CGFloat)fontSize style:(UIFontStyle)style {
     UIFont *font = nil;
 
-    if ([[UIFont class] respondsToSelector:@selector(systemFontOfSize:weight:)])
-    {
+    if ([[UIFont class] respondsToSelector:@selector(systemFontOfSize:weight:)]) {
         CGFloat weight = [self weightForFontStyle:style];
         
         font = [UIFont systemFontOfSize:fontSize weight:weight];
     }
-    else
-    {
+    else {
         NSString *fontName = [self fontNameForFontStyle:style];
         
         font = [UIFont fontWithName:fontName size:fontSize];
     }
     
-    if (font == nil)
-    {
+    if (font == nil) {
         switch (style)
         {
             case UIFontStyleSemiBold:
@@ -65,9 +40,7 @@
     return font;
 }
 
-
-+ (CGFloat)weightForFontStyle:(UIFontStyle)style
-{
++ (CGFloat)weightForFontStyle:(UIFontStyle)style {
     switch (style) {
         case UIFontStyleLight:
             return  UIFontWeightLight;
@@ -90,8 +63,7 @@
     }
 }
 
-+ (NSString*)fontNameForFontStyle:(UIFontStyle)style
-{
++ (NSString*)fontNameForFontStyle:(UIFontStyle)style {
     switch (style) {
         case UIFontStyleLight:
             return  @".HelveticaNeueInterface-Light";
