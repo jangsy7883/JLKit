@@ -29,5 +29,4 @@ CG_INLINE CGRect CGRectSetHeight(CGRect rect, CGFloat height) {
     return rect;
 }
 
-
 #endif /* CGGeometryExtension_h */
