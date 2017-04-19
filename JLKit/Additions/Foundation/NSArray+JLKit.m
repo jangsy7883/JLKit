@@ -78,6 +78,14 @@
     return [replaced copy];
 }
 
+- (id)objectOfObjectPassingTest:(BOOL (NS_NOESCAPE ^)(id obj, NSUInteger idx, BOOL *stop))predicate  {
+    NSUInteger index = [self indexOfObjectPassingTest:predicate];
+    if (index != NSNotFound) {
+        return [self objectAtSafeIndex:index];
+    }
+    return nil;
+}
+
 @end
 
 @implementation NSMutableArray (Additions)

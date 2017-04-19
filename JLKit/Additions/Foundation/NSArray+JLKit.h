@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSArray (Additions)
+@interface NSArray<ObjectType> (Additions)
 
 @property (nonatomic, readonly, copy) NSString *JSONValue;
 
@@ -18,6 +18,8 @@
 
 - (NSArray *)arrayByReplacingUsingBlock:(id (^)(id object))block;
 - (NSArray *)arrayByReplacingNullsWithBlanks;
+
+- (ObjectType)objectOfObjectPassingTest:(BOOL (NS_NOESCAPE ^)(ObjectType obj, NSUInteger idx, BOOL *stop))predicate;
 
 @end
 
