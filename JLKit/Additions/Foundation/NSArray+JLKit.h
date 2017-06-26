@@ -21,6 +21,8 @@
 
 - (ObjectType)objectOfObjectPassingTest:(BOOL (NS_NOESCAPE ^)(ObjectType obj, NSUInteger idx, BOOL *stop))predicate;
 
+- (NSArray <ObjectType> *)sortedArrayWithKey:(NSString *)key ascending:(BOOL)ascending;
+
 @end
 
 @interface NSMutableArray (Additions)
