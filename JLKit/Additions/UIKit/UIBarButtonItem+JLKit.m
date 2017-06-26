@@ -51,6 +51,13 @@
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     [button sizeToFit];
     
+    if ([[UIApplication sharedApplication].delegate respondsToSelector:@selector(window)]) {
+        UIWindow *window = [[UIApplication sharedApplication].delegate performSelector:@selector(window)];
+        if (window.tintColor) {
+            button.tintColor = window.tintColor;
+        }
+    }
+    
     return [[UIBarButtonItem alloc] initWithCustomView:button];
 }
 
