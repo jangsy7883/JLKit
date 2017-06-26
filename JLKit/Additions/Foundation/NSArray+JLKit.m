@@ -86,6 +86,10 @@
     return nil;
 }
 
+- (NSArray *)sortedArrayWithKey:(NSString *)key ascending:(BOOL)ascending {
+    return [self sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:key ascending:ascending]]];
+}
+
 @end
 
 @implementation NSMutableArray (Additions)

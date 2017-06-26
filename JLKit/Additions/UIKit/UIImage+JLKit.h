@@ -11,27 +11,26 @@
 @interface UIImage (Additions)
 
 @property (nonatomic, readonly, strong) UIImage *centerResizableImage;
-@property (nonatomic, readonly, strong) UIImage *squareCropImage;
-@property (nonatomic, readonly) BOOL hasAlpha;
-
 @property (nonatomic, readonly, strong) UIImage *originalRenderingImage;
+@property (nonatomic, readonly) BOOL hasAlpha;
 
 + (UIImage *)imageNamed:(NSString *)name orientation:(UIImageOrientation)orientation;
 
 + (UIImage *)patternImageWithColor:(UIColor *)color;
 + (UIImage *)patternImageWithColor:(UIColor *)color size:(CGSize)size;
 
-+ (void)isEqual:(UIImage*)iamge toImage:(UIImage*)toImage completion:(void (^)(BOOL isEqual))completion;
-
-- (CGSize)sizeToFitWidth:(CGFloat)width scaleAspectFit:(BOOL)scaleAspectFit;
-- (CGSize)sizeToFit:(CGSize)size scaleAspectFit:(BOOL)scaleAspectFit;
-
-- (UIImage *)autoScaleWithOriginalScale:(CGFloat)scale;
-
 - (UIImage *)imageWithTintColor:(UIColor *)color;
-- (UIImage *)imageWithCropFrame:(CGRect)frame angle:(NSInteger)angle circularClip:(BOOL)circular;
+
+//
+- (UIImage *)cropImageWithFrame:(CGRect)frame angle:(NSInteger)angle circularClip:(BOOL)circular;
 - (UIImage *)imageWithAngle:(NSInteger)angle;
 
+//
+- (CGSize)sizeToFitByWidth:(CGFloat)width scaleAspectFit:(BOOL)scaleAspectFit;
+- (CGSize)sizeToFit:(CGSize)size scaleAspectFit:(BOOL)scaleAspectFit;
+
+//
++ (void)isEqual:(UIImage*)iamge toImage:(UIImage*)toImage completion:(void (^)(BOOL isEqual))completion;
 - (BOOL)isEqualToImage:(UIImage*)toImage;
 
 @end
