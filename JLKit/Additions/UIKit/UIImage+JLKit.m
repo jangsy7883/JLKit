@@ -18,6 +18,10 @@
                                 resizingMode:UIImageResizingModeStretch];
 }
 
+- (UIImage *)originalRenderingImage {
+    return [self imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+}
+
 + (UIImage *)imageNamed:(NSString *)name orientation:(UIImageOrientation)orientation {
     UIImage *image = [UIImage imageNamed:name];
     if (image) {
@@ -66,21 +70,6 @@
     return self;
 }
 
-- (UIImage *)autoScaleWithOriginalScale:(CGFloat)scale {
-    CGRect newRect = CGRectMake(0.0, 0.0, self.size.width/scale, self.size.height/scale);
-    
-    UIGraphicsBeginImageContextWithOptions(newRect.size, NO, [UIScreen mainScreen].scale);
-    [self drawInRect:newRect];
-    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return newImage;
-}
-
-- (UIImage *)originalRenderingImage {
-    return [self imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-}
-
 #pragma mark - equal
 
 + (void)isEqual:(UIImage *)iamge toImage:(UIImage *)toImage completion:(void (^)(BOOL isEqual))completion {
@@ -117,7 +106,7 @@
 
 #pragma mark - size
 
-- (CGSize)sizeToFitWidth:(CGFloat)width scaleAspectFit:(BOOL)scaleAspectFit {
+- (CGSize)sizeToFitByWidth:(CGFloat)width scaleAspectFit:(BOOL)scaleAspectFit {
     CGSize fitSize = CGSizeZero;
     CGFloat ratio = (self.size.width * self.scale) / width;
     
@@ -150,58 +139,16 @@
 
 #pragma mark - crop
 
-- (UIImage *)squareCropImage {
-    CGRect cropRect = CGRectZero;
-    
-    CGSize imageSize = self.size;
-    CGFloat squareSize = MIN(imageSize.width, imageSize.width);
-    
-    cropRect.origin.x = (imageSize.width - squareSize) / 2;
-    cropRect.origin.y = (imageSize.height - squareSize) / 2;
-    cropRect.size.width = squareSize;
-    cropRect.size.height = squareSize;
-    
-    CGFloat x = CGRectGetMinX(cropRect);
-    CGFloat y = CGRectGetMinY(cropRect);
-    CGFloat width = CGRectGetWidth(cropRect);
-    CGFloat height = CGRectGetHeight(cropRect);
-    
-    UIImageOrientation imageOrientation = self.imageOrientation;
-    if (imageOrientation == UIImageOrientationRight || imageOrientation == UIImageOrientationRightMirrored) {
-        cropRect.origin.x = y;
-        cropRect.origin.y = imageSize.width - CGRectGetWidth(cropRect) - x;
-        cropRect.size.width = height;
-        cropRect.size.height = width;
-    }
-    else if (imageOrientation == UIImageOrientationLeft || imageOrientation == UIImageOrientationLeftMirrored) {
-        cropRect.origin.x = imageSize.height - CGRectGetHeight(cropRect) - y;
-        cropRect.origin.y = x;
-        cropRect.size.width = height;
-        cropRect.size.height = width;
-    }
-    else if (imageOrientation == UIImageOrientationDown || imageOrientation == UIImageOrientationDownMirrored) {
-        cropRect.origin.x = imageSize.width - CGRectGetWidth(cropRect) - x;;
-        cropRect.origin.y = imageSize.height - CGRectGetHeight(cropRect) - y;
-    }
-    
-    CGImageRef croppedCGImage = CGImageCreateWithImageInRect(self.CGImage, cropRect);
-    UIImage *croppedImage = [UIImage imageWithCGImage:croppedCGImage scale:1.0f orientation:self.imageOrientation];
-    CGImageRelease(croppedCGImage);
-    return croppedImage;
-}
-
-- (UIImage *)imageWithCropFrame:(CGRect)frame angle:(NSInteger)angle circularClip:(BOOL)circular {
+- (UIImage *)cropImageWithFrame:(CGRect)frame angle:(NSInteger)angle circularClip:(BOOL)circular {
     UIImage *croppedImage = nil;
     UIGraphicsBeginImageContextWithOptions(frame.size, ![self hasAlpha] && !circular, self.scale); {
         CGContextRef context = UIGraphicsGetCurrentContext();
         
-        if (circular)
-        {
+        if (circular) {
             CGContextAddEllipseInRect(context, (CGRect){CGPointZero, frame.size});
             CGContextClip(context);
         }
-        if (angle != 0)
-        {
+        if (angle != 0){
             UIImageView *imageView = [[UIImageView alloc] initWithImage:self];
             imageView.layer.minificationFilter = kCAFilterNearest;
             imageView.layer.magnificationFilter = kCAFilterNearest;
@@ -213,8 +160,7 @@
             CGContextTranslateCTM(context, -frame.origin.x, -frame.origin.y);
             [containerView.layer renderInContext:context];
         }
-        else
-        {
+        else {
             CGContextTranslateCTM(context, -frame.origin.x, -frame.origin.y);
             [self drawAtPoint:CGPointZero];
         }
@@ -223,11 +169,11 @@
     }
     UIGraphicsEndImageContext();
     
-    return [UIImage imageWithCGImage:croppedImage.CGImage scale:[UIScreen mainScreen].scale orientation:UIImageOrientationUp];
+    return [UIImage imageWithCGImage:croppedImage.CGImage scale:self.scale orientation:self.imageOrientation];
 }
 
 - (UIImage *)imageWithAngle:(NSInteger)angle {
-    return [self imageWithCropFrame:(CGRect){CGPointZero,self.size}
+    return [self cropImageWithFrame:(CGRect){CGPointZero,self.size}
                               angle:angle
                        circularClip:NO];
 }
