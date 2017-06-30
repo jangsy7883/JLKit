@@ -32,9 +32,13 @@
 
 - (NSArray<NSString *> *)componentsSeparatedByString:(NSString *)separator componentBlock:(id (^)(id component))block;
 
+- (NSString *)stringByAppendingPathComponents:(NSArray <NSString *>*)pathComponents;
+
 - (NSRange)rangeOfFirstMatchInRegexPattern:(NSString*)pattern;
 - (NSArray<NSTextCheckingResult *> *)matchesInRegexPattern:(NSString*)pattern;
 - (BOOL)isValidInRegexPattern:(NSString*)pattern;
+
+- (NSString *)stringByReplacingPattern:(NSString *)pattern withTemplate:(NSString *)templ;
 
 @property (nonatomic, readonly, copy) NSString *MD5;
 @property (nonatomic, readonly, copy) NSString *UTF8Encoding;
