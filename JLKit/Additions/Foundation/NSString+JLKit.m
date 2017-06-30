@@ -44,6 +44,11 @@
     return CGSizeMake(ceilf(fitSize.width), ceilf(fitSize.height));
 }
 
+- (NSString *)stringByAppendingPathComponents:(NSArray <NSString *>*)pathComponents {
+    NSString *string = [pathComponents componentsJoinedByString:@"/"];
+    return [self stringByAppendingPathComponent:string];
+}
+
 - (NSString*)deleteEmptySpace {
     return [[self stringByReplacingOccurrencesOfString:@"\r\n" withString:@"\n"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
@@ -146,6 +151,14 @@
 - (BOOL)isValidInRegexPattern:(NSString*)pattern {
     NSRange range = [self rangeOfFirstMatchInRegexPattern:pattern];
     return (range.length != NSNotFound && range.length > 0);
+}
+
+- (NSString *)stringByReplacingPattern:(NSString *)pattern withTemplate:(NSString *)templ {
+    NSRegularExpression *regex = [self regexWithPattern:pattern];
+    if (regex) {
+        return [regex stringByReplacingMatchesInString:self options:0 range:NSMakeRange(0, self.length) withTemplate:templ];;
+    }
+    return self;
 }
 
 #pragma mark -
