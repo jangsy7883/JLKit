@@ -11,6 +11,7 @@
 @interface NSArray<ObjectType> (Additions)
 
 @property (nonatomic, readonly, copy) NSString *JSONValue;
+@property (nonatomic, readonly, copy) NSString *pathsString;
 
 - (BOOL)emptyAtIndex:(NSInteger)index;
 

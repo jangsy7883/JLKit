@@ -86,6 +86,10 @@
     return nil;
 }
 
+- (NSString *)pathsString {
+    return [self componentsJoinedByString:@"/"];
+}
+
 - (NSArray *)sortedArrayWithKey:(NSString *)key ascending:(BOOL)ascending {
     return [self sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:key ascending:ascending]]];
 }
