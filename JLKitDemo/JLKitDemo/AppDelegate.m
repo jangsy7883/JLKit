@@ -18,32 +18,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-    NSString *url = [NSString stringWithFormat:@"http://naver.com/%@/%@/%@",@"api",@"hospital",@"likedUser"];
-    
-    NSString *url1 = [[[@"http://naver.com" stringByAppendingPathComponent:@"api"] stringByAppendingPathComponent:@"hospital"] stringByAppendingPathComponent:@"likedUser"];
-    
-    NSString *url2 = [@"http://naver.com" stringByAppendingPathComponents:@[
-                                                                           @"api",
-                                                                           @"hospital",
-                                                                           @"likedUser"
-                                                                           ]];
-    
-    
-    NSURL *aa = [NSURL URLWithString:@""];
-    
-    aa urlb
-    
-    NSLog(@"%@",url);
-    NSLog(@"%@",url1);
-    NSLog(@"%@",url2);
-    NSLog(@"%@",[@[
-                   @"api",
-                   @"hospital",
-                   @"likedUser"
-                   ] pathComponents]);
-    
-//    NSLog(@"%@",self.window.tintColor);
     return YES;
 }
 
