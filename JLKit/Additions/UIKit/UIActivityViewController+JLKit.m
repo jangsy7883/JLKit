@@ -17,9 +17,11 @@
 
 + (void)showWithActivityItems:(NSArray *)activityItems
                    activities:(NSArray<UIActivity *> *)activities
-                       option:(void (^)(UIActivityViewController *activityViewController))option {
-    UIActivityViewController *activityViewController = [[UIActivityViewController alloc]initWithActivityItems:activityItems
-                                                                                        applicationActivities:activities];
+                       option:(void (^)(__kindof UIActivityViewController *activityViewController))option {
+
+    
+    UIActivityViewController *activityViewController = [[super alloc] initWithActivityItems:activityItems
+                                                                      applicationActivities:activities];
     
     if (option) {
         option(activityViewController);

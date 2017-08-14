@@ -14,7 +14,6 @@
 
 + (void)showWithActivityItems:(NSArray *)activityItems
                    activities:(NSArray<UIActivity *> *)activities
-                       option:(void (^)(UIActivityViewController *activityViewController))option;
-
+                       option:(void (^)(__kindof UIActivityViewController *activityViewController))option;
 
 @end
