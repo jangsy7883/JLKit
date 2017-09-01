@@ -10,5 +10,8 @@
 
 @interface UICollectionView (JLKit)
 
-- (NSIndexPath *)indexPathForCellContainingView:(UIView *)view;
+- (nullable NSIndexPath *)indexPathForCellContainingView:(nullable UIView *)view;
+
+- (void)performBatchUpdates:(void (^ __nullable)(void))updates animated:(BOOL)animated completion:(void (^ __nullable)(BOOL finished))completion;
+
 @end
