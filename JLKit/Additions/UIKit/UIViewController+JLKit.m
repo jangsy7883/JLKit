@@ -31,10 +31,6 @@
     return NO;
 }
 
-- (UIViewController*)visibleViewController {
-    return [UIViewController visibleViewControllerForViewController:self];
-}
-
 + (UIViewController*)visibleViewController {
     UIViewController* viewController;
     
