@@ -15,9 +15,8 @@
 }
 
 + (void)openURL:(NSURL*)url completion:(void (^)(BOOL success))completion {
-    if ([[UIApplication sharedApplication] canOpenURL:url]) {
-        if ([[UIApplication sharedApplication] respondsToSelector:@selector(openURL:options:completionHandler:)])
-        {
+    if ([[UIApplication sharedApplication] canOpenURL:url]) {        
+        if (@available(iOS 11.0, *)) {
             [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:completion];
         }
         else

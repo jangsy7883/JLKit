@@ -13,7 +13,7 @@
 + (UIFont*)systemFontOfSize:(CGFloat)fontSize style:(UIFontStyle)style {
     UIFont *font = nil;
 
-    if ([[UIFont class] respondsToSelector:@selector(systemFontOfSize:weight:)]) {
+    if (@available(iOS 8.2, *)) {
         CGFloat weight = [self weightForFontStyle:style];
         
         font = [UIFont systemFontOfSize:fontSize weight:weight];
@@ -41,26 +41,29 @@
 }
 
 + (CGFloat)weightForFontStyle:(UIFontStyle)style {
-    switch (style) {
-        case UIFontStyleLight:
-            return  UIFontWeightLight;
-            break;
-        case UIFontStyleMedium:
-            return  UIFontWeightMedium;
-            break;
-        case UIFontStyleSemiBold:
-            return  UIFontWeightSemibold;
-            break;
-        case UIFontStyleBold:
-            return  UIFontWeightBold;
-            break;
-        case UIFontStyleHeavy:
-            return  UIFontWeightHeavy;
-            break;
-        default: //UIFontStyleRegular
-            return UIFontWeightRegular;
-            break;
+    if (@available(iOS 8.2, *)) {
+        switch (style) {
+            case UIFontStyleLight:
+                return  UIFontWeightLight;
+                break;
+            case UIFontStyleMedium:
+                return  UIFontWeightMedium;
+                break;
+            case UIFontStyleSemiBold:
+                return  UIFontWeightSemibold;
+                break;
+            case UIFontStyleBold:
+                return  UIFontWeightBold;
+                break;
+            case UIFontStyleHeavy:
+                return  UIFontWeightHeavy;
+                break;
+            default: //UIFontStyleRegular
+                return UIFontWeightRegular;
+                break;
+        }
     }
+    return 0;
 }
 
 + (NSString*)fontNameForFontStyle:(UIFontStyle)style {
