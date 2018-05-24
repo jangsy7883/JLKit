@@ -12,6 +12,6 @@
 
 @interface NSIndexPath (Additions)
 
-- (BOOL)isEqualToIndexPath:(NSIndexPath*)indexPath;
+- (BOOL)isEqualToIndexPath:(nonnull NSIndexPath*)indexPath;
 
 @end

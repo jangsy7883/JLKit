@@ -12,6 +12,6 @@
 
 - (nullable NSIndexPath *)indexPathForCellContainingView:(nullable UIView *)view;
 
-- (void)performBatchUpdates:(void (^ __nullable)(void))updates animated:(BOOL)animated completion:(void (^ __nullable)(BOOL finished))completion;
+- (void)performBatchUpdates:(nullable void (^)(void))updates animated:(BOOL)animated completion:(nullable void (^)(BOOL finished))completion;
 
 @end

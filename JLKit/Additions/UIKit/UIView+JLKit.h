@@ -13,13 +13,13 @@
 
 @interface UIView (Additions)
 
-@property (nonatomic, readonly) UIViewController *superViewController;
+@property (nonatomic, readonly) UIViewController * _Nullable superViewController;
 @property (nonatomic, assign) CGFloat cornerRadius;
 
-@property (nonatomic, readonly) UIImage* screenShot;
+@property (nonatomic, readonly) UIImage* _Nullable screenShot;
 
-+ (instancetype)viewWithClass:(Class)viewClass;
-+ (instancetype)viewWithNibNamed:(NSString*)nibNameOrNil;
++ (instancetype)viewWithClass:(nullable Class)viewClass;
++ (instancetype)viewWithNibNamed:(nullable NSString*)nibNameOrNil;
 
 - (void)setTransformScale:(CGFloat)scale;
 

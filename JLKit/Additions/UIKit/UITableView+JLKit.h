@@ -10,10 +10,10 @@
 
 @interface UITableView (Additions)
 
-- (NSIndexPath *)indexPathForCellContainingView:(UIView *)view;
+- (nullable NSIndexPath *)indexPathForCellContainingView:(nullable UIView *)view;
 
-- (void)registerNibNamed:(NSString*)nibNamed forHeaderFooterViewReuseIdentifier:(NSString *)identifier;
-- (void)registerNibNamed:(NSString*)nibNamed forCellReuseIdentifier:(NSString *)identifier;
+- (void)registerNibNamed:(nonnull NSString*)nibNamed forHeaderFooterViewReuseIdentifier:(nonnull NSString *)identifier;
+- (void)registerNibNamed:(nonnull NSString*)nibNamed forCellReuseIdentifier:(nonnull NSString *)identifier;
 
 
 @end

@@ -10,7 +10,7 @@
 
 @interface UITableViewCell (Additions)
 
-@property (nonatomic, readonly) NSIndexPath *indexPath;
-@property (nonatomic, readonly) UITableView *superTableView;
+@property (nonatomic, readonly) NSIndexPath * _Nullable indexPath;
+@property (nonatomic, readonly) UITableView * _Nullable superTableView;
 
 @end

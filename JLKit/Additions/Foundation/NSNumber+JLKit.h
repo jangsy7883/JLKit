@@ -10,8 +10,8 @@
 
 @interface NSNumber (JLKit)
 
-- (NSString*)localizedStringForNumberStyle:(NSNumberFormatterStyle)nStyle;
-- (NSString *)stringByRounding:(NSNumberFormatterRoundingMode)roundingMode maximumFractionDigits:(NSUInteger)maximumFractionDigits;
+- (nullable NSString*)localizedStringForNumberStyle:(NSNumberFormatterStyle)nStyle;
+- (nullable NSString *)stringByRounding:(NSNumberFormatterRoundingMode)roundingMode maximumFractionDigits:(NSUInteger)maximumFractionDigits;
 
 + (NSInteger)randomIntegerWithMin:(NSInteger)min max:(NSInteger)max;
 @end
