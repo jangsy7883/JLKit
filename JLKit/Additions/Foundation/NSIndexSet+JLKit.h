@@ -10,5 +10,5 @@
 
 @interface NSIndexSet (JLKit)
 
-@property (nonatomic, readonly) NSArray<NSNumber*>* arrayValue;
+@property (nonatomic, readonly) NSArray<NSNumber*>* _Nullable arrayValue;
 @end

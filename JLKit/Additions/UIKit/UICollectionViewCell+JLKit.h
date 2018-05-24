@@ -10,7 +10,7 @@
 
 @interface UICollectionViewCell (JLKit)
 
-@property (nonatomic, readonly) NSIndexPath *indexPath;
-@property (nonatomic, readonly) UICollectionView *superCollectionView;
+@property (nonatomic, readonly) NSIndexPath * _Nullable indexPath;
+@property (nonatomic, readonly) UICollectionView * _Nullable superCollectionView;
 
 @end

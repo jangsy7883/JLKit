@@ -10,6 +10,6 @@
 
 @interface NSData (JLKit)
 
-@property (nonatomic, readonly) NSString *UTF8String;
+@property (nonatomic, readonly) NSString * _Nullable UTF8String;
 
 @end

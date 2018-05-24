@@ -10,6 +10,6 @@
 
 @interface NSTimeZone (JLKit)
 
-+ (NSTimeZone*)GMT;
++ (nonnull NSTimeZone*)GMT;
 
 @end

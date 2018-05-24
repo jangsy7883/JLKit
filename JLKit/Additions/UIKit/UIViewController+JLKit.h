@@ -12,7 +12,7 @@
 
 @property (nonatomic, readonly, getter=isPresented) BOOL presented;
 
-+ (UIViewController*)visibleViewController;
-+ (UIViewController*)visibleViewControllerForViewController:(UIViewController*)viewController;
++ (nullable UIViewController*)visibleViewController;
++ (nullable UIViewController*)visibleViewControllerForViewController:(nullable UIViewController*)viewController;
 
 @end
