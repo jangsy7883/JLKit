@@ -10,6 +10,6 @@
 
 @interface UISearchBar (JLKit)
 
-@property (nonatomic, readonly) UITextField *textField;
+@property (nonatomic, readonly) UITextField * _Nullable textField;
 
 @end

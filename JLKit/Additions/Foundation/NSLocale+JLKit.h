@@ -10,13 +10,13 @@
 
 @interface NSLocale (Additions)
 
-+ (NSString*)currentLanguageCode;
++ (nullable NSString*)currentLanguageCode;
 
-+ (NSString*)currentCountryCode;
++ (nullable NSString*)currentCountryCode;
 
-+ (NSString*)languagCodeForLocaleIdentifier:(NSString*)localeIdentifier;
++ (nullable NSString*)languagCodeForLocaleIdentifier:(nullable NSString*)localeIdentifier;
 
-+ (NSString*)displayNameForLanguageCode:(NSString*)languageCode;
-+ (NSString*)localizedDisplayNameForLanguageCode:(NSString*)languageCode;
++ (nullable NSString*)displayNameForLanguageCode:(nullable NSString*)languageCode;
++ (nullable NSString*)localizedDisplayNameForLanguageCode:(nullable NSString*)languageCode;
 
 @end
